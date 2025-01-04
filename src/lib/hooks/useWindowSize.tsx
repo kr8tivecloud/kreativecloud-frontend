@@ -1,0 +1,33 @@
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { throttle } from "../utils";
+
+export const useWindowSize = () => {
+  const [width, setWidth] = useState<number>(0);
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", throttle(handleResize, 200));
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return width;
+};
+
+export const useDimensions = (ref: React.RefObject<HTMLDivElement | null>) => {
+  const dimensions = useRef({ width: 0, height: 0 });
+
+  useEffect(() => {
+    if (ref.current) {
+      dimensions.current.width = ref.current.offsetWidth;
+      dimensions.current.height = ref.current.offsetHeight;
+    }
+  }, [ref]);
+
+  return dimensions.current;
+};
