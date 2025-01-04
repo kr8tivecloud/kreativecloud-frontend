@@ -73,13 +73,9 @@ export default function Footer() {
         {/* FOOTER TOP */}
         <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
           {/* LOGO */}
-          <Image
-            src={Logo}
-            alt="Logo"
-            width={172}
-            height={29}
-            className="flex-1"
-          />
+          <div className="flex-1">
+            <Image src={Logo} alt="Logo" width={172} height={29} />
+          </div>
           {/* END LOGO */}
 
           {/* SERVICES */}

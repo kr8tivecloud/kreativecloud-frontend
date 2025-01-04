@@ -16,6 +16,7 @@ import {
   Variants,
 } from "motion/react";
 import { AnimatedButton } from "./AnimatedButton";
+import { usePathname } from "next/navigation";
 
 const navLinks: NavLinkType[] = [
   {
@@ -88,6 +89,7 @@ const MotionLink = motion.create(Link);
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const windowWidth = useWindowSize();
+  const pathname = usePathname();
 
   const controls = useAnimationControls();
   const { scrollY } = useScroll();
@@ -105,6 +107,14 @@ export default function Navbar() {
     return () => unsubscribe(); // Cleanup on unmount
   }, [controls, scrollY]);
 
+  useEffect(() => {
+    // automatically close navbar on navigation
+    if (navbarOpen && windowWidth < 900) {
+      setNavbarOpen(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
+
   function handleOpenNavbar() {
     setNavbarOpen((state) => !state);
   }
@@ -112,7 +122,7 @@ export default function Navbar() {
   return (
     <motion.div
       animate={controls}
-      className="fixed top-0 flex items-center justify-between container py-6 gap-x-10 bg-black"
+      className="fixed top-0 left-0 right-0 flex items-center justify-between container py-6 gap-x-10 bg-black"
       initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <Image src={Logo} alt="Logo" width={162} height={28} />
