@@ -142,7 +142,7 @@ export default function Navbar() {
             initial={"closed"}
             animate={navbarOpen || windowWidth > 1024 ? "open" : "closed"}
             exit={"closed"}
-            className="flex items-center gap-x-10 uppercase font-bold text-sm max-lg:flex-col max-lg:text-3xl max-lg:pt-32 max-lg:items-start max-lg:gap-y-6 max-lg:px-6 max-lg:flex-1"
+            className="flex items-center text-white gap-x-10 uppercase font-bold text-sm max-lg:flex-col max-lg:text-3xl max-lg:pt-32 max-lg:items-start max-lg:gap-y-6 max-lg:px-6 max-lg:flex-1"
           >
             {navLinks.map((navLink) => {
               return (
@@ -183,14 +183,17 @@ export default function Navbar() {
 
         <div>
           <AnimatedButton
-            className="max-lg:hidden"
+            className="max-lg:hidden text-white"
             variant="link"
             href={"/contact"}
           >
             GET IN TOUCH
           </AnimatedButton>
 
-          <button onClick={handleOpenNavbar} className="min-[1024px]:hidden">
+          <button
+            onClick={handleOpenNavbar}
+            className="min-[1024px]:hidden text-white"
+          >
             <FaBars />
           </button>
         </div>

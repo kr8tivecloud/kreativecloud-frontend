@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* SERVICES */}
           <nav className="flex-1">
-            <p className="font-bold">Services</p>
+            <p className="font-bold text-white">Services</p>
 
             <ul className="md:mt-6 space-y-2 md:space-y-4 mt-2">
               {serviceLinks.map((link) => {
@@ -101,7 +101,7 @@ export default function Footer() {
 
           {/* RESOURCES */}
           <nav className="flex-1">
-            <p className="font-bold">Resources</p>
+            <p className="font-bold text-white">Resources</p>
 
             <ul className="md:mt-6 space-y-2 md:space-y-4 mt-2">
               {resourceLinks.map((link) => {
@@ -122,7 +122,7 @@ export default function Footer() {
 
           {/* POLICIES */}
           <nav className="flex-1">
-            <p className="font-bold">Policies</p>
+            <p className="font-bold text-white">Policies</p>
 
             <ul className="md:mt-6 space-y-2 md:space-y-4 mt-2">
               {policyLinks.map((link) => {
