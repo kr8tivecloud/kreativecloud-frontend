@@ -122,83 +122,85 @@ export default function Navbar() {
   return (
     <motion.div
       animate={controls}
-      className="fixed top-0 left-0 right-0 flex items-center justify-between container py-6 gap-x-10 bg-black"
+      className="fixed top-0 left-0 right-0 bg-black"
       initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
-      <Image src={Logo} alt="Logo" width={162} height={28} />
+      <div className="container flex items-center justify-between py-6 gap-x-10">
+        <Image src={Logo} alt="Logo" width={162} height={28} />
 
-      <AnimatePresence>
-        {/* The navbar should only be mounted if the navbar is open or if the window width is greater than 900px */}
-        {navbarOpen || windowWidth > 900 ? (
-          <motion.nav
-            initial={"closed"}
-            variants={sidebarVariants}
-            animate={"open"}
-            exit={"closed"}
-            transition={{
-              type: "spring",
-              bounce: 0,
-            }}
-            className="max-[900px]:fixed max-[900px]:inset-0 max-[900px]:min-w-96 max-[900px]:bg-gray-950 max-[900px]:flex max-[900px]:flex-col"
-          >
-            <motion.ul
-              variants={ulVariants}
+        <AnimatePresence>
+          {/* The navbar should only be mounted if the navbar is open or if the window width is greater than 900px */}
+          {navbarOpen || windowWidth > 900 ? (
+            <motion.nav
               initial={"closed"}
+              variants={sidebarVariants}
               animate={"open"}
               exit={"closed"}
-              className="flex items-center gap-x-10 uppercase font-bold text-sm max-[900px]:flex-col max-[900px]:text-3xl max-[900px]:pt-32 max-[900px]:items-start max-[900px]:gap-y-6 max-[900px]:px-6 max-[900px]:flex-1"
+              transition={{
+                type: "spring",
+                bounce: 0,
+              }}
+              className="max-[900px]:fixed max-[900px]:inset-0 max-[900px]:min-w-96 max-[900px]:bg-gray-950 max-[900px]:flex max-[900px]:flex-col"
             >
-              {navLinks.map((navLink) => {
-                return (
-                  <motion.li variants={itemVariants} key={navLink.href}>
-                    <Link
-                      href={navLink.href}
-                      className="hover:text-gray-300 transition-colors"
-                    >
-                      {navLink.title}
-                    </Link>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
-
-            {/* MOBILE GET IN TOUCH BUTTON */}
-            <MotionLink
-              initial={{}}
-              animate={{}}
-              exit={{}}
-              href={"/contact"}
-              className="bg-white text-black text-sm py-5 text-center font-bold mx-6 mb-20 hidden max-[900px]:block hover:bg-gray-300 transition-colors"
-            >
-              GET IN TOUCH
-            </MotionLink>
-            {/* END MOBILE GET IN TOUCH BUTTON */}
-
-            {/* The navbar close icon should only be mounted if the navbar is open and if the window width is lesser than 900px */}
-            {navbarOpen && windowWidth < 900 ? (
-              <button
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-950"
-                onClick={handleOpenNavbar}
+              <motion.ul
+                variants={ulVariants}
+                initial={"closed"}
+                animate={"open"}
+                exit={"closed"}
+                className="flex items-center gap-x-10 uppercase font-bold text-sm max-[900px]:flex-col max-[900px]:text-3xl max-[900px]:pt-32 max-[900px]:items-start max-[900px]:gap-y-6 max-[900px]:px-6 max-[900px]:flex-1"
               >
-                <FaX />
-              </button>
-            ) : null}
-          </motion.nav>
-        ) : null}
-      </AnimatePresence>
+                {navLinks.map((navLink) => {
+                  return (
+                    <motion.li variants={itemVariants} key={navLink.href}>
+                      <Link
+                        href={navLink.href}
+                        className="hover:text-gray-300 transition-colors"
+                      >
+                        {navLink.title}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+              </motion.ul>
 
-      <div>
-        <AnimatedButton
-          className="max-[900px]:hidden"
-          variant="link"
-          href={"/contact"}
-        >
-          GET IN TOUCH
-        </AnimatedButton>
+              {/* MOBILE GET IN TOUCH BUTTON */}
+              <MotionLink
+                initial={{}}
+                animate={{}}
+                exit={{}}
+                href={"/contact"}
+                className="bg-white text-black text-sm py-5 text-center font-bold mx-6 mb-20 hidden max-[900px]:block hover:bg-gray-300 transition-colors"
+              >
+                GET IN TOUCH
+              </MotionLink>
+              {/* END MOBILE GET IN TOUCH BUTTON */}
 
-        <button onClick={handleOpenNavbar} className="min-[900px]:hidden">
-          <FaBars />
-        </button>
+              {/* The navbar close icon should only be mounted if the navbar is open and if the window width is lesser than 900px */}
+              {navbarOpen && windowWidth < 900 ? (
+                <button
+                  className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-950"
+                  onClick={handleOpenNavbar}
+                >
+                  <FaX />
+                </button>
+              ) : null}
+            </motion.nav>
+          ) : null}
+        </AnimatePresence>
+
+        <div>
+          <AnimatedButton
+            className="max-[900px]:hidden"
+            variant="link"
+            href={"/contact"}
+          >
+            GET IN TOUCH
+          </AnimatedButton>
+
+          <button onClick={handleOpenNavbar} className="min-[900px]:hidden">
+            <FaBars />
+          </button>
+        </div>
       </div>
     </motion.div>
   );
