@@ -112,7 +112,7 @@ export default function Navbar() {
   return (
     <motion.div
       animate={controls}
-      className="sticky top-0 flex items-center justify-between container py-6 gap-x-10 bg-black"
+      className="fixed top-0 flex items-center justify-between container py-6 gap-x-10 bg-black"
       initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <Image src={Logo} alt="Logo" width={162} height={28} />
