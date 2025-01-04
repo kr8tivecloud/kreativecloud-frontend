@@ -5,6 +5,8 @@ export const useWindowSize = () => {
   const [width, setWidth] = useState<number>(0);
 
   useLayoutEffect(() => {
+    setWidth(window.innerWidth);
+
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
