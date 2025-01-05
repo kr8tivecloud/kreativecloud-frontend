@@ -16,6 +16,8 @@ import {
 } from "motion/react";
 import { AnimatedButton } from "./AnimatedButton";
 import { usePathname } from "next/navigation";
+import { enablePageScroll, disablePageScroll } from "scroll-lock";
+import useNavigate from "@/lib/hooks/useNavigate";
 
 const navLinks: NavLinkType[] = [
   {
@@ -89,6 +91,7 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const windowWidth = useWindowSize();
   const pathname = usePathname();
+  const navigate = useNavigate();
 
   const controls = useAnimationControls();
   const { scrollY } = useScroll();
@@ -114,6 +117,15 @@ export default function Navbar() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
+  // handle body scroll when navbar is open
+  useEffect(() => {
+    if (navbarOpen && windowWidth < 1024) {
+      disablePageScroll();
+    } else {
+      enablePageScroll();
+    }
+  }, [windowWidth, navbarOpen]);
+
   function handleOpenNavbar() {
     setNavbarOpen((state) => !state);
   }
@@ -125,7 +137,16 @@ export default function Navbar() {
       initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <div className="container flex items-center justify-between py-6 gap-x-10">
-        <Image src={Logo} alt="Logo" width={162} height={28} />
+        <Image
+          onClick={() => {
+            navigate("/", "push");
+          }}
+          src={Logo}
+          alt="Logo"
+          width={162}
+          height={28}
+          className="cursor-pointer"
+        />
 
         <motion.nav
           initial={"closed"}
