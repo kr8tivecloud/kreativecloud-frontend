@@ -15,7 +15,7 @@ const Heroarea = () => {
       ref={ref}
       animate={isInView ? "show" : "hidden"}
       initial="hidden"
-      className="z-0 bg-red-500 w-full relative flex justify-center items-center "
+      className="z-0  w-full relative flex justify-center items-center "
     >
       {/* <div
         className="absolute top-40 -inset-60 opacity-60 dark:opacity-40"
