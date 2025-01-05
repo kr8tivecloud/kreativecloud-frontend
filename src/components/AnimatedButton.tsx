@@ -31,7 +31,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
       <Link
         {...(rest as LinkPropsWithHref)}
         href={href}
-        className={`className="font-bold text-sm hover:text-gray-300 transition-colors" ${className}`}
+        className={`font-bold text-sm hover:text-gray-300 transition-colors ${className}`}
       >
         {children}
       </Link>
@@ -40,7 +40,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
     return (
       <button
         {...(rest as ButtonProps)}
-        className={`className="font-bold text-sm hover:text-gray-300 transition-colors" ${className}`}
+        className={`font-bold text-sm hover:text-gray-300 transition-colors ${className}`}
       >
         {children}
       </button>

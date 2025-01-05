@@ -16,6 +16,7 @@ import {
 } from "motion/react";
 import { AnimatedButton } from "./AnimatedButton";
 import { usePathname } from "next/navigation";
+import { enablePageScroll, disablePageScroll } from "scroll-lock";
 
 const navLinks: NavLinkType[] = [
   {
@@ -113,6 +114,15 @@ export default function Navbar() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
+
+  // handle body scroll when navbar is open
+  useEffect(() => {
+    if (navbarOpen && windowWidth < 1024) {
+      disablePageScroll();
+    } else {
+      enablePageScroll();
+    }
+  }, [windowWidth, navbarOpen]);
 
   function handleOpenNavbar() {
     setNavbarOpen((state) => !state);
