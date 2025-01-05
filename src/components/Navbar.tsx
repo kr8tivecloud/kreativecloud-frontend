@@ -117,15 +117,6 @@ export default function Navbar() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  // handle body scroll when navbar is open
-  useEffect(() => {
-    if (navbarOpen && windowWidth < 1024) {
-      disablePageScroll();
-    } else {
-      enablePageScroll();
-    }
-  }, [windowWidth, navbarOpen]);
-
   function handleOpenNavbar() {
     setNavbarOpen((state) => !state);
   }
