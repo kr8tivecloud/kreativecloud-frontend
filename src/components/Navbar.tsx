@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "@/assets/images/logo.svg";
 import { NavLinkType } from "@/lib/types";
 import { FaBars } from "react-icons/fa";
@@ -16,8 +16,11 @@ import {
 } from "motion/react";
 import { AnimatedButton } from "./AnimatedButton";
 import { usePathname } from "next/navigation";
-import { enablePageScroll, disablePageScroll } from "scroll-lock";
-import useNavigate from "@/lib/hooks/useNavigate";
+import {
+  enableBodyScroll,
+  disableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 const navLinks: NavLinkType[] = [
   {
@@ -91,7 +94,7 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const windowWidth = useWindowSize();
   const pathname = usePathname();
-  const navigate = useNavigate();
+  const navbarRef = useRef<HTMLElement | null>(null);
 
   const controls = useAnimationControls();
   const { scrollY } = useScroll();
@@ -119,11 +122,17 @@ export default function Navbar() {
 
   // handle body scroll when navbar is open
   useEffect(() => {
-    if (navbarOpen && windowWidth < 1024) {
-      disablePageScroll();
-    } else {
-      enablePageScroll();
+    if (navbarRef.current) {
+      if (navbarOpen && windowWidth < 1024) {
+        disableBodyScroll(navbarRef.current);
+      } else {
+        enableBodyScroll(navbarRef.current);
+      }
     }
+
+    return () => {
+      clearAllBodyScrollLocks();
+    };
   }, [windowWidth, navbarOpen]);
 
   function handleOpenNavbar() {
@@ -137,18 +146,10 @@ export default function Navbar() {
       initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <div className="container flex items-center justify-between py-6 gap-x-10">
-        <Image
-          onClick={() => {
-            navigate("/", "push");
-          }}
-          src={Logo}
-          alt="Logo"
-          width={162}
-          height={28}
-          className="cursor-pointer"
-        />
+        <Image src={Logo} alt="Logo" width={162} height={28} />
 
         <motion.nav
+          ref={navbarRef}
           initial={"closed"}
           variants={sidebarVariants}
           animate={navbarOpen || windowWidth > 1024 ? "open" : "closed"}
@@ -163,7 +164,7 @@ export default function Navbar() {
             initial={"closed"}
             animate={navbarOpen || windowWidth > 1024 ? "open" : "closed"}
             exit={"closed"}
-            className="flex items-center text-white gap-x-10 uppercase font-bold text-sm max-lg:flex-col max-lg:text-3xl max-lg:pt-32 max-lg:items-start max-lg:gap-y-6 max-lg:px-6 max-lg:flex-1"
+            className="flex items-center gap-x-10 uppercase font-bold text-sm max-lg:flex-col max-lg:text-3xl max-lg:pt-32 max-lg:items-start max-lg:gap-y-6 max-lg:px-6 max-lg:flex-1"
           >
             {navLinks.map((navLink) => {
               return (
@@ -204,17 +205,14 @@ export default function Navbar() {
 
         <div>
           <AnimatedButton
-            className="max-lg:hidden text-white"
+            className="max-lg:hidden"
             variant="link"
             href={"/contact"}
           >
             GET IN TOUCH
           </AnimatedButton>
 
-          <button
-            onClick={handleOpenNavbar}
-            className="min-[1024px]:hidden text-white"
-          >
+          <button onClick={handleOpenNavbar} className="min-[1024px]:hidden">
             <FaBars />
           </button>
         </div>
