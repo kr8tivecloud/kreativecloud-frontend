@@ -12,12 +12,18 @@ export default {
       padding: { DEFAULT: "1.5rem", xl: "3rem" },
     },
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      colors: {},
       fontFamily: {
         sans: ["Helvetica", "Arial", "sans-serif"], // Add Helvetica as the primary font
+      },
+      animation: {
+        blink: "blink 1.5s infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
       },
     },
   },
