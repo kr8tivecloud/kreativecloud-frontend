@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import { contentVariants } from "@/lib/animationVariants/contentVariant";
+import Accordion from "@/components/shared/Accordion";
+import { FiPlus } from "react-icons/fi";
+import { IoCloseSharp } from "react-icons/io5";
 
 type ContentProps = {
   title: string;
@@ -15,8 +18,14 @@ const Content: React.FC<ContentProps> = ({ title, body }) => {
       animate="visible"
       className="w-full flex flex-col gap-1"
     >
-      <h4 className="text-[12px] md:text-[16px] font-sans">{title}</h4>
-      <p className="text-[12px] md:text-[16px] font-sans">{body}</p>
+      <Accordion
+        title={title}
+        closeIcon={<FiPlus className="w-6 h-6" />}
+        openIcon={<IoCloseSharp className="w-6 h-6" />}
+        className="border-[1px] border-[#333333] bg-[#151515] rounded-none"
+      >
+        {body}
+      </Accordion>
     </motion.div>
   );
 };
