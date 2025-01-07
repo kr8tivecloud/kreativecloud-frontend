@@ -26,11 +26,11 @@ const TermsPage = () => {
           Terms of Service
         </motion.h1>
 
-        <div className="md:w-[62%] flex flex-col gap-6">
+        <div className="md:w-[55%] flex flex-col gap-6">
           {/* ACCEPTANCE OF TERM */}
           <Content
             title="Acceptance of Terms"
-            body="By accessing and using the Kreative Cloud website (the 'Site'), you agree to comply with and be bound by these Terms of Service (the 'Terms'). If you do not agree with these Terms, please refrain from using our Site."
+            body="By accessing and using the Kreative Cloud website (the Site), you agree to comply with and be bound by these Terms of Service (the Terms). If you do not agree with these Terms, please refrain from using our Site."
           />
 
           {/* USE OF SITE */}
