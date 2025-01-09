@@ -18,6 +18,18 @@ export default {
       colors: {},
       fontFamily: {
         sans: ["Helvetica", "Arial", "sans-serif"], // Add Helvetica as the primary font
+        encodeRegular: [
+          "encode-sans-regular",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ], // Add Helvetica as the primary font
+        encodeMedium: [
+          "encode-sans-medium",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ], // Add Helvetica as the primary font
       },
       animation: {
         blink: "blink 1.5s infinite",

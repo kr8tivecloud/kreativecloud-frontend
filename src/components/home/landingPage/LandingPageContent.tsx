@@ -1,3 +1,4 @@
+import Faqs from "./Faqs/Faqs";
 import Features from "./Features";
 import Heroarea from "./Heroarea";
 import Portfolio from "./Portfolio";
@@ -14,6 +15,7 @@ const LandingPageContent = () => {
       <Services />
       <Testimonial />
       <Process />
+      <Faqs />
     </div>
   );
 };

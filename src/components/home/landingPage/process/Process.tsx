@@ -18,9 +18,9 @@ const Process = () => {
       className="relative w-full flex justify-center items-center py-5 xs:py-10"
     >
       {/* Bottom left gradient */}
-      <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" />
+      <div className="absolute bottom-[-20%] left-[-10%] w-[60%] md:w-[40%] h-[60%] md:h-[40%] rounded-full opacity-30 md:opacity-20 blur-[120px] md:blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" />
       {/* Middle right gradient */}
-      <div className="absolute top-[30%] right-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#FF1493] to-[#FF69B4]" />
+      <div className="absolute top-[30%] right-[-10%] w-[60%] md:w-[40%] h-[60%] md:h-[40%] rounded-full opacity-30 md:opacity-20 blur-[120px] md:blur-[100px] bg-gradient-to-br from-[#FF1493] to-[#FF69B4]" />
       <div
         className="w-full px-4 sm:px-12 flex flex-col lg:flex-row-reverse gap-16 xl:gap-8"
         onClick={(e) => e.stopPropagation()}
@@ -38,19 +38,31 @@ const Process = () => {
             </p>
           </motion.div>
 
+          <div className="flex">
+            <AnimatedButton
+              className="max-lg:hidden w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
+              variant="link"
+              href="/contact"
+            >
+              GET STARTED{" "}
+            </AnimatedButton>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-[50%] flex gap-3 2xs:gap-4 xl:gap-6 h-full relative">
+          <div className="w-full flex flex-col justify-center items-center">
+            <Timeline />
+          </div>{" "}
+        </div>
+
+        <div className="flex justify-center items-center">
           <AnimatedButton
-            className="w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
+            className="lg:hidden w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
             variant="link"
             href="/contact"
           >
             GET STARTED{" "}
           </AnimatedButton>
-        </div>
-
-        <div className="w-full lg:w-[50%] flex gap-3 2xs:gap-4 xl:gap-6 h-full relative">
-          <div className="w-full flex flex-col">
-            <Timeline />
-          </div>{" "}
         </div>
       </div>
     </motion.div>

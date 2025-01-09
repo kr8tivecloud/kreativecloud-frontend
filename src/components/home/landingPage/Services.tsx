@@ -113,7 +113,7 @@ const Services = () => {
                 }
               >
                 <div
-                  className={`absolute inset-0 border-t-[1.25px] border-[#00E5FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[1.25px] before:border-[#00E5FF] before:animate-borderPulse`}
+                  className={`absolute inset-0 border-t-[1.25px] border-[#00E5FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#00E5FF] before:animate-borderPulse`}
                 ></div>
 
                 <div className="w-fit flex justify-center items-center bg-[#15151D] p-2 xs:p-2.5 xl:p-3.5 rounded-full">
@@ -229,7 +229,7 @@ const Services = () => {
                 }
               >
                 <div
-                  className={`absolute inset-0 border-t-[1.25px] border-[#CC0B0B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[1.25px] before:border-[#CC0B0B] before:animate-borderPulse`}
+                  className={`absolute inset-0 border-t-[1.25px] border-[#CC0B0B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#CC0B0B] before:animate-borderPulse`}
                 ></div>
 
                 <div className="w-fit flex justify-center items-center bg-[#15151D] p-2 xs:p-2.5 xl:p-3.5 rounded-full">
