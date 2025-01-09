@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="bg-black flex-1 py-20">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );

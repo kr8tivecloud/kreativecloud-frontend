@@ -69,7 +69,7 @@ const socialLinks: IconNavLinkType[] = [
 export default function Footer() {
   return (
     <footer className="bg-black">
-      <div className="container md:pt-10 pb-16 flex flex-col min-h-[560px]">
+      <div className="container md:pt-10 pb-16 flex flex-col min-h-[30rem]">
         {/* FOOTER TOP */}
         <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
           {/* LOGO */}
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* SERVICES */}
           <nav className="flex-1">
-            <p className="font-bold">Services</p>
+            <p className="font-bold text-white">Services</p>
 
             <ul className="md:mt-6 space-y-2 md:space-y-4 mt-2">
               {serviceLinks.map((link) => {
@@ -101,7 +101,7 @@ export default function Footer() {
 
           {/* RESOURCES */}
           <nav className="flex-1">
-            <p className="font-bold">Resources</p>
+            <p className="font-bold text-white">Resources</p>
 
             <ul className="md:mt-6 space-y-2 md:space-y-4 mt-2">
               {resourceLinks.map((link) => {
@@ -122,7 +122,7 @@ export default function Footer() {
 
           {/* POLICIES */}
           <nav className="flex-1">
-            <p className="font-bold">Policies</p>
+            <p className="font-bold text-white">Policies</p>
 
             <ul className="md:mt-6 space-y-2 md:space-y-4 mt-2">
               {policyLinks.map((link) => {
