@@ -21,6 +21,7 @@ import {
   disableBodyScroll,
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
+import useNavigate from "@/lib/hooks/useNavigate";
 
 const navLinks: NavLinkType[] = [
   {
@@ -91,6 +92,7 @@ const sidebarVariants: Variants = {
 const MotionLink = motion.create(Link);
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const windowWidth = useWindowSize();
   const pathname = usePathname();
@@ -142,11 +144,20 @@ export default function Navbar() {
   return (
     <motion.div
       animate={controls}
-      className="fixed top-0 left-0 right-0 bg-black"
+      className="fixed top-0 left-0 right-0 bg-black z-50"
       initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <div className="container flex items-center justify-between py-6 gap-x-10">
-        <Image src={Logo} alt="Logo" width={162} height={28} />
+        <Image
+          onClick={() => {
+            navigate("/");
+          }}
+          src={Logo}
+          alt="Logo"
+          width={162}
+          height={28}
+          className="cursor-pointer"
+        />
 
         <motion.nav
           ref={navbarRef}

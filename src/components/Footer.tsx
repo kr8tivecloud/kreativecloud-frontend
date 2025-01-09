@@ -69,7 +69,7 @@ const socialLinks: IconNavLinkType[] = [
 export default function Footer() {
   return (
     <footer className="bg-black">
-      <div className="container md:pt-10 pb-16 flex flex-col min-h-[560px]">
+      <div className="container md:pt-10 pb-16 flex flex-col min-h-[30rem]">
         {/* FOOTER TOP */}
         <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
           {/* LOGO */}

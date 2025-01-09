@@ -9,7 +9,10 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: { DEFAULT: "1.5rem", xl: "3rem" },
+      padding: {
+        DEFAULT: "1rem",
+        sm: "3rem",
+      },
     },
     extend: {
       colors: {},
@@ -24,6 +27,12 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+      },
+
+      screens: {
+        "3xs": "320px",
+        "2xs": "480px",
+        xs: "576px",
       },
     },
   },
