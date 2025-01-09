@@ -9,15 +9,30 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: { DEFAULT: "1.5rem", xl: "3rem" },
+      padding: {
+        DEFAULT: "1rem",
+        sm: "3rem",
+      },
     },
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      colors: {},
       fontFamily: {
         sans: ["Helvetica", "Arial", "sans-serif"], // Add Helvetica as the primary font
+      },
+      animation: {
+        blink: "blink 1.5s infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+      },
+
+      screens: {
+        "3xs": "320px",
+        "2xs": "480px",
+        xs: "576px",
       },
     },
   },
