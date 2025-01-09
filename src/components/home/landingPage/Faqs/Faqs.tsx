@@ -58,7 +58,7 @@ const Faqs: React.FC = () => {
       ref={ref}
       animate={isInView ? "show" : "hidden"}
       initial="hidden"
-      className="w-full flex justify-center items-center py-5 xs:py-10"
+      className="w-full flex justify-center items-center py-5 xs:py-10 mb-20"
     >
       <div
         className="w-full px-4 sm:px-12 flex max-lg:flex-col gap-10 xl:gap-8"
