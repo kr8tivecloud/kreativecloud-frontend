@@ -8,6 +8,9 @@ import entrepreneur3 from "./home/landingPage/entrepreneur3.jpg";
 
 import testimonial from "./home/landingPage/testimonial.jpg";
 
+import leftChatBubble from "./home/landingPage/left-chat.svg";
+import rightChatBubble from "./home/landingPage/right-chat.svg";
+
 const landingPage = {
   portfolio1,
   portfolio2,
@@ -18,6 +21,9 @@ const landingPage = {
   entrepreneur3,
 
   testimonial,
+
+  leftChatBubble,
+  rightChatBubble,
 };
 
 export default { landingPage };
