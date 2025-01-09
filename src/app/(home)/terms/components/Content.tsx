@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { motion } from "motion/react";
 import { contentVariants } from "@/lib/animationVariants/contentVariant";
 import Accordion from "@/components/shared/Accordion";
