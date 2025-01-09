@@ -20,7 +20,7 @@ const Process = () => {
       {/* <div className="absolute bottom-[-20%] left-[-10%] w-[60%] md:w-[40%] h-[60%] md:h-[40%] rounded-full opacity-30 md:opacity-20 blur-[120px] md:blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" />
       <div className="absolute top-[30%] right-[-10%] w-[60%] md:w-[40%] h-[60%] md:h-[40%] rounded-full opacity-30 md:opacity-20 blur-[120px] md:blur-[100px] bg-gradient-to-br from-[#FF1493] to-[#FF69B4]" /> */}
 
-      <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" />
+      {/* <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" /> */}
       <div className="absolute top-[30%] right-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#FF1493] to-[#FF69B4]" />
       <div
         className="w-full px-4 sm:px-12 flex flex-col lg:flex-row-reverse gap-16 xl:gap-8"
