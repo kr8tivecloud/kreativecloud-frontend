@@ -8,7 +8,7 @@ import Testimonial from "./testimonial/Testimonial";
 
 const LandingPageContent = () => {
   return (
-    <div className=" w-full flex flex-col overflow-hidden">
+    <div className="w-full flex flex-col overflow-hidden">
       <Heroarea />
       <Portfolio />
       <Features />

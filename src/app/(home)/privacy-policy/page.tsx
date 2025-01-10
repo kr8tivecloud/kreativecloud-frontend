@@ -16,19 +16,19 @@ const PrivatePolicyPage = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="w-full h-full flex justify-center items-center p-4 pt-6"
+      className="w-full h-full flex justify-center items-center px-4 pt-6"
     >
       <div className="w-full flex flex-col items-center justify-center gap-6 md:gap-12">
         <motion.h1
           variants={headerVariants}
           initial="hidden"
           animate="visible"
-          className="text-white font-sans text-2xl md:text-4xl lg:text-5xl leading-10 text-[48px] text-center"
+          className="text-white font-sans font-semibold text-[25px] md:text-4xl lg:text-5xl leading-10 text-center"
         >
           Privacy Policy
         </motion.h1>
 
-        <div className="md:w-[55%] flex flex-col gap-6">
+        <div className="w-full md:w-[55%] flex flex-col gap-4">
           <motion.div
             variants={contentVariants}
             initial="hidden"

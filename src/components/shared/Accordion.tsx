@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
 import { ComponentProps, useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import classNames from "classnames";
 
 const Accordion = ({
   title,
@@ -17,19 +18,25 @@ const Accordion = ({
   openIcon?: React.ReactNode;
   closeIcon?: React.ReactNode;
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <div
       onClick={() => setIsOpen(!isOpen)}
       className={cn(
-        "h-fit shadow-lg rounded-lg py-3 xs:py-4 lg:py-6 px-4 lg:px-6 flex flex-col gap-2.5 xs:gap-4 cursor-pointer",
+        "h-fit shadow-lg rounded-lg p-2.5 flex flex-col gap-2.5 xs:gap-4 cursor-pointer",
         isOpen ? "border-secondary" : "",
         className
       )}
     >
       <div className="flex items-center justify-between gap-3">
-        <h1 className="font-semibold text-sm sm:text-base xl:text-lg text-text-200 dark:text-text-400">
+        <h1
+          className={classNames({
+            "text-sm sm:text-base xl:text-lg text-text-200 dark:text-text-400":
+              true,
+            "font-semibold": isOpen,
+          })}
+        >
           {title}
         </h1>
         <div className="bg-primary rounded-md p-1 xs:p-1.5 text-base sm:text-lg text-white">
