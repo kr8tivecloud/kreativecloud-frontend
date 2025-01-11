@@ -16,7 +16,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 type LinkPropsWithHref = Omit<LinkProps, "href"> & {
-  href: string; // Ensure href is required for links
+  href: string;
 } & CommonProps & {
     variant: "link";
   };

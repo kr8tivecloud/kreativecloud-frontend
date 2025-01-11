@@ -97,6 +97,7 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const windowWidth = useWindowSize();
   const pathname = usePathname();
+  const navbarRef = useRef<HTMLElement | null>(null);
 
   const { scrollY } = useScroll();
   // Map scroll position (0-60px) to background color transition
@@ -109,10 +110,27 @@ export default function Navbar() {
   useEffect(() => {
     // automatically close navbar on navigation
     if (navbarOpen && windowWidth < 1024) {
-      setNavbarOpen(false);
+      if (navbarOpen && windowWidth < 1024) {
+        setNavbarOpen(false);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
+
+  // handle body scroll when navbar is open
+  useEffect(() => {
+    if (navbarRef.current) {
+      if (navbarOpen && windowWidth < 1024) {
+        disableBodyScroll(navbarRef.current);
+      } else {
+        enableBodyScroll(navbarRef.current);
+      }
+    }
+
+    return () => {
+      clearAllBodyScrollLocks();
+    };
+  }, [windowWidth, navbarOpen]);
 
   function handleOpenNavbar() {
     setNavbarOpen((state) => !state);
@@ -126,13 +144,15 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 bg-black z-50"
     >
       <div className="container flex items-center justify-between py-6 gap-x-10">
-        <Image
-          src={Logo}
-          alt="Logo"
-          width={162}
-          height={28}
-          className="relative z-[1]"
-        />
+        <Link href={"/"}>
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={162}
+            height={28}
+            className="relative z-[1]"
+          />
+        </Link>
 
         <MobileNav
           handleOpenNavbar={handleOpenNavbar}
