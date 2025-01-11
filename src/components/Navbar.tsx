@@ -143,7 +143,7 @@ export default function Navbar() {
       }}
       className="fixed top-0 left-0 right-0 bg-black z-50"
     >
-      <div className="container flex items-center justify-between py-6 gap-x-10">
+      <div className="px-4 sm:container flex items-center justify-between py-6 gap-x-10">
         <Link href={"/"}>
           <Image
             src={Logo}
@@ -234,14 +234,14 @@ function MobileNav({ navbarOpen }: MobileNavProps) {
       <div className="h-20 bg-black"></div>
       <div
         ref={navbarRef}
-        className="container h-full flex flex-col gap-y-20 pb-20 overflow-y-auto"
+        className="px-4 sm:container h-full flex flex-col gap-y-20 pb-20 overflow-y-auto"
       >
         <motion.ul
           variants={ulVariants}
           initial={"closed"}
           animate={navbarOpen ? "open" : "closed"}
           exit={"closed"}
-          className="flex gap-x-10 uppercase font-bold flex-col text-base max-lg:text-3xl pt-10 items-start gap-y-6 flex-1"
+          className="flex gap-x-10 uppercase font-bold flex-col text-base max-lg:text-3xl pt-10 items-start gap-y-4 flex-1"
         >
           {navLinks.map((navLink) => {
             return (
@@ -298,7 +298,7 @@ function MobileNav({ navbarOpen }: MobileNavProps) {
                       className="overflow-hidden"
                     >
                       {/* TODO: This animation is not yet fluid */}
-                      <motion.div className="py-6 px-3">
+                      <motion.div className="py-2 px-2">
                         {/* <div className="py-6"> */}
                         <navLink.subMenu />
                         {/* </div> */}

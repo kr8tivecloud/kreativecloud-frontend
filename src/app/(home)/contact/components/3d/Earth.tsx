@@ -22,10 +22,10 @@ const EarthCanvas = () => {
     <Canvas
       shadows
       style={{
-        width: "40vw",
+        width: "35vw",
         minWidth: 350,
         maxWidth: 500,
-        height: "40vw",
+        height: "35vw",
         minHeight: 350,
         maxHeight: 500,
       }}

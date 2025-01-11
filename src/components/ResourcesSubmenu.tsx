@@ -6,6 +6,8 @@ import TermsOfServiceImage from "@/assets/images/navbar/terms-of-service-image.p
 import Image, { StaticImageData } from "next/image";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 type ResourcesLink = {
   title: string;
@@ -38,6 +40,7 @@ const resourcesLinks: ResourcesLink[] = [
 
 export default function ResourcesSubmenu() {
   const [current, setCurrent] = useState(0);
+  const pathname = usePathname();
 
   return (
     <div className="max-w-3xl mx-auto flex items-start gap-x-16 justify-between">
@@ -50,17 +53,26 @@ export default function ResourcesSubmenu() {
 
       <ul className="flex-1 text-sm lg:text-3xl whitespace-nowrap space-y-2 lg:space-y-8">
         {resourcesLinks.map((link, index) => {
+          const isActive = pathname === link.href;
           return (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="inline-flex items-center text-[#999999] relative hover:text-white no-underline transition-[background-size] duration-500 
+                className={cn(
+                  `inline-flex items-center text-[#999999] relative hover:text-white no-underline transition-[background-size] duration-500 
          [background:linear-gradient(#ffffff_0_0)_bottom_left/_var(--underline-width,0%)_0.1em_no-repeat]
-         hover:[--underline-width:100%]"
+         hover:[--underline-width:100%]`,
+                  isActive && "text-white"
+                )}
                 onMouseOver={() => setCurrent(index)}
               >
                 <span>{link.title}</span>
-                <MdOutlineArrowOutward className=" hover:underline" />{" "}
+                <MdOutlineArrowOutward
+                  className={cn(
+                    "hidden hover:underline",
+                    isActive && "inline-block"
+                  )}
+                />{" "}
                 {/* Make it an animated underline, and add animations to the hover of the menu */}
               </Link>
             </li>
