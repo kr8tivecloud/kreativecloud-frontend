@@ -33,7 +33,7 @@ const brandImageVariants: Variants = {
 export default function ServicesPage() {
   return (
     <div className="pt-28">
-      <div className="container">
+      <div className="px-4 sm:container">
         <div className="text-left lg:text-center">
           <h1 className="text-white text-5xl font-bold">Services </h1>
           <p className="text-[#858585]">We offer the following services</p>
@@ -41,7 +41,7 @@ export default function ServicesPage() {
       </div>
 
       {/* SERVICES */}
-      <div className="container space-y-20 lg:space-y-10 mt-5">
+      <div className="px-4 sm:container space-y-20 lg:space-y-10 mt-5">
         {/* WEBSITE DESIGN SECTION */}
         <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
           {/* TEXT CONTENT */}
