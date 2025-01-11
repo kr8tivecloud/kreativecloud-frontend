@@ -38,6 +38,7 @@
     "@eslint/eslintrc": "^3",
     "@types/body-scroll-lock": "^3.1.2",
     "@types/node": "^22.10.5",
+    "@types/nprogress": "^0.2.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-vertical-timeline-component": "^3.3.6",
