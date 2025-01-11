@@ -68,6 +68,7 @@ export const MaskedCursorProvider = ({ children }: MaskedCursorPropsProps) => {
 };
 
 const MaskedCursor = ({
+  className,
   children,
   ...props
 }: MaskedCursorProps & ComponentProps<"div">) => {
@@ -80,7 +81,7 @@ const MaskedCursor = ({
         {...props}
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
-        className="relative"
+        className={`relative ${className}`}
       >
         {children}
       </div>
