@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import Link, { LinkProps } from "next/link";
-import { motion, useInView } from "motion/react";
-import { zoomIn } from "@/lib/motion";
+import MaskedCursor from "./MaskedCursor";
 
 type ButtonVariants = "button" | "link";
 
@@ -26,37 +25,28 @@ type Props = ButtonProps | LinkPropsWithHref;
 
 export const AnimatedButton: React.FC<Props> = (props) => {
   const { variant = "button", className, children, ...rest } = props;
-  const { href } = rest as LinkPropsWithHref;
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.25 });
 
-  const baseHoverStyles =
-    "transition-transform duration-300 ease-in-out hover:scale-110 active:scale-90";
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={isInView ? "show" : "hidden"}
-      initial="hidden"
-      variants={zoomIn(0.2, 0.5)}
-      className=""
-    >
-      {variant === "link" && (
-        <Link {...(rest as LinkPropsWithHref)} href={href}>
-          <div className={`font-bold text-sm ${baseHoverStyles} ${className}`}>
-            {children}
-          </div>
-        </Link>
-      )}
-
-      {variant === "button" && (
+  if (variant === "link") {
+    const { href } = rest as LinkPropsWithHref;
+    return (
+      <Link
+        {...(rest as LinkPropsWithHref)}
+        href={href}
+        className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white ${className}`}
+      >
+        {children}
+      </Link>
+    );
+  } else {
+    return (
+      <MaskedCursor>
         <button
           {...(rest as ButtonProps)}
-          className={`font-bold text-sm ${baseHoverStyles} ${className}`}
+          className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white ${className}`}
         >
           {children}
         </button>
-      )}
-    </motion.div>
-  );
+      </MaskedCursor>
+    );
+  }
 };
