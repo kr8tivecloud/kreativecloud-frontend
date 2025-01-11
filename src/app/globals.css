@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .contact-heading {
@@ -29,3 +30,101 @@ body {
   min-height: 0vw;
   line-height: normal;
 }
+
+.button-transform:hover::after {
+  transform: translateY(10%) translateX(-25px) rotate(-45deg);
+  @layer components {
+    /* Customize the label (the checkbox-container)*/
+    .checkbox-container {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      height: 16px;
+      width: 16px;
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 1px;
+      display: grid;
+      place-items: center;
+    }
+
+    .careers-form-checkmark {
+      border-radius: 0px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .checkbox-container:hover input ~ .checkmark {
+      background-color: #333;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .checkbox-container input:checked ~ .checkmark {
+      background-color: white;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .checkbox-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .checkbox-container .checkmark:after {
+      width: 5px;
+      height: 10px;
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/* SCROLLBAR */
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Width for vertical scrollbar */
+  height: 8px; /* Height for horizontal scrollbar */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track like macOS */
+}
+
+/* Scrollbar thumb (scroll handle) */
+::-webkit-scrollbar-thumb {
+  background: rgba(86, 86, 86, 0.3); /* Subtle, dark scrollbar thumb */
+  border-radius: 4px; /* Rounded edges for macOS feel */
+  transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+/* Thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(112, 112, 112, 0.5); /* Slightly darker when hovered */
+}
+
+/* END SCROLLBAR */

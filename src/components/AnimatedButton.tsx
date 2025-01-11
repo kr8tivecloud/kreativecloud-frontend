@@ -1,5 +1,6 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
+import MaskedCursor from "./MaskedCursor";
 
 type ButtonVariants = "button" | "link";
 
@@ -31,19 +32,21 @@ export const AnimatedButton: React.FC<Props> = (props) => {
       <Link
         {...(rest as LinkPropsWithHref)}
         href={href}
-        className={`className="font-bold text-sm hover:text-gray-300 transition-colors" ${className}`}
+        className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white ${className}`}
       >
         {children}
       </Link>
     );
   } else {
     return (
-      <button
-        {...(rest as ButtonProps)}
-        className={`className="font-bold text-sm hover:text-gray-300 transition-colors" ${className}`}
-      >
-        {children}
-      </button>
+      <MaskedCursor>
+        <button
+          {...(rest as ButtonProps)}
+          className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white ${className}`}
+        >
+          {children}
+        </button>
+      </MaskedCursor>
     );
   }
 };
