@@ -171,7 +171,7 @@ export default function Footer() {
             className="absolute top-0 left-0 w-full h-full pointer-events-none"
           />
         </div>
-        <div className="relative z-[1] container mt-32 pb-16 flex flex-col min-h-[560px]">
+        <div className="relative z-[1] px-4 sm:container my-16 flex flex-col min-h-[350px]">
           {/* FOOTER TOP */}
           <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
             {/* LOGO */}

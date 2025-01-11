@@ -70,13 +70,21 @@ export default function ServicesPage() {
           </div>
           {/* END TEXT CONTENT */}
 
-          <Image
-            src={WebsiteDesign}
-            alt="Website design"
-            width={600}
-            height={460}
-            className="flex-1 min-w-0 max-w-full"
-          />
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <MotionImage
+              src={WebsiteDesign}
+              alt="Website design"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
         </div>
         {/* END WEBSITE DESIGN SECTION */}
 
@@ -113,15 +121,15 @@ export default function ServicesPage() {
             initial={"default"}
             variants={brandImageVariants}
             whileInView={"inView"}
-            // viewport={{ once: true }}
+            viewport={{ once: true, amount: "all" }}
             className="overflow-hidden flex-1 min-w-0 max-w-full"
           >
             <MotionImage
-              viewport={{ amount: "some" }}
               src={GraphicDesign}
               alt="Graphic design"
-              width={600}
               height={460}
+              viewport={{ amount: "all" }}
+              width={600}
               className=""
             />
           </motion.div>
@@ -158,13 +166,21 @@ export default function ServicesPage() {
           </div>
           {/* END TEXT CONTENT */}
 
-          <Image
-            src={Branding}
-            alt="Branding"
-            width={600}
-            height={460}
-            className="flex-1 min-w-0 max-w-full"
-          />
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={Branding}
+              alt="Branding"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
         </div>
         {/* END BRANDING SECTION */}
 
@@ -196,13 +212,21 @@ export default function ServicesPage() {
           </div>
           {/* END TEXT CONTENT */}
 
-          <Image
-            src={Marketing}
-            alt="Marketing"
-            width={600}
-            height={460}
-            className="flex-1 min-w-0 max-w-full"
-          />
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={Marketing}
+              alt="Marketing"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
         </div>
         {/* END MARKETING SECTION */}
 
@@ -235,13 +259,21 @@ export default function ServicesPage() {
           </div>
           {/* END TEXT CONTENT */}
 
-          <Image
-            src={ContentCreation}
-            alt="Content Creation"
-            width={600}
-            height={460}
-            className="flex-1 min-w-0 max-w-full"
-          />
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={ContentCreation}
+              alt="Content Creation"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
         </div>
         {/* END CONTENT CREATION SECTION */}
 
@@ -274,13 +306,21 @@ export default function ServicesPage() {
           </div>
           {/* END TEXT CONTENT */}
 
-          <Image
-            src={SocialMediaManagement}
-            alt="SocialMediaManagement"
-            width={600}
-            height={460}
-            className="flex-1 min-w-0 max-w-full"
-          />
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={SocialMediaManagement}
+              alt="SocialMediaManagement"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
         </div>
         {/* END SOCIAL MEDIA MANAGEMENT SECTION */}
       </div>

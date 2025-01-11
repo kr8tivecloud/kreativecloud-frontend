@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 // import Contact3DImage from "@/assets/images/contact-3d.png";
 // import Image from "next/image";
@@ -6,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import Image from "next/image";
 import TopGradient from "@/assets/images/contact/top-gradient.svg";
 import BottomGradient from "@/assets/images/contact/bottom-gradient.svg";
+import { motion } from "motion/react";
 
 export default function ContactPage() {
   return (
@@ -25,21 +28,37 @@ export default function ContactPage() {
       </div>
       {/* END GRADIENTS */}
       {/* HERO SECTION */}
-      <div className="container flex items-center flex-col-reverse md:flex-row relative z-[1]">
+      <motion.div
+        layout
+        className="px-4 sm:container flex items-center flex-col-reverse md:flex-row relative z-[1]"
+      >
         <div className="flex-1 min-w-0">
-          <h2 className="text-5xl xl:text-8xl font-bold text-center md:text-left">
+          <motion.h2
+            initial={{ y: -20 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: "all" }}
+            className="text-5xl xl:text-8xl font-bold text-center md:text-left"
+          >
             Get your <br />
             discounted <br />
             website&nbsp;today!
-          </h2>
-          <p className="font-bold mt-3">
+          </motion.h2>
+          <motion.p
+            initial={{ y: 10 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: "all" }}
+            className="font-bold mt-3"
+          >
             Send us a message, lets schedule a meeting.
-          </p>
+          </motion.p>
         </div>
 
         {/* TODO: It is on top of every element on the page */}
+
         <EarthCanvas />
-      </div>
+      </motion.div>
       {/* END HERO SECTION */}
 
       {/* CONTACT FORM */}
