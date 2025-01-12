@@ -239,7 +239,7 @@ function MobileNav({ navbarOpen }: MobileNavProps) {
           initial={"closed"}
           animate={navbarOpen ? "open" : "closed"}
           exit={"closed"}
-          className="flex gap-x-10 uppercase font-bold flex-col text-base max-lg:text-3xl pt-10 items-start gap-y-4 flex-1"
+          className="flex gap-x-10 uppercase font-bold flex-col text-base max-lg:text-xl pt-10 items-start gap-y-1 flex-1"
         >
           {navLinks.map((navLink) => {
             return (

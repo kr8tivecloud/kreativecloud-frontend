@@ -59,21 +59,17 @@ export default function ResourcesSubmenu() {
               <Link
                 href={link.href}
                 className={cn(
-                  `inline-flex items-center text-[#999999] relative hover:text-white no-underline transition-[background-size] duration-500 
+                  `inline-flex items-center gap-x-1 text-[#999999] relative hover:text-white no-underline transition-[background-size] duration-500 
          [background:linear-gradient(#ffffff_0_0)_bottom_left/_var(--underline-width,0%)_0.1em_no-repeat]
-         hover:[--underline-width:100%]`,
+         hover:[--underline-width:100%] [&:hover>svg]:opacity-100`,
                   isActive && "text-white"
                 )}
                 onMouseOver={() => setCurrent(index)}
               >
                 <span>{link.title}</span>
                 <MdOutlineArrowOutward
-                  className={cn(
-                    "hidden hover:underline",
-                    isActive && "inline-block"
-                  )}
+                  className={cn("opacity-0 transition-opacity")}
                 />{" "}
-                {/* Make it an animated underline, and add animations to the hover of the menu */}
               </Link>
             </li>
           );

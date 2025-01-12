@@ -26,7 +26,7 @@ export default function FlipText({ text }: FlipTextProps) {
     <motion.div
       initial="initial"
       whileHover={"hovered"}
-      className="whitespace-nowrap relative overflow-hidden text-white h-[1.1em]"
+      className="whitespace-nowrap relative overflow-hidden text-white leading-none h-[1em]"
     >
       {/* RESTING STATE */}
       <motion.div custom={"rest"} variants={flipVariants}>
