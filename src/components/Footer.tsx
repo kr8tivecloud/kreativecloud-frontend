@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { IconNavLinkType, NavLinkType } from "@/lib/types";
 import Link from "next/link";
 import {
@@ -69,109 +69,10 @@ const socialLinks: IconNavLinkType[] = [
 ];
 
 export default function Footer() {
-  const blockSize = 50; // Size of grid cells
-  const highlightDuration = 500; // Highlight duration in ms
-
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const highlightContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current!;
-    const highlightContainer = highlightContainerRef.current!;
-    const ctx = canvas.getContext("2d")!;
-    let screenWidth = window.innerWidth;
-    let screenHeight = window.innerHeight;
-
-    canvas.width = screenWidth;
-    canvas.height = screenHeight;
-
-    const columns = Math.ceil(screenWidth / blockSize);
-    const rows = Math.ceil(screenHeight / blockSize);
-
-    // Draw the grid
-    const drawGrid = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
-      ctx.lineWidth = 1;
-
-      for (let x = 0; x < columns * blockSize; x += blockSize) {
-        for (let y = 0; y < rows * blockSize; y += blockSize) {
-          ctx.beginPath();
-          ctx.rect(x, y, blockSize, blockSize);
-          ctx.stroke();
-        }
-      }
-    };
-
-    // Highlight a box
-    const highlightBox = (x: number, y: number) => {
-      const gridX = Math.floor(x / blockSize);
-      const gridY = Math.floor(y / blockSize);
-      const overlayX = gridX * blockSize;
-      const overlayY = gridY * blockSize;
-
-      const highlightBox = document.createElement("div");
-      highlightBox.className =
-        "absolute border-2 border-white bg-black pointer-events-none";
-      highlightBox.style.width = `${blockSize}px`;
-      highlightBox.style.height = `${blockSize}px`;
-      highlightBox.style.left = `${overlayX}px`;
-      highlightBox.style.top = `${overlayY}px`;
-      highlightBox.style.transition = "opacity 0.5s ease";
-
-      highlightContainer.appendChild(highlightBox);
-
-      setTimeout(() => {
-        highlightBox.style.opacity = "0";
-        setTimeout(() => highlightContainer.removeChild(highlightBox), 500);
-      }, highlightDuration);
-    };
-
-    // Handle mouse move
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      highlightBox(x, y);
-    };
-
-    // Resize handler
-    const handleResize = () => {
-      screenWidth = window.innerWidth;
-      screenHeight = window.innerHeight;
-      canvas.width = screenWidth;
-      canvas.height = screenHeight;
-      drawGrid();
-    };
-
-    canvas.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("resize", handleResize);
-
-    drawGrid();
-
-    return () => {
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
-      <footer className="bg-black relative">
-        <div className="absolute inset-0">
-          {/* Canvas for the grid */}
-          <canvas
-            ref={canvasRef}
-            className="absolute top-0 left-0 w-full h-full"
-          />
-
-          {/* Overlay container for highlights */}
-          <div
-            ref={highlightContainerRef}
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          />
-        </div>
-        <div className="relative z-[1] px-4 sm:container my-16 flex flex-col min-h-[350px]">
+      <footer className="bg-black">
+        <div className="relative px-4 sm:container my-16 flex flex-col gap-y-12 min-h-[350px]">
           {/* FOOTER TOP */}
           <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
             {/* LOGO */}

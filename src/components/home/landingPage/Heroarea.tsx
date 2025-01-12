@@ -46,9 +46,9 @@ const Heroarea = () => {
             <div className="flex">
               <AnimatedButton
                 className="w-fit py-4 md:py-5 px-6 md:px-8 "
-                variant="link"
+                as="link"
                 href="/contact"
-                type="outline"
+                variant="outline"
               >
                 EXPLORE{" "}
               </AnimatedButton>
