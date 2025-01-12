@@ -11,6 +11,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa6";
+import images from "../../public/images";
 
 const serviceLinks: NavLinkType[] = [
   {
@@ -77,7 +78,7 @@ export default function Footer() {
           <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
             {/* LOGO */}
             <div className="flex-1">
-              <Image src={Logo} alt="Logo" width={172} height={29} />
+              <Image src={images.logo} alt="Logo" width={172} height={29} />
             </div>
             {/* END LOGO */}
 

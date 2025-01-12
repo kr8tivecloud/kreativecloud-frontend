@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "@/assets/images/logo.svg";
 import { NavLinkType } from "@/lib/types";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import {
@@ -13,7 +12,6 @@ import {
   useTransform,
   Variants,
 } from "motion/react";
-import { AnimatedButton } from "./AnimatedButton";
 import { usePathname } from "next/navigation";
 import {
   enableBodyScroll,
@@ -26,6 +24,7 @@ import TemplatesSubmenu from "./TemplatesSubmenu";
 import ResourcesSubmenu from "./ResourcesSubmenu";
 import NavSubmenu from "./NavSubmenu";
 import { FiChevronDown } from "react-icons/fi";
+import images from "../../public/images";
 
 const navLinks: NavLinkType[] = [
   {
@@ -143,10 +142,10 @@ export default function Navbar() {
       }}
       className="fixed top-0 left-0 right-0 bg-black z-50"
     >
-      <div className="px-4 sm:container flex items-center justify-between py-6 gap-x-10">
+      <div className="px-4 sm:px-12 flex items-center justify-between py-6 gap-x-10">
         <Link href={"/"}>
           <Image
-            src={Logo}
+            src={images.logo}
             alt="Logo"
             width={162}
             height={28}
@@ -161,13 +160,12 @@ export default function Navbar() {
         <Nav />
 
         <div className="relative z-[1]">
-          <AnimatedButton
-            className="max-lg:hidden"
-            variant="link"
+          <MotionLink
             href={"/contact"}
+            className="max-lg:hidden font-bold text-[#FE922A] hover:text-white transition-colors duration-300"
           >
             GET IN TOUCH
-          </AnimatedButton>
+          </MotionLink>
 
           <button onClick={handleOpenNavbar} className="w-7 h-5 lg:hidden">
             <motion.div
