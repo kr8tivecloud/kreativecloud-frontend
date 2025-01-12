@@ -4,13 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { NavLinkType } from "@/lib/types";
-import { FaBars } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import {
+  AnimatePresence,
   motion,
-  useAnimationControls,
   useScroll,
+  useTransform,
   Variants,
 } from "motion/react";
 import { AnimatedButton } from "./AnimatedButton";
@@ -20,27 +19,33 @@ import {
   disableBodyScroll,
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
+// import { StaggeredFlipText } from "./StaggeredFlipText";
+import FlipText from "./FlipText";
+import TemplatesSubmenu from "./TemplatesSubmenu";
+import ResourcesSubmenu from "./ResourcesSubmenu";
+import NavSubmenu from "./NavSubmenu";
+import { FiChevronDown } from "react-icons/fi";
 import useNavigate from "@/lib/hooks/useNavigate";
 import images from "../../public/images";
+import { FaX } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa";
 
 const navLinks: NavLinkType[] = [
   {
     title: "Templates",
     href: "/templates",
+    subMenu: TemplatesSubmenu,
   },
   {
-    title: "Services",
-    href: "/services",
+    title: "Resources",
+    href: "/resources",
+    subMenu: ResourcesSubmenu,
   },
   {
     title: "Careers",
     href: "/careers",
   },
-  {
-    title: "Portfolio",
-    href: "/portfolio",
-  },
-];
+].map((item, index) => ({ ...item, id: index + 1 })); // Id must start from 1 else it can be falsy
 
 const itemVariants: Variants = {
   open: {
@@ -83,7 +88,7 @@ const sidebarVariants: Variants = {
   closed: {
     x: "-100%",
     transition: {
-      delay: 0.5,
+      delay: 0.3,
       bounce: 0,
     },
   },
@@ -98,26 +103,20 @@ export default function Navbar() {
   const pathname = usePathname();
   const navbarRef = useRef<HTMLElement | null>(null);
 
-  const controls = useAnimationControls();
   const { scrollY } = useScroll();
-
-  useEffect(() => {
-    // Change navbar color based on scroll position
-    const unsubscribe = scrollY.on("change", (currentY) => {
-      if (currentY > 50) {
-        controls.start({ backgroundColor: "rgba(0, 0, 0, 1)" });
-      } else {
-        controls.start({ backgroundColor: "rgba(0, 0, 0, 0)" });
-      }
-    });
-
-    return () => unsubscribe(); // Cleanup on unmount
-  }, [controls, scrollY]);
+  // Map scroll position (0-60px) to background color transition
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 60],
+    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]
+  );
 
   useEffect(() => {
     // automatically close navbar on navigation
     if (navbarOpen && windowWidth < 1024) {
-      setNavbarOpen(false);
+      if (navbarOpen && windowWidth < 1024) {
+        setNavbarOpen(false);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
@@ -143,9 +142,10 @@ export default function Navbar() {
 
   return (
     <motion.div
-      animate={controls}
+      style={{
+        backgroundColor,
+      }}
       className="fixed top-0 left-0 right-0 bg-black z-50"
-      initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
     >
       <div className="container flex items-center justify-between py-6 gap-x-10">
         <Image
@@ -197,7 +197,7 @@ export default function Navbar() {
             animate={{}}
             exit={{}}
             href={"/contact"}
-            className="bg-white text-black text-sm py-5 text-center font-bold mx-6 mb-20 hidden max-lg:block hover:bg-gray-300 transition-colors"
+            className="bg-white text-black text-sm py-5 text-center font-bold block hover:bg-gray-300 transition-colors"
           >
             GET IN TOUCH
           </MotionLink>
@@ -216,7 +216,7 @@ export default function Navbar() {
 
         <div>
           <AnimatedButton
-            className="max-lg:hidden text-[#FE922A]"
+            className="max-lg:hidden"
             variant="link"
             href={"/contact"}
           >
