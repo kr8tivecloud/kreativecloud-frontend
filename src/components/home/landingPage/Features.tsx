@@ -67,7 +67,7 @@ const Features = () => {
           <h1 className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
             Featured entrepreneurs{" "}
           </h1>
-          <p className="text-sm font-bold text-[#9797A2]">
+          <p className="text-sm text-[#9797A2]">
             From small startups to growing businesses, Kreative Cloud has helped
             countless entrepreneurs bring their ideas to life.
           </p>
