@@ -12,7 +12,6 @@ import {
   useTransform,
   Variants,
 } from "motion/react";
-import { AnimatedButton } from "./AnimatedButton";
 import { usePathname } from "next/navigation";
 import {
   enableBodyScroll,

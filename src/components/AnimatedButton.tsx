@@ -53,7 +53,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
     );
   } else {
     return (
-      <MaskedCursor>
+      <MaskedCursor className={className}>
         <button
           {...(rest as ButtonProps)}
           className={`${baseStyles} ${typeStyles} ${className}`}

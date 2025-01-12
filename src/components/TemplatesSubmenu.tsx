@@ -43,9 +43,13 @@ export default function TemplatesSubmenu() {
           </li>
         </ul>
 
-        <div className="w-full flex items-center gap-x-6 mt-5">
-          <AnimatedButton className="w-full font-normal">Skip</AnimatedButton>
-          <AnimatedButton className="w-full font-normal">Search</AnimatedButton>
+        <div className="flex items-center gap-x-6 mt-5">
+          <AnimatedOutlineButton className="flex-1 font-normal">
+            Skip
+          </AnimatedOutlineButton>
+          <AnimatedButton className="flex-1 font-normal [&>button]:w-full">
+            Search
+          </AnimatedButton>
         </div>
       </form>
     </div>
