@@ -1,6 +1,5 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
-import MaskedCursor from "./MaskedCursor";
 
 type ButtonVariants = "button" | "link";
 
