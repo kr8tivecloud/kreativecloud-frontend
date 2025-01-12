@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "@/assets/images/logo.svg";
 import { NavLinkType } from "@/lib/types";
 import { FaBars } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
@@ -22,6 +21,7 @@ import {
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
 import useNavigate from "@/lib/hooks/useNavigate";
+import images from "../../public/images";
 
 const navLinks: NavLinkType[] = [
   {
@@ -152,7 +152,7 @@ export default function Navbar() {
           onClick={() => {
             navigate("/");
           }}
-          src={Logo}
+          src={images.logo}
           alt="Logo"
           width={162}
           height={28}
@@ -216,7 +216,7 @@ export default function Navbar() {
 
         <div>
           <AnimatedButton
-            className="max-lg:hidden"
+            className="max-lg:hidden text-[#FE922A]"
             variant="link"
             href={"/contact"}
           >
