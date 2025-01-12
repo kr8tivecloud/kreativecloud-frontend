@@ -1,6 +1,6 @@
 "use client";
 import { SectionWrapper } from "@/lib/hoc";
-import { fadeIn, textVariant } from "@/lib/motion";
+import { scaleVariants, textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import "swiper/css/pagination";
@@ -70,9 +70,6 @@ const Services = () => {
 
   return (
     <motion.div
-      ref={ref}
-      animate={isInView ? "show" : "hidden"}
-      initial="hidden"
       className="w-full flex justify-center items-center py-5 xs:py-10"
       onClick={handleOutsideClick}
     >
@@ -82,6 +79,9 @@ const Services = () => {
       >
         <div className="w-full lg:w-[50%]">
           <motion.div
+            ref={ref}
+            animate={isInView ? "show" : "hidden"}
+            initial="hidden"
             variants={textVariant(0.1)}
             className="w-full 2xs:w-[80%] lg:w-[70%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
           >
@@ -104,7 +104,8 @@ const Services = () => {
             {creativeServices.map((service, index: number) => (
               <motion.div
                 key={index}
-                variants={fadeIn("right", "easeInOut", 0.3, 0.1)} // ease in fade
+                variants={scaleVariants}
+                whileInView={scaleVariants.whileInView}
                 className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] border-t-[1.25px] border-[#00E5FF] relative transition-all duration-300 group"
                 onHoverStart={() => setHoveredCreative(index)}
                 onHoverEnd={() => setHoveredCreative(null)}
@@ -113,7 +114,7 @@ const Services = () => {
                 }
               >
                 <div
-                  className={`absolute inset-0 border-t-[1.25px] border-[#00E5FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#00E5FF] before:animate-borderPulse`}
+                  className={`absolute inset-0 border-t-[1px] border-[#00E5FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#00E5FF] before:animate-borderPulse`}
                 ></div>
 
                 <div className="w-fit flex justify-center items-center bg-[#15151D] p-2 xs:p-2.5 xl:p-3.5 rounded-full">
@@ -206,7 +207,11 @@ const Services = () => {
                   )}
                 </div>
 
-                <p className="text-xs 2xs:text-sm font-bold uppercase text-white">
+                <p
+                  className={`text-xs 2xs:text-sm font-bold uppercase transition-colors duration-300 ${
+                    hoveredCreative === index ? "text-white" : "text-[#6A6E87]"
+                  }`}
+                >
                   {service.title}
                 </p>
               </motion.div>
@@ -220,7 +225,8 @@ const Services = () => {
             {marketingServices.map((service, index: number) => (
               <motion.div
                 key={index}
-                variants={fadeIn("right", "easeInOut", 0.3, 0.1)} // ease in fade
+                variants={scaleVariants}
+                whileInView={scaleVariants.whileInView}
                 className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] border-t-[1.25px] border-[#CC0B0B] relative transition-all duration-300 group"
                 onHoverStart={() => setHoveredMarketing(index)}
                 onHoverEnd={() => setHoveredMarketing(null)}
@@ -229,7 +235,7 @@ const Services = () => {
                 }
               >
                 <div
-                  className={`absolute inset-0 border-t-[1.25px] border-[#CC0B0B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#CC0B0B] before:animate-borderPulse`}
+                  className={`absolute inset-0 border-t-[1px] border-[#CC0B0B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#CC0B0B] before:animate-borderPulse`}
                 ></div>
 
                 <div className="w-fit flex justify-center items-center bg-[#15151D] p-2 xs:p-2.5 xl:p-3.5 rounded-full">
@@ -274,31 +280,41 @@ const Services = () => {
                       <path
                         opacity={hoveredMarketing === index ? "1" : "0.3"}
                         d="M28.5156 41.6716C33.6933 41.6716 37.8906 37.4743 37.8906 32.2966C37.8906 27.119 33.6933 22.9216 28.5156 22.9216C23.338 22.9216 19.1406 27.119 19.1406 32.2966C19.1406 37.4743 23.338 41.6716 28.5156 41.6716Z"
-                        fill={hoveredMarketing === index ? "#fff" : "#6A6E87"}
+                        fill={
+                          hoveredMarketing === index ? "#6A6E87" : "#6A6E87"
+                        }
                         style={{ transition: "fill 0.3s ease" }}
                       />
                       <path
                         opacity={hoveredMarketing === index ? "1" : "0.3"}
                         d="M17.2656 41.6716C22.4433 41.6716 26.6406 37.4743 26.6406 32.2966C26.6406 27.119 22.4433 22.9216 17.2656 22.9216C12.088 22.9216 7.89062 27.119 7.89062 32.2966C7.89062 37.4743 12.088 41.6716 17.2656 41.6716Z"
-                        fill={hoveredMarketing === index ? "#fff" : "#6A6E87"}
+                        fill={
+                          hoveredMarketing === index ? "#6A6E87" : "#6A6E87"
+                        }
                         style={{ transition: "fill 0.3s ease" }}
                       />
                       <path
                         opacity={hoveredMarketing === index ? "1" : "0.3"}
                         d="M13.5156 30.4216C18.6933 30.4216 22.8906 26.2243 22.8906 21.0466C22.8906 15.869 18.6933 11.6716 13.5156 11.6716C8.33796 11.6716 4.14062 15.869 4.14062 21.0466C4.14062 26.2243 8.33796 30.4216 13.5156 30.4216Z"
-                        fill={hoveredMarketing === index ? "#fff" : "#6A6E87"}
+                        fill={
+                          hoveredMarketing === index ? "#6A6E87" : "#6A6E87"
+                        }
                         style={{ transition: "fill 0.3s ease" }}
                       />
                       <path
                         opacity={hoveredMarketing === index ? "1" : "0.3"}
                         d="M32.2656 30.4216C37.4433 30.4216 41.6406 26.2243 41.6406 21.0466C41.6406 15.869 37.4433 11.6716 32.2656 11.6716C27.088 11.6716 22.8906 15.869 22.8906 21.0466C22.8906 26.2243 27.088 30.4216 32.2656 30.4216Z"
-                        fill={hoveredMarketing === index ? "#fff" : "#6A6E87"}
+                        fill={
+                          hoveredMarketing === index ? "#6A6E87" : "#6A6E87"
+                        }
                         style={{ transition: "fill 0.3s ease" }}
                       />
                       <path
                         opacity={hoveredMarketing === index ? "1" : "0.3"}
                         d="M22.8906 22.9216C28.0683 22.9216 32.2656 18.7243 32.2656 13.5466C32.2656 8.36896 28.0683 4.17163 22.8906 4.17163C17.713 4.17163 13.5156 8.36896 13.5156 13.5466C13.5156 18.7243 17.713 22.9216 22.8906 22.9216Z"
-                        fill={hoveredMarketing === index ? "#fff" : "#6A6E87"}
+                        fill={
+                          hoveredMarketing === index ? "#6A6E87" : "#6A6E87"
+                        }
                         style={{ transition: "fill 0.3s ease" }}
                       />
                     </svg>
@@ -331,7 +347,11 @@ const Services = () => {
                   )}
                 </div>
 
-                <p className="text-xs 2xs:text-sm font-bold uppercase text-white">
+                <p
+                  className={`text-xs 2xs:text-sm font-bold uppercase transition-colors duration-300 ${
+                    hoveredMarketing === index ? "text-white" : "text-[#6A6E87]"
+                  }`}
+                >
                   {service.title}
                 </p>
               </motion.div>

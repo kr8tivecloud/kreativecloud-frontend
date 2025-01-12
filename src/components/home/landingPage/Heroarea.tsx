@@ -38,18 +38,21 @@ const Heroarea = () => {
             className="w-[90%] md:w-[85%] xl:w-[80%] flex flex-col gap-3"
           >
             <h1 className="text-[3rem] xs:text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] 2xl:text-[8rem] font-bold leading-[3.5rem] xs:leading-[4.5rem] sm:leading-[5.5rem] md:leading-[6.5rem] lg:leading-[7.5rem] xl:leading-[8rem] 2xl:leading-[8.5rem]">
-              We design. You grow <span className="animate-blink">!</span>
+              We design. You grow!
             </h1>
           </motion.div>
 
           <div className="w-full flex max-sm:flex-col-reverse sm:items-center gap-4 sm:gap-6 md:gap-8 ">
-            <AnimatedButton
-              className="w-fit bg-white text-black py-4 md:py-5 px-6 md:px-8 "
-              variant="link"
-              href="/contact"
-            >
-              EXPLORE{" "}
-            </AnimatedButton>
+            <div className="flex">
+              <AnimatedButton
+                className="w-fit py-4 md:py-5 px-6 md:px-8 "
+                variant="link"
+                href="/contact"
+                type="outline"
+              >
+                EXPLORE{" "}
+              </AnimatedButton>
+            </div>
             <p className="text-[#FFFFFFB3] w-[70%] xs:w-[60%] sm:w-[45%] md:w-[40%] xl:w-[30%] font-bold text-sm lg:text-base">
               Your all-in-one creative team. We provide everything your business
               needs to thrive.

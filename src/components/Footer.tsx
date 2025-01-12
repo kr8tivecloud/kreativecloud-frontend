@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import Logo from "@/assets/images/logo.svg";
 import { IconNavLinkType, NavLinkType } from "@/lib/types";
 import Link from "next/link";
 import {
@@ -11,6 +10,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa6";
+import images from "../../public/images";
 
 const serviceLinks: NavLinkType[] = [
   {
@@ -176,7 +176,7 @@ export default function Footer() {
           <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
             {/* LOGO */}
             <div className="flex-1">
-              <Image src={Logo} alt="Logo" width={172} height={29} />
+              <Image src={images.logo} alt="Logo" width={172} height={29} />
             </div>
             {/* END LOGO */}
 

@@ -21,6 +21,37 @@ body {
   scroll-behavior: smooth;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.right-cloud-bg {
+  background-image: url(../../public/images/home/landingPage/right-chat.svg);
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.left-cloud-bg {
+  background-image: url(../../public/images/home/landingPage/left-chat.svg);
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.animate-cloud-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
 .contact-heading {
   font-size: clamp(
     50px,

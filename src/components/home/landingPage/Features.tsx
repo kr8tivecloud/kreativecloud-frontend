@@ -9,6 +9,7 @@ import images from "../../../../public/images";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
+import useNavigate from "@/lib/hooks/useNavigate";
 
 const entrepreneurs = [
   {
@@ -41,6 +42,7 @@ const entrepreneurs = [
 ];
 
 const Features = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1 });
   const [hovered, setHovered] = useState<number | null>(null);
@@ -57,10 +59,7 @@ const Features = () => {
       className="w-full flex justify-center items-center py-5 xs:py-10"
       onClick={handleOutsideClick}
     >
-      <div
-        className="w-full px-4 sm:px-12 flex flex-col gap-6 xs:gap-8 md:gap-10 xl:gap-12"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="w-full px-4 sm:px-12 flex flex-col gap-6 xs:gap-8 md:gap-10 xl:gap-12">
         <motion.div
           variants={textVariant(0.1)}
           className="w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
@@ -109,20 +108,21 @@ const Features = () => {
                   spaceBetween: 30,
                 },
               }}
-              className="w-full pb-8"
+              className="w-full pb-16"
             >
               {entrepreneurs.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8">
+                  <div className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8 pb-12 xs:pb-16">
                     <motion.div
                       // variants={scaleVariants}
                       // whileInView={scaleVariants.whileInView}
                       className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
                       onHoverStart={() => setHovered(index)}
                       onHoverEnd={() => setHovered(null)}
-                      onClick={() =>
-                        setHovered(index === hovered ? null : index)
-                      }
+                      onClick={() => {
+                        setHovered(index === hovered ? null : index);
+                        navigate("/entrepreneur/1");
+                      }}
                     >
                       <div
                         className={` absolute inset-0 bg-black ${
@@ -153,7 +153,6 @@ const Features = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3 }}
                           className="absolute z-20 top-3 px-4 flex flex-col items-center justify-center w-full h-full"
-                          onClick={(e) => e.stopPropagation()}
                         >
                           <h2 className="text-white text-2xl font-bold">
                             {item.name}
@@ -197,6 +196,7 @@ const Features = () => {
                   }}
                   onClick={() => {
                     setHovered(index === hovered ? null : index);
+                    navigate("/entrepreneur/1", "push");
                   }}
                 >
                   <div
@@ -228,7 +228,6 @@ const Features = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
                       className="absolute z-20 top-3 px-4 flex flex-col items-center justify-center w-full h-full"
-                      onClick={(e) => e.stopPropagation()}
                     >
                       <h2 className="text-white text-2xl font-bold">
                         {item.name}
@@ -250,9 +249,10 @@ const Features = () => {
           </div>
           <div className="w-full flex justify-center items-center lg:mt-12">
             <AnimatedButton
-              className="w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
+              className="w-fit py-3.5 md:py-4 px-5 md:px-6"
               variant="link"
               href="/entrepreneurs"
+              type="outline"
             >
               SEE MORE{" "}
             </AnimatedButton>

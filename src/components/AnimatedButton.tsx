@@ -8,6 +8,7 @@ type CommonProps = {
   variant?: ButtonVariants;
   className?: string;
   children: React.ReactNode;
+  type?: "outline" | "solid";
 };
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
@@ -24,7 +25,20 @@ type LinkPropsWithHref = Omit<LinkProps, "href"> & {
 type Props = ButtonProps | LinkPropsWithHref;
 
 export const AnimatedButton: React.FC<Props> = (props) => {
-  const { variant = "button", className, children, ...rest } = props;
+  const {
+    variant = "button",
+    className,
+    children,
+    type = "outline",
+    ...rest
+  } = props;
+
+  const baseStyles =
+    "font-bold text-sm transition-colors p-4 ease-in-out duration-300";
+  const typeStyles =
+    type === "outline"
+      ? "bg-transparent text-white border-2 border-white hover:bg-white hover:text-black"
+      : "bg-white text-black";
 
   if (variant === "link") {
     const { href } = rest as LinkPropsWithHref;
@@ -32,7 +46,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
       <Link
         {...(rest as LinkPropsWithHref)}
         href={href}
-        className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white ${className}`}
+        className={`${baseStyles} ${typeStyles} ${className}`}
       >
         {children}
       </Link>
@@ -42,7 +56,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
       <MaskedCursor className={className}>
         <button
           {...(rest as ButtonProps)}
-          className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white`}
+          className={`${baseStyles} ${typeStyles} ${className}`}
         >
           {children}
         </button>
