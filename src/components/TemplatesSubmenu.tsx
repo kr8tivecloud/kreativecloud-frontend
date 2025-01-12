@@ -47,7 +47,9 @@ export default function TemplatesSubmenu() {
           <AnimatedOutlineButton className="flex-1 font-normal">
             Skip
           </AnimatedOutlineButton>
-          <AnimatedButton className="flex-1 font-normal">Search</AnimatedButton>
+          <AnimatedButton className="flex-1 font-normal [&>button]:w-full">
+            Search
+          </AnimatedButton>
         </div>
       </form>
     </div>

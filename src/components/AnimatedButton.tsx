@@ -39,10 +39,10 @@ export const AnimatedButton: React.FC<Props> = (props) => {
     );
   } else {
     return (
-      <MaskedCursor>
+      <MaskedCursor className={className}>
         <button
           {...(rest as ButtonProps)}
-          className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white ${className}`}
+          className={`font-bold text-sm transition-colors bg-white p-4 text-black outline outline-1 outline-white`}
         >
           {children}
         </button>
