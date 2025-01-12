@@ -2,8 +2,10 @@
 import { SectionWrapper } from "@/lib/hoc";
 import { scaleVariants, textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import "swiper/css/pagination";
+import images from "../../../../public/images";
 
 const creativeServices = [
   {
@@ -77,7 +79,7 @@ const Services = () => {
         className="w-full px-4 sm:px-12 flex max-lg:flex-col gap-16 xl:gap-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full lg:w-[50%]">
+        <div className="relative w-full lg:w-[50%] flex flex-col">
           <motion.div
             ref={ref}
             animate={isInView ? "show" : "hidden"}
@@ -94,9 +96,15 @@ const Services = () => {
               assist you!
             </p>
           </motion.div>
+
+          <Image
+            src={images.landingPage.animation2}
+            alt="animation"
+            className="absolute top-[6rem] lg:top-[8rem] -left-[14rem] 2xs:-left-[16rem] lg:-left-[8rem] w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[80%] xl:w-[60%]"
+          />
         </div>
 
-        <div className="w-full lg:w-[50%] flex gap-3 2xs:gap-4 xl:gap-6 h-full">
+        <div className="z-40 w-full lg:w-[50%] flex gap-3 2xs:gap-4 xl:gap-6 h-full">
           <div className="w-[50%] flex flex-col gap-4 2xs:gap-6 xl:gap-8">
             <p className="text-sm 2xs:text-base border-l border-[#00E5FF] px-3 font-bold mb-3.5 xs:mb-2.5">
               Creative Services
