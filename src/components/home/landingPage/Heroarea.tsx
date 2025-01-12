@@ -3,7 +3,9 @@ import { AnimatedButton } from "@/components/AnimatedButton";
 import { SectionWrapper } from "@/lib/hoc";
 import { textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
+import Image from "next/image";
 import { useRef } from "react";
+import images from "../../../../public/images";
 
 const Heroarea = () => {
   const ref = useRef(null);
@@ -31,8 +33,8 @@ const Heroarea = () => {
           transform: "scale(1.1)",
         }}
       />
-      <div className="z-10 w-[90%] lg:w-[85%] h-full  inset-0 mx-auto flex items-center justify-between">
-        <div className="w-[90%] lg:w-[80%] py-40 flex flex-col gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+      <div className="z-10 w-[90%] xl:w-[80%] h-full inset-0 mx-auto flex items-center justify-between">
+        <div className="w-[90%] lg:w-[80%] py-24 md:py-32 lg:py-40 xl:py-44 2xl:py-48 flex flex-col gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <motion.div
             variants={textVariant(0.1)}
             className="w-[90%] md:w-[85%] xl:w-[80%] flex flex-col gap-3"
@@ -46,9 +48,9 @@ const Heroarea = () => {
             <div className="flex">
               <AnimatedButton
                 className="w-fit py-4 md:py-5 px-6 md:px-8 "
-                as="link"
+                variant="link"
                 href="/contact"
-                variant="outline"
+                type="outline"
               >
                 EXPLORE{" "}
               </AnimatedButton>
@@ -60,6 +62,17 @@ const Heroarea = () => {
           </div>
         </div>
       </div>
+
+      <Image
+        src={images.landingPage.animation1}
+        alt="animation"
+        className="absolute left-0 2xs:left-[4rem] xs:left-[8rem] sm:left-[12rem] md:left-[13rem] lg:left-[15rem] z-20"
+        style={{
+          transform: "rotate(270deg)",
+          minWidth: "40rem",
+          minHeight: "auto",
+        }}
+      />
     </motion.div>
   );
 };

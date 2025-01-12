@@ -5,6 +5,8 @@ import { textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
 import { useRef } from "react";
 import Timeline from "./Timeline";
+import images from "../../../../../public/images";
+import Image from "next/image";
 
 const Process = () => {
   const ref = useRef(null);
@@ -50,7 +52,7 @@ const Process = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-[50%] flex gap-3 2xs:gap-4 xl:gap-6 h-full relative">
+        <div className="w-full lg:w-[50%] flex gap-3 2xs:gap-4 xl:gap-6 h-full relative z-40">
           <div className="w-full flex flex-col justify-center items-center">
             <Timeline />
           </div>{" "}
@@ -66,6 +68,17 @@ const Process = () => {
           </AnimatedButton>
         </div>
       </div>
+
+      <Image
+        src={images.landingPage.animation3}
+        alt="animation"
+        className="absolute top-[6rem] lg:top-[8rem] -right-[20rem] lg:-right-[15rem] xl:-right-[10rem] w-[30%] md:w-[20%] lg:w-[30%] xl:w-[40%]"
+        style={{
+          transform: "rotate(180deg)",
+          minWidth: "40rem",
+          minHeight: "auto",
+        }}
+      />
     </motion.div>
   );
 };

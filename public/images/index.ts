@@ -38,6 +38,10 @@ import testimonial from "./home/landingPage/testimonial.jpg";
 import leftChatBubble from "./home/landingPage/left-chat.svg";
 import rightChatBubble from "./home/landingPage/right-chat.svg";
 
+import animation1 from "./home/landingPage/animations/animation1.png";
+import animation2 from "./home/landingPage/animations/animation2.png";
+import animation3 from "./home/landingPage/animations/animation3.png";
+
 const landingPage = {
   portfolio1,
   portfolio2,
@@ -51,6 +55,10 @@ const landingPage = {
 
   leftChatBubble,
   rightChatBubble,
+
+  animation1,
+  animation2,
+  animation3,
 };
 
 export default { landingPage, entrepreneurPage, socialLinks, logo };
