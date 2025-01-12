@@ -103,7 +103,7 @@ const Hero: React.FC<HeroProps> = ({
           variants={itemVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-fit bg-transparent text-black bg-white border-white font-bold text-smfont-sans py-3.5 md:py-4 px-5 md:px-6"
+          className="w-fit bg-transparent text-black hover:bg-[#C0C0C0] bg-white border-white font-bold text-smfont-sans py-3.5 md:py-4 px-5 md:px-6"
         >
           VISIT WEBSITE
         </motion.a>
