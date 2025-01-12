@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import Logo from "@/assets/images/logo.svg";
 import { IconNavLinkType, NavLinkType } from "@/lib/types";
 import Link from "next/link";
 import {
