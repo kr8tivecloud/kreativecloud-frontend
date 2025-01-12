@@ -9,6 +9,8 @@ import {
   middleSectionImageVariants,
   overlayVariants,
 } from "@/lib/animationVariants/entreprenuerVariant";
+import { FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa";
 
 type MiddleSectionProps = {
   title: string;
@@ -61,15 +63,19 @@ const MiddleSection: React.FC<MiddleSectionProps> = ({
           priority
         />
         <motion.div
-          className="absolute inset-0 bg-black/10 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center"
           variants={overlayVariants}
           initial="initial"
           whileInView="inView"
         >
-          <div className="text-white text-center">
-            <p className="text-5xl font-sans xl:leading-[60px]">
-              {overlayText}
-            </p>
+          <div className="flex justify-center items-center relative w-full">
+            <div className="flex items-start text-white text-center gap-1">
+              <FaQuoteLeft className="text-white mt-1 lg:mt-1.5 xl:mt-2.5 w-2.5 md:w-3 h-2.5 md:h-3" />
+              <p className="text-3xl md:text-4xl lg:text-5xl font-sans xl:leading-[60px]">
+                {overlayText}
+              </p>
+              <FaQuoteRight className="text-white mt-1 lg:mt-1.5 xl:mt-2.5 w-2.5 md:w-3 h-2.5 md:h-3" />
+            </div>
           </div>
         </motion.div>
       </motion.div>
