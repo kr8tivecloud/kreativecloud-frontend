@@ -42,7 +42,7 @@ const Process = () => {
           <div className="flex">
             <AnimatedButton
               className="max-lg:hidden w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
-              variant="link"
+              as="link"
               href="/contact"
             >
               GET STARTED{" "}
@@ -59,7 +59,7 @@ const Process = () => {
         <div className="flex justify-center items-center">
           <AnimatedButton
             className="lg:hidden w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
-            variant="link"
+            as="link"
             href="/contact"
           >
             GET STARTED{" "}
