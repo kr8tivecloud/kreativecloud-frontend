@@ -250,9 +250,10 @@ const Features = () => {
           </div>
           <div className="w-full flex justify-center items-center lg:mt-12">
             <AnimatedButton
-              className="w-fit bg-transparent text-white border-2 border-white py-3.5 md:py-4 px-5 md:px-6"
+              className="w-fit py-3.5 md:py-4 px-5 md:px-6"
               variant="link"
               href="/entrepreneurs"
+              type="outline"
             >
               SEE MORE{" "}
             </AnimatedButton>

@@ -25,10 +25,7 @@ import TemplatesSubmenu from "./TemplatesSubmenu";
 import ResourcesSubmenu from "./ResourcesSubmenu";
 import NavSubmenu from "./NavSubmenu";
 import { FiChevronDown } from "react-icons/fi";
-import useNavigate from "@/lib/hooks/useNavigate";
 import images from "../../public/images";
-import { FaX } from "react-icons/fa6";
-import { FaBars } from "react-icons/fa";
 
 const navLinks: NavLinkType[] = [
   {
@@ -97,7 +94,6 @@ const sidebarVariants: Variants = {
 const MotionLink = motion.create(Link);
 
 export default function Navbar() {
-  const navigate = useNavigate();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const windowWidth = useWindowSize();
   const pathname = usePathname();
@@ -147,87 +143,284 @@ export default function Navbar() {
       }}
       className="fixed top-0 left-0 right-0 bg-black z-50"
     >
-      <div className="container flex items-center justify-between py-6 gap-x-10">
-        <Image
-          onClick={() => {
-            navigate("/");
-          }}
-          src={images.logo}
-          alt="Logo"
-          width={162}
-          height={28}
-          className="cursor-pointer"
+      <div className="px-4 sm:px-12 flex items-center justify-between py-6 gap-x-10">
+        <Link href={"/"}>
+          <Image
+            src={images.logo}
+            alt="Logo"
+            width={162}
+            height={28}
+            className="relative z-[1]"
+          />
+        </Link>
+
+        <MobileNav
+          handleOpenNavbar={handleOpenNavbar}
+          navbarOpen={navbarOpen}
         />
+        <Nav />
 
-        <motion.nav
-          ref={navbarRef}
-          initial={"closed"}
-          variants={sidebarVariants}
-          animate={navbarOpen || windowWidth > 1024 ? "open" : "closed"}
-          transition={{
-            type: "spring",
-            bounce: 0,
-          }}
-          className="max-lg:fixed max-lg:inset-0 max-lg:min-w-96 max-lg:bg-gray-950 max-lg:flex max-lg:flex-col"
-        >
-          <motion.ul
-            variants={ulVariants}
-            initial={"closed"}
-            animate={navbarOpen || windowWidth > 1024 ? "open" : "closed"}
-            exit={"closed"}
-            className="flex items-center gap-x-10 uppercase font-bold text-sm max-lg:flex-col max-lg:text-3xl max-lg:pt-32 max-lg:items-start max-lg:gap-y-6 max-lg:px-6 max-lg:flex-1"
-          >
-            {navLinks.map((navLink) => {
-              return (
-                <motion.li variants={itemVariants} key={navLink.href}>
-                  <Link
-                    href={navLink.href}
-                    className="hover:text-gray-300 transition-colors"
-                  >
-                    {navLink.title}
-                  </Link>
-                </motion.li>
-              );
-            })}
-          </motion.ul>
-
-          {/* MOBILE GET IN TOUCH BUTTON */}
+        <div className="relative z-[1]">
           <MotionLink
-            initial={{}}
-            animate={{}}
-            exit={{}}
             href={"/contact"}
-            className="bg-white text-black text-sm py-5 text-center font-bold block hover:bg-gray-300 transition-colors"
+            className="max-lg:hidden font-bold text-[#FE922A] hover:text-white transition-colors duration-300"
           >
             GET IN TOUCH
           </MotionLink>
-          {/* END MOBILE GET IN TOUCH BUTTON */}
 
-          {/* The navbar close icon should only be mounted if the navbar is open and if the window width is lesser than 1024px */}
-          {navbarOpen && windowWidth < 1024 ? (
-            <button
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-950"
-              onClick={handleOpenNavbar}
-            >
-              <FaX />
-            </button>
-          ) : null}
-        </motion.nav>
-
-        <div>
-          <AnimatedButton
-            className="max-lg:hidden"
-            variant="link"
-            href={"/contact"}
-          >
-            GET IN TOUCH
-          </AnimatedButton>
-
-          <button onClick={handleOpenNavbar} className="min-[1024px]:hidden">
-            <FaBars />
+          <button onClick={handleOpenNavbar} className="w-7 h-5 lg:hidden">
+            <motion.div
+              initial={{ y: -5, rotate: 0 }}
+              animate={navbarOpen ? { y: 0, rotate: 45 } : undefined}
+              transition={{ bounce: 0.25 }}
+              className="block w-full h-[3px] bg-white shrink-0"
+            />
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={navbarOpen ? { opacity: 0 } : undefined}
+              transition={{ duration: 0 }}
+              className="block w-full h-[3px] bg-white shrink-0"
+            />
+            <motion.div
+              initial={{ y: 5, rotateX: 0 }}
+              animate={navbarOpen ? { y: -5, rotate: -45 } : undefined}
+              transition={{ bounce: 0.25 }}
+              className="block w-full h-[3px] bg-white shrink-0"
+            />
           </button>
         </div>
       </div>
     </motion.div>
+  );
+}
+
+type MobileNavProps = {
+  navbarOpen: boolean;
+  handleOpenNavbar: () => void;
+};
+
+function MobileNav({ navbarOpen }: MobileNavProps) {
+  const navbarRef = useRef<HTMLDivElement | null>(null);
+  const windowWidth = useWindowSize();
+  const [selected, setSelected] = useState<number | null>(null);
+
+  // handle body scroll when navbar is open
+  useEffect(() => {
+    if (navbarRef.current) {
+      if (navbarOpen && windowWidth < 1024) {
+        disableBodyScroll(navbarRef.current);
+      } else {
+        enableBodyScroll(navbarRef.current);
+      }
+    }
+
+    return () => {
+      clearAllBodyScrollLocks();
+    };
+  }, [windowWidth, navbarOpen]);
+
+  return (
+    <motion.nav
+      initial={"closed"}
+      variants={sidebarVariants}
+      animate={navbarOpen ? "open" : "closed"}
+      transition={{
+        type: "spring",
+        bounce: 0,
+      }}
+      className="fixed flex flex-col lg:hidden inset-0 min-w-96 bg-black"
+    >
+      <div className="h-20 bg-black"></div>
+      <div
+        ref={navbarRef}
+        className="px-4 sm:container h-full flex flex-col gap-y-20 pb-20 overflow-y-auto"
+      >
+        <motion.ul
+          variants={ulVariants}
+          initial={"closed"}
+          animate={navbarOpen ? "open" : "closed"}
+          exit={"closed"}
+          className="flex gap-x-10 uppercase font-bold flex-col text-base max-lg:text-3xl pt-10 items-start gap-y-4 flex-1"
+        >
+          {navLinks.map((navLink) => {
+            return (
+              <motion.li
+                variants={itemVariants}
+                key={navLink.href}
+                className="block w-full"
+              >
+                <Link
+                  onClick={(e) => {
+                    if (navLink.subMenu) {
+                      e.preventDefault();
+                      setSelected((prevState) => {
+                        if (prevState === navLink.id) {
+                          return null;
+                        } else {
+                          return navLink.id;
+                        }
+                      });
+                    }
+                  }}
+                  href={navLink.href}
+                  // before:absolute before:inset-0 before:bg-yellow-900 before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:delay-200
+                  className="hover:text-gray-300 transition-colors flex items-center gap-1 relative z-[1] py-3"
+                >
+                  <FlipText text={navLink.title} />
+                  {navLink.subMenu ? (
+                    <FiChevronDown
+                      className={`transition-transform delay-150 ${
+                        selected === navLink.id ? "rotate-180" : ""
+                      }`}
+                    />
+                  ) : null}
+                  {/* {navLink.title} */}
+                </Link>
+
+                <AnimatePresence>
+                  {navLink.subMenu && selected === navLink.id ? (
+                    <motion.div
+                      initial={{
+                        y: -20,
+                        opacity: 0,
+                        height: 0,
+                      }}
+                      animate={{ y: 0, opacity: 1, height: "auto" }}
+                      exit={{
+                        // y: -100,
+                        opacity: 0,
+                        height: 0,
+                      }}
+                      transition={{
+                        bounce: 0,
+                      }}
+                      className="overflow-hidden"
+                    >
+                      {/* TODO: This animation is not yet fluid */}
+                      <motion.div className="py-2 px-2">
+                        {/* <div className="py-6"> */}
+                        <navLink.subMenu />
+                        {/* </div> */}
+                      </motion.div>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+              </motion.li>
+            );
+          })}
+        </motion.ul>
+
+        {/* MOBILE GET IN TOUCH BUTTON */}
+        <MotionLink
+          initial={{}}
+          animate={{}}
+          exit={{}}
+          href={"/contact"}
+          className="bg-white text-black text-sm py-5 text-center font-bold block hover:bg-gray-300 transition-colors"
+        >
+          GET IN TOUCH
+        </MotionLink>
+        {/* END MOBILE GET IN TOUCH BUTTON */}
+
+        {/* The navbar close icon should only be mounted if the navbar is open and if the window width is lesser than 1024px */}
+        {/* {navbarOpen ? (
+          <button
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-950"
+            onClick={handleOpenNavbar}
+          >
+            <FaX />
+          </button>
+        ) : null} */}
+      </div>
+    </motion.nav>
+  );
+}
+
+function Nav() {
+  const [selected, setSelected] = useState<number | null>(0);
+  const [dir, setDir] = useState<"r" | "l" | null>(null);
+  const submenuRef = useRef<HTMLDivElement>(null);
+
+  // handle body scroll when navbar is open
+  useEffect(() => {
+    if (submenuRef.current) {
+      if (selected) {
+        disableBodyScroll(submenuRef.current);
+      } else {
+        enableBodyScroll(submenuRef.current);
+      }
+    }
+
+    return () => {
+      clearAllBodyScrollLocks();
+    };
+  }, [selected]);
+
+  const handleSetSelected = (val: number | null) => {
+    if (typeof selected === "number" && typeof val === "number") {
+      setDir(selected > val ? "r" : "l");
+    } else if (val === null) {
+      setDir(null);
+    }
+
+    setSelected(val);
+  };
+
+  return (
+    <nav className="max-lg:hidden" onMouseLeave={() => handleSetSelected(null)}>
+      <ul className="flex items-center gap-x-10 uppercase font-bold text-sm relative z-[1]">
+        {navLinks.map((navLink) => {
+          return (
+            <li
+              key={navLink.href}
+              id={`shift-nav-${navLink.id}`}
+              onMouseEnter={() => handleSetSelected(navLink.id)}
+              onClick={() => handleSetSelected(navLink.id)}
+            >
+              <Link
+                onClick={(e) => {
+                  if (navLink.subMenu) {
+                    e.preventDefault();
+                    setSelected(navLink.id);
+                  }
+                }}
+                href={navLink.href}
+                className="hover:text-gray-300 transition-colors flex items-center gap-1"
+              >
+                <FlipText text={navLink.title} />
+                {navLink.subMenu ? (
+                  <FiChevronDown
+                    className={`transition-transform delay-150 ${
+                      selected === navLink.id ? "rotate-180" : ""
+                    }`}
+                  />
+                ) : null}
+                {/* {navLink.title} */}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      <AnimatePresence>
+        {selected && navLinks[selected - 1].subMenu && (
+          <NavSubmenu
+            ref={submenuRef}
+            tabs={navLinks}
+            dir={dir}
+            selected={selected}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* MOBILE GET IN TOUCH BUTTON */}
+      <MotionLink
+        href={"/contact"}
+        className="bg-white text-black text-sm py-5 text-center font-bold mx-6 mb-20 hidden max-lg:block hover:bg-gray-300 transition-colors"
+      >
+        GET IN TOUCH
+      </MotionLink>
+      {/* END MOBILE GET IN TOUCH BUTTON */}
+    </nav>
   );
 }
