@@ -35,7 +35,7 @@ export default function ServiceCategoryPill({
               selected?.includes(category)
                 ? "bg-white/25"
                 : "bg-[#15151D] hover:bg-[#0D0D11]",
-              "text-white text-sm border border-black/25 px-3 py-1 rounded-full",
+              "text-white text-sm border border-black/25 px-3 py-1 rounded-full transition-colors",
               className
             )}
             onClick={() => handleSelect(category)}
