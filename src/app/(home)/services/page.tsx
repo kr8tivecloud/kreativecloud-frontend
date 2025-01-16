@@ -40,9 +40,9 @@ export default function ServicesPage() {
       </div>
 
       {/* SERVICES */}
-      <div className="px-4 sm:container space-y-20 lg:space-y-10 mt-5">
+      <div className="px-4 sm:container space-y-10 mt-5">
         {/* WEBSITE DESIGN SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         {/* END WEBSITE DESIGN SECTION */}
 
         {/* GRAPHIC DESIGN SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row-reverse">
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -138,7 +138,7 @@ export default function ServicesPage() {
         {/* END GRAPHIC DESIGN SECTION */}
 
         {/* BRANDING SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -186,7 +186,7 @@ export default function ServicesPage() {
         {/* END BRANDING SECTION */}
 
         {/* MARKETING SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row-reverse">
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -232,7 +232,7 @@ export default function ServicesPage() {
         {/* END MARKETING SECTION */}
 
         {/* CONTENT CREATION SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -281,7 +281,7 @@ export default function ServicesPage() {
         {/* END CONTENT CREATION SECTION */}
 
         {/* SOCIAL MEDIA MANAGEMENT SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row-reverse">
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">

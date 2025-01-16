@@ -33,7 +33,7 @@ const resourcesLinks: ResourcesLink[] = [
   },
   {
     title: "Terms of Service",
-    href: "/terms-of-service",
+    href: "/terms",
     image: TermsOfServiceImage,
   },
 ];
