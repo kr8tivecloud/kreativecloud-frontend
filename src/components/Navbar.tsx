@@ -172,19 +172,19 @@ export default function Navbar() {
               initial={{ y: -5, rotate: 0 }}
               animate={navbarOpen ? { y: 0, rotate: 45 } : undefined}
               transition={{ bounce: 0.25 }}
-              className="block w-full h-[3px] bg-white shrink-0"
+              className="block w-full h-[3px] bg-[#FE922A] shrink-0"
             />
             <motion.div
               initial={{ opacity: 1 }}
               animate={navbarOpen ? { opacity: 0 } : undefined}
               transition={{ duration: 0 }}
-              className="block w-full h-[3px] bg-white shrink-0"
+              className="block w-full h-[3px] bg-[#FE922A] shrink-0"
             />
             <motion.div
               initial={{ y: 5, rotateX: 0 }}
               animate={navbarOpen ? { y: -5, rotate: -45 } : undefined}
               transition={{ bounce: 0.25 }}
-              className="block w-full h-[3px] bg-white shrink-0"
+              className="block w-full h-[3px] bg-[#FE922A] shrink-0"
             />
           </button>
         </div>

@@ -65,7 +65,7 @@ const Features = () => {
           className="w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
         >
           <h1 className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
-            Featured entrepreneurs{" "}
+            Featured Entrepreneurs{" "}
           </h1>
           <p className="text-sm text-[#9797A2]">
             From small startups to growing businesses, Kreative Cloud has helped
@@ -114,18 +114,24 @@ const Features = () => {
                 <SwiperSlide key={index}>
                   <div className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8 pb-12 xs:pb-16">
                     <motion.div
-                      // variants={scaleVariants}
-                      // whileInView={scaleVariants.whileInView}
                       className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
-                      onHoverStart={() => setHovered(index)}
-                      onHoverEnd={() => setHovered(null)}
-                      onClick={() => {
-                        setHovered(index === hovered ? null : index);
+                      // onHoverStart={() => setHovered(index)}
+                      // onHoverEnd={() => setHovered(null)}
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent parent click handler
+                        setHovered(index);
+
+                        if (hovered !== index) {
+                          setTimeout(() => {
+                            navigate("/entrepreneur/1");
+                          }, 1000);
+                          return;
+                        }
                         navigate("/entrepreneur/1");
                       }}
                     >
                       <div
-                        className={` absolute inset-0 bg-black ${
+                        className={`absolute inset-0 bg-black ${
                           hovered === index ? "opacity-80" : "opacity-10"
                         } z-10 transition-opacity duration-300 backdrop-blur-sm`}
                       ></div>

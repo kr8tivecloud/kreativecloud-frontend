@@ -70,7 +70,7 @@ const Faqs: React.FC = () => {
             className="w-full 2xs:w-[80%] lg:w-[70%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
           >
             <h1 className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
-              Frequently asked questions{" "}
+              Frequently Asked Questions{" "}
             </h1>
           </motion.div>
 

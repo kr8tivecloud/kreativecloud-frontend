@@ -22,8 +22,9 @@ const Process = () => {
       {/* <div className="absolute bottom-[-20%] left-[-10%] w-[60%] md:w-[40%] h-[60%] md:h-[40%] rounded-full opacity-30 md:opacity-20 blur-[120px] md:blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" />
       <div className="absolute top-[30%] right-[-10%] w-[60%] md:w-[40%] h-[60%] md:h-[40%] rounded-full opacity-30 md:opacity-20 blur-[120px] md:blur-[100px] bg-gradient-to-br from-[#FF1493] to-[#FF69B4]" /> */}
 
-      {/* <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#00E6E6] to-[#00FF66]" /> */}
-      <div className="absolute top-[30%] right-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[100px] bg-gradient-to-br from-[#FF1493] to-[#FF69B4]" />
+      <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full opacity-[0.15] blur-[60px] md:blur-[120px] bg-gradient-to-br from-[#00E6E6]/50 to-[#00FF66]/50 transform-gpu" />
+      <div className="absolute top-[30%] right-[-10%] w-[40%] h-[40%] rounded-full opacity-[0.15] blur-[60px] md:blur-[120px] bg-gradient-to-br from-[#FF1493]/50 to-[#FF69B4]/50 transform-gpu" />
+
       <div
         className="w-full px-4 sm:px-12 flex flex-col lg:flex-row-reverse gap-16 xl:gap-8"
         onClick={(e) => e.stopPropagation()}
@@ -72,7 +73,7 @@ const Process = () => {
       <Image
         src={images.landingPage.animation3}
         alt="animation"
-        className="absolute top-[6rem] lg:top-[8rem] -right-[20rem] lg:-right-[15rem] xl:-right-[10rem] w-[30%] md:w-[20%] lg:w-[30%] xl:w-[40%]"
+        className="absolute top-[5rem] lg:top-[6rem] -right-[20rem] lg:-right-[15rem] xl:-right-[10rem] w-[30%] md:w-[20%] lg:w-[30%] xl:w-[40%]"
         style={{
           transform: "rotate(180deg)",
           minWidth: "40rem",

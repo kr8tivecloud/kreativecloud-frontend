@@ -147,7 +147,7 @@ export default function Footer() {
           {/* END FOOTER TOP */}
 
           {/* FOOTER BOTTOM */}
-          <div className="text-[#999999] text-sm flex justify-between flex-col-reverse md:flex-row gap-y-4 gap-x-6">
+          <div className="text-[#999999] text-sm flex justify-between items-center flex-col-reverse md:flex-row gap-y-4 gap-x-6">
             {/* COPYRIGHT NOTICE */}
             <p className="flex-1">
               &copy; {new Date().getFullYear()} Kreative Cloud. All rights
@@ -156,7 +156,7 @@ export default function Footer() {
             {/* END COPYRIGHT NOTICE */}
 
             {/* SOCIALS */}
-            <nav className="flex-1 flex md:justify-center">
+            <nav className="flex-1 flex justify-center">
               <ul className="inline-flex gap-x-6">
                 {socialLinks.map((link, index) => {
                   return (

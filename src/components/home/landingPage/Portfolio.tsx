@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import images from "../../../../public/images";
+import { useWindowSize } from "@/lib/hooks/useWindowSize";
 
 const imagesPreview = [
   images.landingPage.portfolio1,
@@ -18,13 +19,14 @@ const imagesPreview = [
 const Portfolio = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.25 });
+  const width = useWindowSize();
 
   return (
     <motion.div
       ref={ref}
       animate={isInView ? "show" : "hidden"}
       initial="hidden"
-      className="w-full flex justify-center items-center py-5 xs:py-10"
+      className="w-full flex justify-center items-center pb-5 xs:pb-10"
     >
       <div className="w-full px-4 sm:px-12 flex flex-col gap-6 xs:gap-8 md:gap-10 xl:gap-12 ">
         <motion.div variants={textVariant(0.1)} className="w-[90%]">
@@ -43,11 +45,11 @@ const Portfolio = () => {
             speed={3000}
             loop={true}
             slidesPerView="auto"
-            spaceBetween={30}
+            spaceBetween={width < 640 ? 10 : 15}
             grabCursor={true}
             freeMode={true}
             allowTouchMove={false}
-            className="w-full h-48 2xs:h-60 md:h-72 lg:h-80 xl:h-96"
+            className="w-full h-60 xs:h-72 lg:h-80 xl:h-96"
           >
             {[...imagesPreview, ...imagesPreview].map((image, index) => (
               <SwiperSlide key={index} className="!w-auto h-full">
