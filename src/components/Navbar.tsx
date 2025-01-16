@@ -338,6 +338,7 @@ function Nav() {
   const [selected, setSelected] = useState<number | null>(0);
   const [dir, setDir] = useState<"r" | "l" | null>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   // handle body scroll when navbar is open
   useEffect(() => {
@@ -353,6 +354,14 @@ function Nav() {
       clearAllBodyScrollLocks();
     };
   }, [selected]);
+
+  useEffect(() => {
+    // automatically close submenu on navigation
+    if (selected) {
+      handleSetSelected(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const handleSetSelected = (val: number | null) => {
     if (typeof selected === "number" && typeof val === "number") {
