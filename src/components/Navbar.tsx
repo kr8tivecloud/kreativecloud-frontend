@@ -146,8 +146,8 @@ export default function Navbar() {
           <Image
             src={images.logo}
             alt="Logo"
-            width={162}
-            height={28}
+            width={172}
+            height={29}
             className="relative z-[1]"
           />
         </Link>
