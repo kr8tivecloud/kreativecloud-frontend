@@ -34,7 +34,7 @@ export default function ServiceCategoryPill({
             className={cn(
               selected?.includes(category)
                 ? "bg-white/25"
-                : "bg-[#0D0D11] hover:bg-[#15151D]",
+                : "bg-[#15151D] hover:bg-[#0D0D11]",
               "text-white text-sm border border-black/25 px-3 py-1 rounded-full",
               className
             )}
