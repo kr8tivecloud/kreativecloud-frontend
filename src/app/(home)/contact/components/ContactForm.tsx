@@ -1,7 +1,6 @@
 "use client";
 
 import { contactFormSchema } from "@/apis/contact/contact.schemas";
-import { AnimatedOutlineButton } from "@/components/AnimatedOutlineButton";
 import Input from "@/components/Input";
 import ServiceCategoryPill from "@/components/ServiceCategoryPill";
 import React from "react";
@@ -9,6 +8,7 @@ import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormError } from "@/components/FormError";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 export default function ContactForm() {
   const contactForm = useForm<z.infer<typeof contactFormSchema>>({
@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   return (
     <section className="relative z-[1]">
-      <div className="container py-16">
+      <div className="px-4 sm:container py-16">
         <div className="text-center">
           <h3 className="text-5xl text-white font-bold">Get in touch</h3>
           <p className="text-[#E7E9F7] text-sm mt-1">
@@ -92,7 +92,9 @@ export default function ContactForm() {
             <FormError error={contactForm.formState.errors.message} />
           </div>
 
-          <AnimatedOutlineButton className="w-full">SEND</AnimatedOutlineButton>
+          <AnimatedButton variant="outline" className="w-full">
+            SEND
+          </AnimatedButton>
         </form>
       </div>
     </section>

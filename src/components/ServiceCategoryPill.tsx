@@ -25,14 +25,16 @@ export default function ServiceCategoryPill({
   }
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-2 sm:gap-3">
       {categories.map((category) => {
         return (
           <button
             key={category}
             type="button"
             className={cn(
-              selected?.includes(category) ? "bg-white/25" : "bg-[#0D0D11]",
+              selected?.includes(category)
+                ? "bg-white/25"
+                : "bg-[#0D0D11] hover:bg-[#15151D]",
               "text-white text-sm border border-black/25 px-3 py-1 rounded-full",
               className
             )}
