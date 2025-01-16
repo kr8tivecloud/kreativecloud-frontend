@@ -30,7 +30,7 @@ export default function ContactPage() {
       {/* HERO SECTION */}
       <motion.div
         layout
-        className="px-4 sm:container flex md:items-center flex-col-reverse md:flex-row relative z-[1] gap-y-5"
+        className="px-4 sm:container flex md:items-center flex-col-reverse md:flex-row relative z-[1] gap-y-5 min-h-[calc(100vh_-_75px)]"
       >
         <div className="flex-1 min-w-0">
           <motion.h2
