@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { AnimatedOutlineButton } from "@/components/AnimatedOutlineButton";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import WebsiteDesign from "@/assets/images/services/website-design.png";
 import GraphicDesign from "@/assets/images/services/graphic-design.png";
@@ -64,8 +63,10 @@ export default function ServicesPage() {
               on any platform or revamp the aesthetics of your site, we got you!"
             />
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
-              <AnimatedButton>BUY SHOPIFY THEME</AnimatedButton>
+              <AnimatedButton variant="outline" as={"link"} href="#">
+                HIRE US
+              </AnimatedButton>
+              <AnimatedButton variant="solid">BUY SHOPIFY THEME</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -111,8 +112,8 @@ export default function ServicesPage() {
             />
 
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
-              <AnimatedButton>BUY SHOPIFY THEME</AnimatedButton>
+              <AnimatedButton>HIRE US</AnimatedButton>
+              <AnimatedButton variant="solid">BUY SHOPIFY THEME</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -161,7 +162,7 @@ export default function ServicesPage() {
             />
 
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton variant="outline">HIRE US</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -207,7 +208,7 @@ export default function ServicesPage() {
               stands out and makes a lasting impression."
             />
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton variant="outline">HIRE US</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -254,7 +255,9 @@ export default function ServicesPage() {
               to life."
             />
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton as={"link"} variant="outline" href="#">
+                HIRE US
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -301,7 +304,9 @@ export default function ServicesPage() {
             />
 
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton variant="outline" as={"link"} href="#">
+                HIRE US
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}

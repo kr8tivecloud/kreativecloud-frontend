@@ -1,7 +1,6 @@
 import React from "react";
 import Input from "./Input";
 import Checkbox from "./Checkbox";
-import { AnimatedOutlineButton } from "./AnimatedOutlineButton";
 import { AnimatedButton } from "./AnimatedButton";
 
 export default function TemplatesSubmenu() {
@@ -44,10 +43,10 @@ export default function TemplatesSubmenu() {
         </ul>
 
         <div className="flex items-center gap-x-6 mt-5">
-          <AnimatedOutlineButton className="flex-1 font-normal">
+          <AnimatedButton variant="outline" className="flex-1 font-normal">
             Skip
-          </AnimatedOutlineButton>
-          <AnimatedButton className="flex-1 font-normal [&>button]:w-full">
+          </AnimatedButton>
+          <AnimatedButton variant="solid" className="flex-1 font-normal">
             Search
           </AnimatedButton>
         </div>

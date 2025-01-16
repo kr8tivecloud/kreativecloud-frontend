@@ -28,6 +28,7 @@ const EarthCanvas = () => {
         height: "35vw",
         minHeight: 350,
         maxHeight: 500,
+        margin: "auto",
       }}
       frameloop="demand"
       dpr={[1, 2]}

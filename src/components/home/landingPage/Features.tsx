@@ -257,8 +257,8 @@ const Features = () => {
             <AnimatedButton
               className="w-fit py-3.5 md:py-4 px-5 md:px-6"
               href="/entrepreneurs"
-              variant="link"
-              type="outline"
+              as="link"
+              variant="outline"
             >
               SEE MORE{" "}
             </AnimatedButton>

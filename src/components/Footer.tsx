@@ -72,7 +72,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-black">
-        <div className="relative px-4 sm:px-12 my-16 flex flex-col gap-y-12 min-h-[350px]">
+        <div className="relative px-4 sm:container my-16 flex flex-col gap-y-12 min-h-[350px]">
           {/* FOOTER TOP */}
           <div className="flex gap-x-6 gap-y-6 flex-1 items-start flex-col md:flex-row">
             {/* LOGO */}
