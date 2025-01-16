@@ -135,9 +135,9 @@ const Testimonial = () => {
       initial="hidden"
       className="w-full flex justify-center items-center py-5 xs:py-10 relative overflow-visible"
     >
-      <div className="max-2xs:hidden absolute left-[-400px] top-[-50%] w-[1067px] h-[1500px] bg-gradient-to-t from-[#FF006B] to-[#FF6DC1] opacity-[0.15] blur-[250px] rotate-[60deg] mix-blend-screen pointer-events-none" />
+      <div className="max-2xs:hidden absolute left-[-400px] top-[-50%] w-[1067px] h-[1500px] bg-gradient-to-t from-[#FF006B]/50 to-[#FF6DC1]/50 opacity-[0.15] blur-[120px] md:blur-[250px] rotate-[60deg] mix-blend-screen pointer-events-none transform-gpu" />
 
-      <div className="max-2xs:hidden absolute right-[-400px] top-[-50%] w-[728px] h-[1000px] bg-[#00E5FF] opacity-[0.15] blur-[250px] rotate-[60deg] mix-blend-screen pointer-events-none" />
+      <div className="max-2xs:hidden absolute right-[-400px] top-[-50%] w-[728px] h-[1000px] bg-[#00E5FF]/50 opacity-[0.15] blur-[120px] md:blur-[250px] rotate-[60deg] mix-blend-screen pointer-events-none transform-gpu" />
 
       <div className="w-full flex flex-col gap-6 xs:gap-8 md:gap-10 xl:gap-12 relative">
         <motion.div

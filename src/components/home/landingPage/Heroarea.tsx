@@ -15,7 +15,7 @@ const Heroarea = () => {
       ref={ref}
       animate={isInView ? "show" : "hidden"}
       initial="hidden"
-      className="relative w-full flex justify-center items-center "
+      className="relative w-full flex justify-center items-center max-sm:h-screen"
     >
       <div
         className="absolute -top-80 -left-20 inset-[15rem] opacity-60 dark:opacity-40"
@@ -34,12 +34,12 @@ const Heroarea = () => {
         }}
       />
       <div className="z-10 w-[90%] xl:w-[80%] h-full inset-0 mx-auto flex items-center justify-between">
-        <div className="w-[90%] lg:w-[80%] py-24 md:py-32 lg:py-40 xl:py-44 2xl:py-48 flex flex-col gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+        <div className="w-full sm:w-[90%] lg:w-[80%] sm:py-32 lg:py-40 xl:py-44 2xl:py-48 flex flex-col gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <motion.div
             variants={textVariant(0.1)}
-            className="w-[90%] md:w-[85%] xl:w-[80%] flex flex-col gap-3"
+            className="w-full sm:w-[90%] md:w-[85%] xl:w-[80%] flex flex-col gap-3"
           >
-            <h1 className="text-[3rem] xs:text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] 2xl:text-[8rem] font-bold leading-[3.5rem] xs:leading-[4.5rem] sm:leading-[5.5rem] md:leading-[6.5rem] lg:leading-[7.5rem] xl:leading-[8rem] 2xl:leading-[8.5rem]">
+            <h1 className="text-[3.5rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] 2xl:text-[8rem] font-bold leading-[4.0rem] sm:leading-[5.5rem] md:leading-[6.5rem] lg:leading-[7.5rem] xl:leading-[8rem] 2xl:leading-[8.5rem]">
               We design. You grow!
             </h1>
           </motion.div>
@@ -66,10 +66,9 @@ const Heroarea = () => {
       <Image
         src={images.landingPage.animation1}
         alt="animation"
-        className="absolute left-0 2xs:left-[4rem] xs:left-[8rem] sm:left-[12rem] md:left-[13rem] lg:left-[15rem] z-20"
+        className="min-w-[80rem] sm:min-w-[60rem] absolute -left-[10rem] sm:left-[5rem] md:left-[13rem] lg:left-[15rem] z-20"
         style={{
           transform: "rotate(270deg)",
-          minWidth: "40rem",
           minHeight: "auto",
         }}
       />
