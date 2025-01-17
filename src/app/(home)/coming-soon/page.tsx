@@ -1,13 +1,12 @@
 "use client";
 
 import CountdownTimer from "@/components/home/comingSoon";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/motion";
 
 import Image from "next/image";
 import { comingSoonBgImage } from "../../../../public/images/comingSoon";
-import { useWindowSize } from "@/lib/hooks/useWindowSize";
 
 const targetDate = process.env.NEXT_PUBLIC_COMMING_SOON_TARGET_DATE;
 
