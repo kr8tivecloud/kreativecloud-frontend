@@ -16,9 +16,9 @@ const Heroarea = () => {
     >
       <motion.div
         variants={textVariant(0.1)}
-        className="w-full 2xs:w-[95%] md:w-[90%] lg:w-[75%] 2xl:w-[65%] 3xl:w-[60%] flex flex-col gap-3"
+        className="w-full md:w-[90%] xl:w-[80%] flex flex-col gap-3"
       >
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold">
+        <h1 className="text-6xl sm:text-7xl lg:text-8xl 2xl:text-9xl font-bold">
           Dreamers, Doers, and Disruptors.{" "}
         </h1>
       </motion.div>
