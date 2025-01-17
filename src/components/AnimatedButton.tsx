@@ -1,46 +1,46 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
 
-type ButtonVariants = "button" | "link";
+type ButtonType = "button" | "link";
 
 type CommonProps = {
-  variant?: ButtonVariants;
+  as?: ButtonType;
   className?: string;
   children: React.ReactNode;
-  type?: "outline" | "solid";
+  variant?: "outline" | "solid";
 };
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   CommonProps & {
-    variant?: "button";
+    as?: "button";
   };
 
 type LinkPropsWithHref = Omit<LinkProps, "href"> & {
   href: string;
 } & CommonProps & {
-    variant: "link";
+    as: "link";
   };
 
 type Props = ButtonProps | LinkPropsWithHref;
 
 export const AnimatedButton: React.FC<Props> = (props) => {
   const {
-    variant = "button",
+    as = "button",
     className,
     children,
-    type = "outline",
+    variant = "outline",
     ...rest
   } = props;
 
   const baseStyles =
-    "font-bold text-sm transition-colors p-4 ease-in-out duration-300";
+    "font-bold text-sm text-center transition-colors p-4 ease-in-out duration-300 border-2 border-white";
 
   const typeStyles =
-    type === "outline"
-      ? "bg-transparent text-white border-2 border-white hover:bg-white hover:text-black"
-      : "bg-white text-black hover:bg-[#C0C0C0] hover:border-none";
+    variant === "outline"
+      ? "bg-transparent text-white hover:bg-white hover:text-black"
+      : "bg-white text-black hover:bg-[#C0C0C0] hover:border-[#C0C0C0]";
 
-  if (variant === "link") {
+  if (as === "link") {
     const { href } = rest as LinkPropsWithHref;
     return (
       <Link

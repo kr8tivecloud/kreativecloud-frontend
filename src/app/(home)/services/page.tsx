@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { AnimatedOutlineButton } from "@/components/AnimatedOutlineButton";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import WebsiteDesign from "@/assets/images/services/website-design.png";
 import GraphicDesign from "@/assets/images/services/graphic-design.png";
@@ -41,9 +40,9 @@ export default function ServicesPage() {
       </div>
 
       {/* SERVICES */}
-      <div className="px-4 sm:container space-y-20 lg:space-y-10 mt-5">
+      <div className="px-4 sm:container space-y-10 mt-5">
         {/* WEBSITE DESIGN SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -64,8 +63,10 @@ export default function ServicesPage() {
               on any platform or revamp the aesthetics of your site, we got you!"
             />
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
-              <AnimatedButton>BUY SHOPIFY THEME</AnimatedButton>
+              <AnimatedButton variant="outline" as={"link"} href="#">
+                HIRE US
+              </AnimatedButton>
+              <AnimatedButton variant="solid">BUY SHOPIFY THEME</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -89,7 +90,7 @@ export default function ServicesPage() {
         {/* END WEBSITE DESIGN SECTION */}
 
         {/* GRAPHIC DESIGN SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row-reverse">
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -111,8 +112,8 @@ export default function ServicesPage() {
             />
 
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
-              <AnimatedButton>BUY SHOPIFY THEME</AnimatedButton>
+              <AnimatedButton>HIRE US</AnimatedButton>
+              <AnimatedButton variant="solid">BUY SHOPIFY THEME</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -137,7 +138,7 @@ export default function ServicesPage() {
         {/* END GRAPHIC DESIGN SECTION */}
 
         {/* BRANDING SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -161,7 +162,7 @@ export default function ServicesPage() {
             />
 
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton variant="outline">HIRE US</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -185,7 +186,7 @@ export default function ServicesPage() {
         {/* END BRANDING SECTION */}
 
         {/* MARKETING SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row-reverse">
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -207,7 +208,7 @@ export default function ServicesPage() {
               stands out and makes a lasting impression."
             />
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton variant="outline">HIRE US</AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -231,7 +232,7 @@ export default function ServicesPage() {
         {/* END MARKETING SECTION */}
 
         {/* CONTENT CREATION SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row">
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -254,7 +255,9 @@ export default function ServicesPage() {
               to life."
             />
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton as={"link"} variant="outline" href="#">
+                HIRE US
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -278,7 +281,7 @@ export default function ServicesPage() {
         {/* END CONTENT CREATION SECTION */}
 
         {/* SOCIAL MEDIA MANAGEMENT SECTION */}
-        <div className="flex items-center flex-col mt-8 lg:mt-0 lg:flex-row-reverse">
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
           {/* TEXT CONTENT */}
           <div className="flex-1 min-w-0">
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
@@ -301,7 +304,9 @@ export default function ServicesPage() {
             />
 
             <div className="flex items-center gap-x-5">
-              <AnimatedOutlineButton>HIRE US</AnimatedOutlineButton>
+              <AnimatedButton variant="outline" as={"link"} href="#">
+                HIRE US
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}

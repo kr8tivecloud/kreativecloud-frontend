@@ -25,15 +25,17 @@ export default function ServiceCategoryPill({
   }
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-2 sm:gap-3">
       {categories.map((category) => {
         return (
           <button
             key={category}
             type="button"
             className={cn(
-              selected?.includes(category) ? "bg-white/25" : "bg-[#0D0D11]",
-              "text-white text-sm border border-black/25 px-3 py-1 rounded-full",
+              selected?.includes(category)
+                ? "bg-white/25"
+                : "bg-[#15151D] hover:bg-[#0D0D11]",
+              "text-white text-sm border border-black/25 px-3 py-1 rounded-full transition-colors",
               className
             )}
             onClick={() => handleSelect(category)}

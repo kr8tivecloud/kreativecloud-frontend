@@ -25,16 +25,17 @@ import ResourcesSubmenu from "./ResourcesSubmenu";
 import NavSubmenu from "./NavSubmenu";
 import { FiChevronDown } from "react-icons/fi";
 import images from "../../public/images";
+import { AnimatedButton } from "./AnimatedButton";
 
 const navLinks: NavLinkType[] = [
   {
     title: "Templates",
-    href: "/templates",
+    href: "#",
     subMenu: TemplatesSubmenu,
   },
   {
     title: "Resources",
-    href: "/resources",
+    href: "#",
     subMenu: ResourcesSubmenu,
   },
   {
@@ -109,9 +110,7 @@ export default function Navbar() {
   useEffect(() => {
     // automatically close navbar on navigation
     if (navbarOpen && windowWidth < 1024) {
-      if (navbarOpen && windowWidth < 1024) {
-        setNavbarOpen(false);
-      }
+      setNavbarOpen(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
@@ -142,13 +141,13 @@ export default function Navbar() {
       }}
       className="fixed top-0 left-0 right-0 bg-black z-50"
     >
-      <div className="px-4 sm:px-12 flex items-center justify-between py-6 gap-x-10">
+      <div className="px-4 sm:container flex items-center justify-between py-6 gap-x-10">
         <Link href={"/"}>
           <Image
             src={images.logo}
             alt="Logo"
-            width={162}
-            height={28}
+            width={172}
+            height={29}
             className="relative z-[1]"
           />
         </Link>
@@ -245,7 +244,7 @@ function MobileNav({ navbarOpen }: MobileNavProps) {
             return (
               <motion.li
                 variants={itemVariants}
-                key={navLink.href}
+                key={navLink.id}
                 className="block w-full"
               >
                 <Link
@@ -310,15 +309,15 @@ function MobileNav({ navbarOpen }: MobileNavProps) {
         </motion.ul>
 
         {/* MOBILE GET IN TOUCH BUTTON */}
-        <MotionLink
-          initial={{}}
-          animate={{}}
-          exit={{}}
+        <AnimatedButton
           href={"/contact"}
-          className="bg-white text-black text-sm py-5 text-center font-bold block hover:bg-gray-300 transition-colors"
+          as={"link"}
+          variant="outline"
+          className="text-center"
+          // className="bg-white text-black text-sm py-5 text-center font-bold block hover:bg-gray-300 transition-colors"
         >
           GET IN TOUCH
-        </MotionLink>
+        </AnimatedButton>
         {/* END MOBILE GET IN TOUCH BUTTON */}
 
         {/* The navbar close icon should only be mounted if the navbar is open and if the window width is lesser than 1024px */}
@@ -339,6 +338,7 @@ function Nav() {
   const [selected, setSelected] = useState<number | null>(0);
   const [dir, setDir] = useState<"r" | "l" | null>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   // handle body scroll when navbar is open
   useEffect(() => {
@@ -354,6 +354,14 @@ function Nav() {
       clearAllBodyScrollLocks();
     };
   }, [selected]);
+
+  useEffect(() => {
+    // automatically close submenu on navigation
+    if (selected) {
+      handleSetSelected(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const handleSetSelected = (val: number | null) => {
     if (typeof selected === "number" && typeof val === "number") {
@@ -371,7 +379,7 @@ function Nav() {
         {navLinks.map((navLink) => {
           return (
             <li
-              key={navLink.href}
+              key={navLink.id}
               id={`shift-nav-${navLink.id}`}
               onMouseEnter={() => handleSetSelected(navLink.id)}
               onClick={() => handleSetSelected(navLink.id)}

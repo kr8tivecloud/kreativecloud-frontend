@@ -30,7 +30,7 @@ export default function ContactPage() {
       {/* HERO SECTION */}
       <motion.div
         layout
-        className="px-4 sm:container flex items-center flex-col-reverse md:flex-row relative z-[1]"
+        className="px-4 sm:container flex md:items-center flex-col-reverse md:flex-row relative z-[1] gap-y-5 min-h-[calc(100vh_-_75px)]"
       >
         <div className="flex-1 min-w-0">
           <motion.h2
@@ -38,11 +38,9 @@ export default function ContactPage() {
             whileInView={{ y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: "all" }}
-            className="text-5xl xl:text-8xl font-bold text-center md:text-left"
+            className="text-5xl xl:text-8xl font-bold md:max-w-sm"
           >
-            Get your <br />
-            discounted <br />
-            website&nbsp;today!
+            Get&nbsp;your discounted website&nbsp;today!
           </motion.h2>
           <motion.p
             initial={{ y: 10 }}
