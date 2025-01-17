@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { throttle } from "../utils";
 
-export const useWindowSize = () => {
-  const [width, setWidth] = useState<number>(0);
+export const useWindowSize = (currentWidth?: number) => {
+  const [width, setWidth] = useState<number>(currentWidth || 0);
 
   useLayoutEffect(() => {
     setWidth(window.innerWidth);

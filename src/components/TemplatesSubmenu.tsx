@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import Input from "./Input";
 import Checkbox from "./Checkbox";
 import { AnimatedButton } from "./AnimatedButton";
+import { useRouter } from "next/navigation";
 
 export default function TemplatesSubmenu() {
+  const router = useRouter();
+
   return (
     <div className="max-w-3xl mx-auto flex flex-col lg:flex-row items-start gap-x-5 justify-between">
       <p className="text-sm lg:text-3xl max-w-72">
@@ -43,10 +48,22 @@ export default function TemplatesSubmenu() {
         </ul>
 
         <div className="flex items-center gap-x-6 mt-5">
-          <AnimatedButton variant="outline" className="flex-1 font-normal">
+          <AnimatedButton
+            onClick={() => {
+              router.push("/coming-soon");
+            }}
+            variant="outline"
+            className="flex-1 font-normal"
+          >
             Skip
           </AnimatedButton>
-          <AnimatedButton variant="solid" className="flex-1 font-normal">
+          <AnimatedButton
+            onClick={() => {
+              router.push("/coming-soon");
+            }}
+            variant="solid"
+            className="flex-1 font-normal"
+          >
             Search
           </AnimatedButton>
         </div>
