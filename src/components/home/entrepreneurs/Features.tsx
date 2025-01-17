@@ -58,7 +58,7 @@ const Features = () => {
       <div className="w-full flex flex-col gap-6 xs:gap-8 md:gap-10 xl:gap-12">
         <motion.div
           variants={textVariant(0.1)}
-          className="w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
+          className="w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
         >
           <h1 className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
             Entrepreneurs of the Month{" "}
