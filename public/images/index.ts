@@ -8,12 +8,26 @@ import twitter from "./entreprenuer/svgs/twitter.svg";
 import facebook from "./entreprenuer/svgs/facebook.svg";
 import instagram from "./entreprenuer/svgs/instagram.svg";
 
+import pastEntre1 from "./entreprenuer/past/past-entre1.jpg";
+import pastEntre2 from "./entreprenuer/past/past-entre2.jpg";
+import pastEntre3 from "./entreprenuer/past/past-entre3.jpg";
+import pastEntre4 from "./entreprenuer/past/past-entre4.jpg";
+import pastEntre5 from "./entreprenuer/past/past-entre5.jpg";
+import pastEntre6 from "./entreprenuer/past/past-entre6.jpg";
+
 const entrepreneurPage = {
   enterprenuerHero,
   enterprenuerFashion,
   enterprenuerProject1,
   enterprenuerProject2,
   enterprenuerProject3,
+
+  pastEntre1,
+  pastEntre2,
+  pastEntre3,
+  pastEntre4,
+  pastEntre5,
+  pastEntre6,
 };
 
 const socialLinks = {
