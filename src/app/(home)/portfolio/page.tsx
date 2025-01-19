@@ -49,7 +49,7 @@ export default function PortfolioPage() {
       <div className="px-4 sm:container mt-14 space-y-14">
         {/* WEBSITE DESIGN SECTION */}
         <div>
-          <div className="text-[#F6F6F6] font-bold text-5xl mb-6">
+          <div className="text-[#F6F6F6] font-bold text-4xl mb-6">
             Website Design
           </div>
           <div className="space-y-10 mb-14">
@@ -122,7 +122,12 @@ export default function PortfolioPage() {
                 />
 
                 <div className="flex items-center gap-x-5">
-                  <AnimatedButton variant="solid" as={"link"} href="#">
+                  <AnimatedButton
+                    variant="solid"
+                    as={"link"}
+                    href="https://eventsbyblackdiamond.com"
+                    target="_blank"
+                  >
                     VIEW WEBSITE
                   </AnimatedButton>
                 </div>
@@ -230,11 +235,21 @@ export default function PortfolioPage() {
 
                 <div className="flex flex-col sm:flex-row items-stretch">
                   <div className="flex flex-col space-y-2 text-center">
-                    <Image className="flex-1" src={TmentalLogo} alt="Tmental" />
+                    <Image
+                      className="flex-1"
+                      src={TmentalLogo}
+                      alt="Tmental"
+                      unoptimized
+                    />
                     <div className="font-bold">Tmental</div>
                   </div>
                   <div className="flex flex-col space-y-2 text-center">
-                    <Image className="flex-1" src={SobSnlLogo} alt="Sob SNL" />
+                    <Image
+                      className="flex-1"
+                      src={SobSnlLogo}
+                      alt="Sob SNL"
+                      unoptimized
+                    />
                     <div className="font-bold">Sob SNL</div>
                   </div>
                   <div className="flex flex-col space-y-2 text-center">
@@ -242,6 +257,7 @@ export default function PortfolioPage() {
                       className="flex-1"
                       src={GunThudLogo}
                       alt="Gun Thud"
+                      unoptimized
                     />
                     <div className="font-bold">Gun Thud</div>
                   </div>

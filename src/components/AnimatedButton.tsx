@@ -1,5 +1,5 @@
-import React from "react";
-import Link, { LinkProps } from "next/link";
+import React, { ComponentProps } from "react";
+import Link from "next/link";
 
 type ButtonType = "button" | "link";
 
@@ -10,14 +10,13 @@ type CommonProps = {
   variant?: "outline" | "solid";
 };
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+type ButtonProps = ComponentProps<"button"> &
   CommonProps & {
     as?: "button";
   };
 
-type LinkPropsWithHref = Omit<LinkProps, "href"> & {
-  href: string;
-} & CommonProps & {
+type LinkPropsWithHref = ComponentProps<typeof Link> &
+  CommonProps & {
     as: "link";
   };
 
