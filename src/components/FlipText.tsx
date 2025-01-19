@@ -1,8 +1,10 @@
 import React from "react";
 import { motion, Variants } from "motion/react";
+import { cn } from "@/lib/utils";
 
 type FlipTextProps = {
   text: string | undefined;
+  className?: string;
 };
 
 const flipVariants: Variants = {
@@ -21,12 +23,15 @@ const flipVariants: Variants = {
   }),
 };
 
-export default function FlipText({ text }: FlipTextProps) {
+export default function FlipText({ text, className }: FlipTextProps) {
   return (
     <motion.div
       initial="initial"
       whileHover={"hovered"}
-      className="whitespace-nowrap relative overflow-hidden text-white leading-none h-[1em]"
+      className={cn(
+        "whitespace-nowrap relative overflow-hidden text-white leading-none h-[1em]",
+        className
+      )}
     >
       {/* RESTING STATE */}
       <motion.div custom={"rest"} variants={flipVariants}>
