@@ -24,7 +24,7 @@ const Accordion = ({
     <div
       onClick={() => setIsOpen(!isOpen)}
       className={cn(
-        "h-fit shadow-lg rounded-lg p-2.5 flex flex-col gap-2.5 xs:gap-4 cursor-pointer",
+        "h-fit shadow-lg rounded-lg p-2.5 pr-0.5 flex flex-col gap-2.5 xs:gap-4 cursor-pointer",
         isOpen ? "border-secondary" : "",
         className
       )}
