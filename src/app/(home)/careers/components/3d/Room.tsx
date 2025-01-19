@@ -12,7 +12,7 @@ import { useGLTF, Clone, MeshDistortMaterial } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export function Room({ ...props }) {
-  const group = useRef();
+  const group = useRef<THREE.Group<THREE.Object3DEventMap> | null>(null);
   const { nodes } = useGLTF("/3d/room/scene-transformed.glb");
   return (
     <group ref={group} {...props} dispose={null}>
@@ -40,6 +40,7 @@ export function Room({ ...props }) {
           object={nodes.Bac_fleurs_BLANC}
           castShadow
           receiveShadow
+          // @ts-expect-error don't know why it's erroring out
           inject={(object) =>
             object.name === "Plante_VERT_VERT_0" && (
               <MeshDistortMaterial
@@ -80,8 +81,8 @@ export function Room({ ...props }) {
 }
 
 function Lights() {
-  const ref = useRef();
-  const light = useRef();
+  const ref = useRef<THREE.Group<THREE.Object3DEventMap> | null>(null);
+  const light = useRef<THREE.SpotLight>(null);
   const [color] = useState(() => new THREE.Color("white"));
   const { nodes } = useGLTF("/3d/room/scene-transformed.glb");
   useEffect(() => {
@@ -90,12 +91,18 @@ function Lights() {
       3000
     );
     return () => clearInterval(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useFrame(() => {
-    light.current.color.lerp(color, 0.01);
-    ref.current.traverse(
-      (obj) => obj.isMesh && obj.material.emissive.lerp(color, 0.01)
-    );
+    light.current?.color.lerp(color, 0.01);
+    ref.current?.traverse((obj) => {
+      if (
+        obj instanceof THREE.Mesh &&
+        obj.material instanceof THREE.MeshStandardMaterial
+      ) {
+        obj.material.emissive.lerp(color, 0.01);
+      }
+    });
   });
   return (
     <>
@@ -120,12 +127,14 @@ function Lights() {
 }
 
 function Screen() {
-  const ref = useRef();
-  useFrame((state, delta) => {
+  const ref = useRef<THREE.SpotLight>(null);
+  useFrame((state) => {
     const sin =
       Math.sin(state.clock.elapsedTime) +
       Math.cos(state.clock.elapsedTime * 10);
-    ref.current.intensity = (0.5 + Math.abs(sin / 10)) * 40;
+    if (ref.current) {
+      ref.current.intensity = (0.5 + Math.abs(sin / 10)) * 40;
+    }
   });
   return (
     <spotLight
