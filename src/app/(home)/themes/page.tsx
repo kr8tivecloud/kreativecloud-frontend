@@ -17,11 +17,16 @@ export default function ThemesPage() {
           <Image
             src={cloudyBg}
             alt=""
-            className="absolute left-0 right-0 top-0 object-fill"
+            className="absolute left-0 right-0 top-0 object-fill h-full w-full"
+            style={{ objectFit: "cover" }}
           />
           <div className="relative z-[1]">
-            <Image src={shopifyLogo} alt="" className="mx-auto" />
-            <h1 className="font-bold text-4xl text-center max-w-3xl mx-auto">
+            <Image
+              src={shopifyLogo}
+              alt=""
+              className="mx-auto max-w-xs sm:max-w-md"
+            />
+            <h1 className="font-bold text-2xl sm:text-4xl text-center max-w-3xl mx-auto">
               A straightforward and professional theme designed specifically for{" "}
               <br />
               <span>new brands and startups</span>
@@ -33,7 +38,11 @@ export default function ThemesPage() {
             </p>
 
             <div className="text-center my-10 space-y-2">
-              <Image src={cloudStartImage} alt="" className="w-72 mx-auto" />
+              <Image
+                src={cloudStartImage}
+                alt=""
+                className="w-48 sm:w-72 mx-auto"
+              />
               <p className="font-bold text-xl">Cloud Start</p>
             </div>
 
@@ -47,12 +56,12 @@ export default function ThemesPage() {
       {/* END HERO */}
 
       <div className="px-4 sm:container py-10">
-        <p className="font-bold text-4xl max-w-xl mx-auto text-center">
+        <p className="font-bold text-3xl sm:text-4xl max-w-xl mx-auto text-center">
           Maximize your online impact —&nbsp;affordable, feature-packed, and
           powerful.
         </p>
 
-        <div className="grid grid-cols-2 max-w-3xl mx-auto mt-16 text-[#86868B] font-bold">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-x-10 max-w-3xl mx-auto mt-16 text-[#86868B] font-bold">
           <ul className="space-y-5">
             <li>
               <span className="text-white">Simple</span> and straightforward to
