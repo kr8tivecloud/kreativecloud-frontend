@@ -76,3 +76,9 @@ const landingPage = {
 };
 
 export default { landingPage, entrepreneurPage, socialLinks, logo };
+
+export { default as templateImage } from "./mock-images/template-image.png";
+export { default as templateCalloutHero } from "./templates/template-callout-hero.png";
+export { default as shopifyLogo } from "./themes/shopify-logo.png";
+export { default as cloudStartImage } from "./themes/cloudstart-image.png";
+export { default as cloudyBg } from "./themes/cloudy-bg.png";
