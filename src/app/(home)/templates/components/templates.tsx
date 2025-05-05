@@ -170,15 +170,15 @@ const templates: {
 
 export default function Templates() {
   return (
-    <div className="pl-6 border-[#B7B7B7] space-y-6">
+    <div className="md:pl-6 border-[#B7B7B7] space-y-6">
       {/* CUSTOM TEMPLATE */}
-      <div className="flex items-center bg-[#1C1B1A]">
+      <div className="flex flex-col md:flex-row md:items-center bg-[#1C1B1A]">
         <div>
-          <div className="max-w-96 mx-6">
-            <h2 className="font-bold text-4xl">
+          <div className="max-w-full sm:max-w-96 mx-4 sm:mx-6 py-6 sm:py-0">
+            <h2 className="font-bold text-2xl sm:text-4xl">
               Do you want a custom template?
             </h2>
-            <p className="my-4">
+            <p className="my-4 text-sm sm:text-base">
               Get a professionally crafted custom template designed to match
               your unique style and needs.
             </p>
@@ -220,7 +220,7 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
     <div>
       <h3 className="font-bold text-base">{title}</h3>
 
-      <div className="grid grid-cols-3 gap-5 mt-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-3">
         {items.map((item) => {
           return (
             <div key={item.id}>
@@ -229,6 +229,7 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
                 alt={item.title}
                 width={320}
                 height={320}
+                className="w-full"
               />
               <p className="text-sm text-[#9F9F9F] line-clamp-1 my-1">
                 {item.title}

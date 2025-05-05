@@ -10,13 +10,13 @@ export default function TemplatesPage() {
     <div className="pt-28">
       <div className="px-4 sm:container">
         {/* TITLE SECTION */}
-        <div className="flex items-center gap-x-20">
-          <h1 className="font-bold text-5xl">
+        <div className="flex flex-col sm:flex-row items-center gap-x-20">
+          <h1 className="font-bold text-4xl sm:text-5xl">
             Get any template <br />
             you want with ease.
           </h1>
 
-          <p className="text-right ml-auto max-w-80">
+          <p className="sm:text-right ml-auto max-w-80 mt-4 sm:mt-0">
             We have everything you need for your design project. Enjoy!
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function TemplatesPage() {
         {/* END FILTER DETAILS */}
 
         {/* MAIN CONTENT */}
-        <div className="mt-6 flex divide-x">
+        <div className="mt-6 flex">
           <Filters />
 
           {/* TEMPLATES */}

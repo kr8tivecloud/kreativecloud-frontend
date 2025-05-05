@@ -25,7 +25,7 @@ export default function Filters() {
   };
 
   return (
-    <div className="pr-6">
+    <div className="pr-6 hidden sm:block border border-r">
       <div className="text-[#F8F8F8] font-bold text-sm">TEMPLATES</div>
 
       <ul className="space-y-2">
