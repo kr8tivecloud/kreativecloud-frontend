@@ -23,7 +23,7 @@ export default function TemplatesPage() {
         {/* END TITLE SECTION */}
 
         {/* FILTER DETAILS */}
-        <div className="mt-6 flex items-center gap-x-20">
+        <div className="mt-6 flex flex-col sm:flex-row items-center gap-x-20 gap-y-5">
           <SelectedCategories />
 
           <FilterDetails />
