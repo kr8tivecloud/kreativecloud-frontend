@@ -172,20 +172,24 @@ export default function Templates() {
   return (
     <div className="md:pl-6 border-[#B7B7B7] space-y-6">
       {/* CUSTOM TEMPLATE */}
-      <div className="flex flex-col md:flex-row md:items-center bg-[#1C1B1A]">
-        <div>
-          <div className="max-w-full sm:max-w-96 mx-4 sm:mx-6 py-6 sm:py-0">
-            <h2 className="font-bold text-2xl sm:text-4xl">
-              Do you want a custom template?
-            </h2>
-            <p className="my-4 text-sm sm:text-base">
-              Get a professionally crafted custom template designed to match
-              your unique style and needs.
-            </p>
-            <AnimatedButton variant="outline">GET STARTED</AnimatedButton>
-          </div>
+      <div className="flex flex-col lg:flex-row lg:items-stretch bg-[#1C1B1A]">
+        <div className="max-w-full sm:max-w-96 mx-4 sm:mx-6 py-6">
+          <h2 className="font-bold text-2xl sm:text-4xl">
+            Do you want a custom template?
+          </h2>
+          <p className="my-4 text-sm sm:text-base">
+            Get a professionally crafted custom template designed to match your
+            unique style and needs.
+          </p>
+          <AnimatedButton variant="outline">GET STARTED</AnimatedButton>
         </div>
-        <Image src={templateCalloutHero} alt="" />
+        <div>
+          <Image
+            src={templateCalloutHero}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
       {/* END CUSTOM TEMPLATE */}
 

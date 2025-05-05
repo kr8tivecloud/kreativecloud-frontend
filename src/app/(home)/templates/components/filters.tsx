@@ -25,10 +25,10 @@ export default function Filters() {
   };
 
   return (
-    <div className="pr-6 hidden sm:block border border-r">
+    <div className="pr-6 hidden sm:block border-0 border-r whitespace-nowrap">
       <div className="text-[#F8F8F8] font-bold text-sm">TEMPLATES</div>
 
-      <ul className="space-y-2">
+      <ul className="space-y-4 mt-4">
         {Object.entries(filters).map(([key, isChecked]) => (
           <li key={key} className="flex items-center">
             <input
