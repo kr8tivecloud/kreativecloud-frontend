@@ -18,7 +18,7 @@ export default function TemplateDetailsPage() {
   return (
     <div className="pt-28 relative">
       <div className="px-4 sm:container">
-        <div className="grid grid-cols-[1fr_490px] gap-x-10 mb-56">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_490px] gap-x-10 mb-16 lg:mb-56">
           <div>
             <Image
               src={templateImage}
@@ -29,7 +29,7 @@ export default function TemplateDetailsPage() {
             />
 
             {/* OVERVIEW IMAGES */}
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(128px,1fr))] gap-x-3">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(128px,1fr))] gap-3 mt-4">
               {overviewImages.map((image, index) => {
                 return (
                   <div
@@ -50,7 +50,7 @@ export default function TemplateDetailsPage() {
             {/* END OVERVIEW IMAGES */}
           </div>
 
-          <div>
+          <div className="mt-6 lg:mt-0">
             {/* KEYWORDS */}
             <p className="font-bold text-xl leading-5">
               Acuity Scheduling Template, Hair Stylist Acuity Scheduling
