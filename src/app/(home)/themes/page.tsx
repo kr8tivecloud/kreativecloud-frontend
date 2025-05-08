@@ -29,7 +29,9 @@ export default function ThemesPage() {
             <h1 className="font-bold text-2xl sm:text-4xl text-center max-w-3xl mx-auto">
               A straightforward and professional theme designed specifically for{" "}
               <br />
-              <span>new brands and startups</span>
+              <span className="bg-gradient-to-r from-[#0051B8] via-[#0B2C3E] to-[#5ABA1D] bg-clip-text text-transparent">
+                new brands and startups
+              </span>
             </h1>
             <p className="my-4 mx-auto text-center max-w-2xl">
               Best for startups, solopreneurs, and small businesses looking for
@@ -90,6 +92,14 @@ export default function ThemesPage() {
           </ul>
         </div>
       </div>
+
+      {/* CLOUD START FEATURES */}
+      <div className="mt-20">
+        <h2 className="font-bold text-2xl sm:text-4xl text-center bg-gradient-to-r from-[#0051B8] via-[#0B2C3E] to-[#5ABA1D] bg-clip-text text-transparent">
+          Cloud Start Features
+        </h2>
+      </div>
+      {/* END CLOUD START FEATURES */}
     </div>
   );
 }

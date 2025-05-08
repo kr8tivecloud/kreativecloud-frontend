@@ -51,7 +51,7 @@ function FilterSidebarContent() {
   };
 
   return (
-    <div className={cn("pr-6 whitespace-nowrap")}>
+    <div className={cn("pr-6 whitespace-nowrap border-0 md:border-r")}>
       <div className="text-[#F8F8F8] font-bold text-sm">TEMPLATES</div>
 
       <ul className="space-y-4 mt-4">

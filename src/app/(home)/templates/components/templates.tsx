@@ -231,7 +231,7 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
     <div>
       <h3 className="font-bold text-base">{title}</h3>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-3">
         {items.map((item) => {
           return (
             <div key={item.id}>
