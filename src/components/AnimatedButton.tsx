@@ -1,5 +1,6 @@
 import React, { ComponentProps } from "react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ButtonType = "button" | "link";
 
@@ -45,7 +46,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
       <Link
         {...(rest as LinkPropsWithHref)}
         href={href}
-        className={`${baseStyles} ${typeStyles} ${className}`}
+        className={cn(`${baseStyles} ${typeStyles}`, className)}
       >
         {children}
       </Link>
@@ -54,7 +55,7 @@ export const AnimatedButton: React.FC<Props> = (props) => {
     return (
       <button
         {...(rest as ButtonProps)}
-        className={`${baseStyles} ${typeStyles} ${className}`}
+        className={cn(`${baseStyles} ${typeStyles}`, className)}
       >
         {children}
       </button>

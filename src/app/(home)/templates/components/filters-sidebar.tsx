@@ -1,8 +1,34 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
+import { useFilter } from "./filter-context-provider";
+import { Sheet, SheetContent, SheetTitle } from "@/components/shared/Sheet";
+import { useIsMobile } from "@/lib/hooks/use-mobile";
 
-export default function Filters() {
+export default function FiltersSidebar() {
+  const { open, setOpen } = useFilter();
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return (
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetContent side={"left"} className="bg-black">
+          <SheetTitle className="sr-only">Template filter sheet</SheetTitle>
+          <FilterSidebarContent />
+        </SheetContent>
+      </Sheet>
+    );
+  } else {
+    return (
+      <>
+        <FilterSidebarContent />
+      </>
+    );
+  }
+}
+
+function FilterSidebarContent() {
   // State to manage checkbox values
   const [filters, setFilters] = useState({
     "Social Media Templates": true,
@@ -25,7 +51,7 @@ export default function Filters() {
   };
 
   return (
-    <div className="pr-6 hidden sm:block border-0 border-r whitespace-nowrap">
+    <div className={cn("pr-6 whitespace-nowrap")}>
       <div className="text-[#F8F8F8] font-bold text-sm">TEMPLATES</div>
 
       <ul className="space-y-4 mt-4">

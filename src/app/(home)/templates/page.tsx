@@ -1,9 +1,10 @@
 import React from "react";
 import SelectedCategories from "./components/selected-categories";
 import FilterDetails from "./components/filter-details";
-import Filters from "./components/filters";
+import FiltersSidebar from "./components/filters-sidebar";
 import Templates from "./components/templates";
 import RecentlyViewedTemplates from "./components/recently-viewed-templates";
+import { FilterContextProvider } from "./components/filter-context-provider";
 
 export default function TemplatesPage() {
   return (
@@ -22,24 +23,25 @@ export default function TemplatesPage() {
         </div>
         {/* END TITLE SECTION */}
 
-        {/* FILTER DETAILS */}
-        <div className="mt-6 flex flex-col md:flex-row items-center gap-x-20 gap-y-5">
-          <SelectedCategories />
+        <FilterContextProvider>
+          {/* FILTER DETAILS */}
+          <div className="mt-6 flex flex-col-reverse md:flex-row items-start gap-x-20 gap-y-5">
+            <SelectedCategories />
 
-          <FilterDetails />
-        </div>
-        {/* END FILTER DETAILS */}
+            <FilterDetails />
+          </div>
+          {/* END FILTER DETAILS */}
 
-        {/* MAIN CONTENT */}
-        <div className="mt-6 flex">
-          <Filters />
+          {/* MAIN CONTENT */}
+          <div className="mt-6 flex">
+            <FiltersSidebar />
 
-          {/* TEMPLATES */}
-          <Templates />
-          {/* END TEMPLATES */}
-        </div>
-        {/* END MAIN CONTENT */}
-
+            {/* TEMPLATES */}
+            <Templates />
+            {/* END TEMPLATES */}
+          </div>
+          {/* END MAIN CONTENT */}
+        </FilterContextProvider>
         {/* RECENTLY VIEWED */}
         <RecentlyViewedTemplates />
         {/* END RECENTLY VIEWED */}

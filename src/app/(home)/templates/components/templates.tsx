@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   templateCalloutHero,
@@ -172,7 +174,7 @@ export default function Templates() {
   return (
     <div className="md:pl-6 border-[#B7B7B7] space-y-6">
       {/* CUSTOM TEMPLATE */}
-      <div className="flex flex-col lg:flex-row lg:items-stretch bg-[#1C1B1A]">
+      <div className="flex flex-col-reverse lg:flex-row lg:items-stretch bg-[#1C1B1A]">
         <div className="max-w-full sm:max-w-96 mx-4 sm:mx-6 py-6">
           <h2 className="font-bold text-2xl sm:text-4xl">
             Do you want a custom template?
@@ -220,6 +222,10 @@ type TemplateGroupProps = {
   }[];
 };
 function TemplateGroup({ title, items }: TemplateGroupProps) {
+  const handleAddToCart = (id: string) => {
+    // TODO: Implement add to cart functionality
+    console.log("Add to cart:", id);
+  };
   return (
     <div>
       <h3 className="font-bold text-base">{title}</h3>
@@ -229,6 +235,7 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
           return (
             <div key={item.id}>
               <Image
+                onClick={() => handleAddToCart(item.id)}
                 src={item.image}
                 alt={item.title}
                 width={320}
