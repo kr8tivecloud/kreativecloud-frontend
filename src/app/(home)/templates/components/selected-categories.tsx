@@ -9,7 +9,7 @@ const selectedCategories = [
 
 export default function SelectedCategories() {
   return (
-    <div className="flex flex-wrap gap-2 max-w-full">
+    <div className="flex flex-1 flex-wrap gap-2 max-w-full">
       {selectedCategories.map((item) => {
         return (
           <div

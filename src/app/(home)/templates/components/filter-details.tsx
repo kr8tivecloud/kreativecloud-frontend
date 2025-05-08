@@ -17,7 +17,7 @@ export default function FilterDetails() {
   const { setOpen } = useFilter();
 
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-2 max-md:w-full ml-auto flex-1 md:items-center">
+    <div className="flex flex-col-reverse md:flex-row gap-2 max-md:w-full ml-auto max-md:flex-1 md:items-center">
       <p className="text-sm text-[#B7B7B7] whitespace-nowrap max-md:ml-auto">
         12 results
       </p>
