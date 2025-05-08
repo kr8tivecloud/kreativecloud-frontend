@@ -2,8 +2,9 @@ import Image from "next/image";
 import React from "react";
 import { templateImage } from "../../../../../public/images";
 import { AnimatedButton } from "@/components/AnimatedButton";
-import { FaCheck } from "react-icons/fa6";
+import { FaCheck, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import TemplateRecommendations from "../components/template-recommendations";
+import Accordion from "@/components/shared/Accordion";
 
 const overviewImages = [
   templateImage,
@@ -98,11 +99,32 @@ export default function TemplateDetailsPage() {
             {/* END FEATURES */}
 
             {/* COLLAPSIBLES */}
-            <div>
+            <div className="mt-4">
               {/* DESCRIPTION */}
+              <Accordion
+                title="DESCRIPTION"
+                closeIcon={<FaChevronDown />}
+                openIcon={<FaChevronUp />}
+              >
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Debitis, quibusdam amet veniam accusamus tempora ipsam ipsa
+                similique ratione numquam ex rerum enim! Suscipit delectus
+                iusto, maiores animi quis eum nesciunt.
+              </Accordion>
+
               {/* END DESCRIPTION */}
 
               {/* HOW TO USE */}
+              <Accordion
+                title="HOW TO USE"
+                closeIcon={<FaChevronDown />}
+                openIcon={<FaChevronUp />}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
+                veniam fugiat modi doloremque tempore? Minus suscipit odit
+                tempore autem? Soluta autem consequatur, mollitia eius animi
+                earum iusto. Pariatur, animi harum.
+              </Accordion>
               {/* END HOW TO USE */}
             </div>
             {/* END COLLAPSIBLES */}

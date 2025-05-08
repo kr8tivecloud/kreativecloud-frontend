@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Accordion from "./Accordion";
+import FaqAccordion from "./FaqAccordion";
 import { motion, useInView } from "framer-motion";
 import { SectionWrapper } from "@/lib/hoc";
 import { textVariant } from "@/lib/motion";
@@ -82,7 +82,7 @@ const Faqs: React.FC = () => {
         </div>
         <div className="w-full lg:w-[50%] flex flex-col items-start bg-black z-40">
           {AccordionsData.map((item, index) => (
-            <Accordion
+            <FaqAccordion
               key={index}
               title={item.title}
               isOpen={activeIndex === index}
@@ -91,7 +91,7 @@ const Faqs: React.FC = () => {
               lastIndex={AccordionsData.length - 1}
             >
               {item.content}
-            </Accordion>
+            </FaqAccordion>
           ))}
         </div>
       </div>

@@ -9,6 +9,7 @@ import Image, { StaticImageData } from "next/image";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { FaPlus } from "react-icons/fa6";
 import { FiDownloadCloud } from "react-icons/fi";
+import Link from "next/link";
 
 const templates: {
   id: string;
@@ -234,14 +235,15 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
         {items.map((item) => {
           return (
             <div key={item.id}>
-              <Image
-                onClick={() => handleAddToCart(item.id)}
-                src={item.image}
-                alt={item.title}
-                width={320}
-                height={320}
-                className="w-full"
-              />
+              <Link href={`/templates/${item.id}`} className="block w-full">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={320}
+                  height={320}
+                  className="w-full"
+                />
+              </Link>
               <p className="text-sm text-[#9F9F9F] line-clamp-1 my-1">
                 {item.title}
               </p>
@@ -254,7 +256,10 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
                 </span>
               </div>
 
-              <AnimatedButton className="border-[#222222] flex items-center space-x-2 py-3 text-[#B7B7B7]">
+              <AnimatedButton
+                onClick={() => handleAddToCart(item.id)}
+                className="border-[#222222] flex items-center space-x-2 py-3 text-[#B7B7B7]"
+              >
                 <FaPlus size={14} />
                 <span>Add to cart</span>
               </AnimatedButton>

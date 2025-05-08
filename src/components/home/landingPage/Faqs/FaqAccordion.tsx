@@ -4,7 +4,7 @@ import { scaleVariants } from "@/lib/motion";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 
-const Accordion = ({
+const FaqAccordion = ({
   title,
   children,
   isOpen,
@@ -53,4 +53,4 @@ const Accordion = ({
   );
 };
 
-export default Accordion;
+export default FaqAccordion;
