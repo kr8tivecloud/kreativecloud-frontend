@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar-hide {
+    /* For Webkit-based browsers (Chrome, Safari, new Edge) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* For Firefox */
+    scrollbar-width: none;
+    /* For IE and old Edge */
+    -ms-overflow-style: none;
+  }
+}
+
 :root {
   --background: #000000;
   --foreground: #ffffff;
