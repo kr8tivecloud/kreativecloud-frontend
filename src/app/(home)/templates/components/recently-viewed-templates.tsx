@@ -23,7 +23,7 @@ export default function RecentlyViewedTemplates() {
   return (
     <div className="mt-12">
       <h3 className="font-bold text-base">Recently Viewed</h3>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5 mt-3">
+      <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5 mt-3">
         {recentlyViewed.map((item) => (
           <div key={item.id}>
             <Image
@@ -31,7 +31,7 @@ export default function RecentlyViewedTemplates() {
               alt={item.title}
               width={220}
               height={180}
-              className="w-full h-44"
+              className="w-full h-32 sm:h-44 object-cover"
             />
             <p className="text-sm text-[#9F9F9F] line-clamp-1 my-1">
               {item.title}

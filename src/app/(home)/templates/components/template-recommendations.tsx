@@ -53,7 +53,7 @@ export default function TemplateRecommendations() {
     <div>
       <h2 className="font-bold text-3xl">You might also like</h2>
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-5 mt-5">
+      <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-5 mt-5">
         {recommendations.map((recommendation) => {
           return (
             <div key={recommendation.id}>

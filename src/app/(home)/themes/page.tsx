@@ -57,6 +57,7 @@ export default function ThemesPage() {
       </div>
       {/* END HERO */}
 
+      {/* COPY */}
       <div className="px-4 sm:container py-10">
         <p className="font-bold text-3xl sm:text-4xl max-w-xl mx-auto text-center">
           Maximize your online impact —&nbsp;affordable, feature-packed, and
@@ -92,12 +93,23 @@ export default function ThemesPage() {
           </ul>
         </div>
       </div>
+      {/* END COPY */}
 
       {/* CLOUD START FEATURES */}
       <div className="mt-20">
         <h2 className="font-bold text-2xl sm:text-4xl text-center bg-gradient-to-r from-[#0051B8] via-[#0B2C3E] to-[#5ABA1D] bg-clip-text text-transparent">
           Cloud Start Features
         </h2>
+
+        <div className="text-center space-y-4">
+          <Image
+            src={cloudStartImage}
+            alt=""
+            className="w-48 sm:w-72 mx-auto"
+          />
+          <AnimatedButton variant="solid">BUY</AnimatedButton>
+          <p>Starts from $200</p>
+        </div>
       </div>
       {/* END CLOUD START FEATURES */}
     </div>
