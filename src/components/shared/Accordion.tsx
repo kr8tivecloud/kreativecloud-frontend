@@ -12,11 +12,13 @@ const Accordion = ({
   openIcon,
   closeIcon,
   className,
+  titleBorder = false,
 }: ComponentProps<"div"> & {
   title: string;
   children: React.ReactNode;
   openIcon?: React.ReactNode;
   closeIcon?: React.ReactNode;
+  titleBorder?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -29,7 +31,12 @@ const Accordion = ({
         className
       )}
     >
-      <div className="flex items-center justify-between gap-3">
+      <div
+        className={cn(
+          "flex items-center justify-between gap-3",
+          titleBorder && "border-b"
+        )}
+      >
         <h1
           className={classNames({
             "text-sm sm:text-base xl:text-lg text-text-200 dark:text-text-400":

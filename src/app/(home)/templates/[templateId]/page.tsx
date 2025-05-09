@@ -1,55 +1,16 @@
-import Image from "next/image";
 import React from "react";
-import { templateImage } from "../../../../../public/images";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { FaCheck, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import TemplateRecommendations from "../components/template-recommendations";
 import Accordion from "@/components/shared/Accordion";
-
-const overviewImages = [
-  templateImage,
-  templateImage,
-  templateImage,
-  templateImage,
-  templateImage,
-  templateImage,
-];
+import ImageOverview from "../components/image-overview";
 
 export default function TemplateDetailsPage() {
   return (
     <div className="pt-28 relative">
       <div className="px-4 sm:container">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_490px] gap-x-10 mb-16 lg:mb-56">
-          <div>
-            <Image
-              src={templateImage}
-              alt="Template image"
-              width={660}
-              height={561}
-              className="w-full"
-            />
-
-            {/* OVERVIEW IMAGES */}
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(128px,1fr))] gap-3 mt-4">
-              {overviewImages.map((image, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="relative after:absolute after:inset-0 after:bg-black/20"
-                  >
-                    <Image
-                      src={image}
-                      alt=""
-                      width={150}
-                      height={150}
-                      className="w-full h-32 object-cover"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-            {/* END OVERVIEW IMAGES */}
-          </div>
+          <ImageOverview />
 
           <div className="mt-6 lg:mt-0">
             {/* KEYWORDS */}
@@ -105,6 +66,7 @@ export default function TemplateDetailsPage() {
                 title="DESCRIPTION"
                 closeIcon={<FaChevronDown />}
                 openIcon={<FaChevronUp />}
+                titleBorder
               >
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Debitis, quibusdam amet veniam accusamus tempora ipsam ipsa
@@ -119,6 +81,8 @@ export default function TemplateDetailsPage() {
                 title="HOW TO USE"
                 closeIcon={<FaChevronDown />}
                 openIcon={<FaChevronUp />}
+                className="py-1"
+                titleBorder
               >
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
                 veniam fugiat modi doloremque tempore? Minus suscipit odit

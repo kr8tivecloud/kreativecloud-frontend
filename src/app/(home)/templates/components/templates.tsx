@@ -244,11 +244,11 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
                   className="w-full"
                 />
               </Link>
-              <p className="text-sm text-[#9F9F9F] line-clamp-1 my-1">
+              <p className="text-sm text-[#9F9F9F] line-clamp-2 my-1">
                 {item.title}
               </p>
               <p className="text-base text-[#B7B7B7]">USD {item.price}</p>
-              <div className="flex items-center gap-x-1 mb-2">
+              <div className="flex items-center gap-x-1 mb-1">
                 <FiDownloadCloud />
 
                 <span className="text-[#B7B7B7] font-bold text-xs">
