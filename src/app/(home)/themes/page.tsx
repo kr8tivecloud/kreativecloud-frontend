@@ -175,7 +175,7 @@ export default function ThemesPage() {
       {/* END COPY */}
 
       {/* CLOUD START FEATURES */}
-      <div className="mt-20">
+      <div className="mt-20 px-4 sm:container">
         <h2 className="font-bold text-2xl sm:text-4xl text-center bg-gradient-to-r from-[#0051B8] via-[#0B2C3E] to-[#5ABA1D] bg-clip-text text-transparent">
           Cloud Start Features
         </h2>
@@ -206,7 +206,7 @@ export default function ThemesPage() {
           </div>
           {/* END SLIDES DISPLAY */}
           {/* NAVIGATION */}
-          <div className="flex items-center mx-auto max-w-3xl lg:max-w-4xl xl:max-w-5xl mt-8 px-2 sm:px-0">
+          <div className="flex items-center gap-x-4 mx-auto max-w-3xl lg:max-w-4xl xl:max-w-5xl mt-8 px-2 sm:px-0">
             {/* PREV BUTTON */}
             <button
               onClick={handlePrev}
