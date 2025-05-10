@@ -20,7 +20,7 @@ templates.splice(1, 0, adData);
 
 export default function Templates() {
   return (
-    <div>
+    <div className="flex-1">
       <div className="md:pl-6 border-0 md:border-l border-[#B7B7B7] space-y-6">
         {templates.map((template) => {
           if (template.id === "ad") {
