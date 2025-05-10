@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react"; // Import useMemo
 import { templateCalloutHero } from "../../../../../public/images";
 import Image, { StaticImageData } from "next/image";
 import { AnimatedButton } from "@/components/AnimatedButton";
@@ -8,21 +8,38 @@ import { FaPlus } from "react-icons/fa6";
 import { FiDownloadCloud } from "react-icons/fi";
 import Link from "next/link";
 import Pagination from "@/components/Pagination";
-import { templates } from "@/lib/mock-data";
+import { templates as originalTemplates } from "@/lib/mock-data"; // Rename imported templates
 
 const adData = {
   id: "ad",
   category: "ad",
-  items: [],
+  items: [], // This structure is compatible with how templates are mapped
 };
 
-templates.splice(1, 0, adData);
+// Remove the direct mutation of the imported array:
+// templates.splice(1, 0, adData);
 
 export default function Templates() {
+  const displayTemplates = useMemo(() => {
+    const newTemplates = [...originalTemplates]; // Create a shallow copy
+
+    // Insert adData at index 1.
+    // Array.prototype.splice behavior:
+    // If index is greater than the length of the array, new item(s) will be added at the end of the array.
+    // If newTemplates is empty, splice(1,0,adData) results in [adData].
+    // If newTemplates has 1 element, splice(1,0,adData) results in [originalElement, adData].
+    // If newTemplates has 2+ elements, splice(1,0,adData) inserts adData at index 1.
+    newTemplates.splice(1, 0, adData);
+
+    return newTemplates;
+  }, []); // Empty dependency array ensures this logic runs only once after component mount,
+  // as originalTemplates (from import) and adData (constant) don't change.
+
   return (
     <div className="flex-1">
       <div className="md:pl-6 border-0 md:border-l border-[#B7B7B7] space-y-6">
-        {templates.map((template) => {
+        {displayTemplates.map((template) => {
+          // Use the memoized displayTemplates
           if (template.id === "ad") {
             return (
               <div key={template.id}>
@@ -58,7 +75,7 @@ export default function Templates() {
             <TemplateGroup
               key={template.id}
               title={template.category}
-              items={template.items}
+              items={template.items as TemplateGroupProps["items"]} // Cast items if necessary, adData.items is []
             />
           );
         })}
