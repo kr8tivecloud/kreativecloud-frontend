@@ -103,16 +103,16 @@ export default function ThemesPage() {
             <Image
               src={shopifyLogo}
               alt=""
-              className="mx-auto max-w-xs sm:max-w-md"
+              className="mx-auto max-w-sm sm:max-w-md"
             />
-            <h1 className="font-bold text-2xl sm:text-4xl text-center max-w-3xl mx-auto">
+            <h1 className="font-bold text-3xl sm:text-4xl text-center max-w-3xl mx-auto">
               A straightforward and professional theme designed specifically for{" "}
               <br />
               <span className="bg-gradient-to-r from-[#0051B8] via-[#0B2C3E] to-[#5ABA1D] bg-clip-text text-transparent">
                 new brands and startups
               </span>
             </h1>
-            <p className="my-4 mx-auto text-center max-w-2xl">
+            <p className="text-sm sm:text-base my-4 mx-auto text-center max-w-2xl">
               Best for startups, solopreneurs, and small businesses looking for
               a simple yet professional online presence without breaking the
               bank.
@@ -127,7 +127,7 @@ export default function ThemesPage() {
               <p className="font-bold text-xl">Cloud Start</p>
             </div>
 
-            <div className="flex items-center justify-center gap-x-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <AnimatedButton variant="outline">DOWNLOAD NOW</AnimatedButton>
               <AnimatedButton variant="solid">VIEW LIVE DEMO</AnimatedButton>
             </div>
@@ -259,7 +259,7 @@ export default function ThemesPage() {
           <Image
             src={cloudStartImage}
             alt=""
-            className="w-48 sm:w-72 mx-auto"
+            className="w-56 sm:w-72 mx-auto"
           />
           <AnimatedButton variant="solid">BUY</AnimatedButton>
           <p>Starts from $200</p>

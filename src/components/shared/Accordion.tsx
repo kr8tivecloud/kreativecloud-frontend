@@ -34,7 +34,7 @@ const Accordion = ({
       <div
         className={cn(
           "flex items-center justify-between gap-3",
-          titleBorder && "border-b"
+          titleBorder && "border-b border-b-[#8C8C8C]"
         )}
       >
         <h1
@@ -51,17 +51,21 @@ const Accordion = ({
         </div>
       </div>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            layout // Add layout prop for smoother height animation
             key="content"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }} // Add easing
+            className="overflow-hidden" // overflow-hidden is important for height: 0 to work
           >
-            <div className="text-xs sm:text-sm xl:text-base">{children}</div>
+            {/* Added a padding to the content wrapper for better spacing during animation */}
+            <div className="text-xs sm:text-sm xl:text-base pt-1 pb-2 pr-2">
+              {children}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -84,3 +84,21 @@ export { default as cloudStartImage } from "./themes/cloudstart-image.png";
 export { default as cloudyBg } from "./themes/cloudy-bg.png";
 export { default as homeMockup } from "./themes/home-mockup.png";
 export { default as aboutMockup } from "./themes/about-mockup.png";
+
+// ACUITY
+export { default as acuity1 } from "./templates/categories/acuity/acuity-1.png";
+export { default as acuity2 } from "./templates/categories/acuity/acuity-2.png";
+export { default as acuity3 } from "./templates/categories/acuity/acuity-3.png";
+
+// SOCIAL MEDIA
+export { default as socialMedia1 } from "./templates/categories/social-media/social-media-1.png";
+export { default as socialMedia2 } from "./templates/categories/social-media/social-media-2.png";
+export { default as socialMedia3 } from "./templates/categories/social-media/social-media-3.png";
+export { default as socialMedia4 } from "./templates/categories/social-media/social-media-4.png";
+export { default as socialMedia5 } from "./templates/categories/social-media/social-media-5.png";
+export { default as socialMedia6 } from "./templates/categories/social-media/social-media-6.png";
+
+// ACUITY
+export { default as _3dMockup1 } from "./templates/categories/3d-mockups/3d-mockup-1.png";
+export { default as _3dMockup2 } from "./templates/categories/3d-mockups/3d-mockup-2.png";
+export { default as _3dMockup3 } from "./templates/categories/3d-mockups/3d-mockup-3.png";
