@@ -73,7 +73,7 @@ export default function Pagination({
             className={cn(
               buttonBaseClass,
               isCurrentPage
-                ? "bg-white text-black border-white" // Active page: distinct style
+                ? "bg-white text-black disabled:text-black border-white" // Active page: distinct style
                 : "" // No additional classes for non-active page numbers beyond base + hover animations
             )}
             // The `disabled` attribute makes the button non-interactive.

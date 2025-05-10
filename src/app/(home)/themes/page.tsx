@@ -88,7 +88,7 @@ export default function ThemesPage() {
   }, [currentIndex]); // Rerun when currentIndex changes
 
   return (
-    <div className="pt-28 relative">
+    <div className="pt-10 relative">
       {/* HERO  */}
       <div className="relative overflow-hidden">
         <div className="px-4 sm:container min-h-dvh pt-10 pb-32">
@@ -106,19 +106,19 @@ export default function ThemesPage() {
               className="mx-auto max-w-sm sm:max-w-md"
             />
             <h1 className="font-bold text-3xl sm:text-4xl text-center max-w-3xl mx-auto">
-              A straightforward and professional theme designed specifically for{" "}
-              <br />
+              A straightforward and professional theme designed
+              specifically&nbsp;for <br />
               <span className="bg-gradient-to-r from-[#0051B8] via-[#0B2C3E] to-[#5ABA1D] bg-clip-text text-transparent">
                 new brands and startups
               </span>
             </h1>
-            <p className="text-sm sm:text-base my-4 mx-auto text-center max-w-2xl">
+            <p className="text-sm sm:text-base mt-4 mx-auto text-center max-w-2xl">
               Best for startups, solopreneurs, and small businesses looking for
               a simple yet professional online presence without breaking the
               bank.
             </p>
 
-            <div className="text-center my-10 space-y-2">
+            <div className="text-center my-5 space-y-2">
               <Image
                 src={cloudStartImage}
                 alt=""

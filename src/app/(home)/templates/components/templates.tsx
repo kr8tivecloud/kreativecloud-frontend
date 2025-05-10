@@ -25,12 +25,9 @@ export default function Templates() {
         {templates.map((template) => {
           if (template.id === "ad") {
             return (
-              <>
+              <div key={template.id}>
                 {/* CUSTOM TEMPLATE AD */}
-                <div
-                  className="flex flex-col-reverse lg:flex-row lg:items-stretch bg-[#1C1B1A] lg:max-h-[500px]"
-                  key={template.id}
-                >
+                <div className="flex flex-col-reverse lg:flex-row lg:items-stretch bg-[#1C1B1A] lg:max-h-[500px]">
                   <div className="max-w-full sm:max-w-96 mx-4 sm:mx-6 py-6 flex items-center">
                     <div>
                       <h2 className="font-bold text-2xl sm:text-4xl md:text-5xl">
@@ -54,7 +51,7 @@ export default function Templates() {
                   </div>
                 </div>
                 {/* END CUSTOM TEMPLATE AD */}
-              </>
+              </div>
             );
           }
           return (
