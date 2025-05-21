@@ -1,8 +1,8 @@
 "use client";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { SectionWrapper } from "@/lib/hoc";
-import { scaleVariants, textVariant } from "@/lib/motion";
-import { useInView, motion } from "motion/react";
+import { textVariant } from "@/lib/motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import images from "../../../../public/images";
@@ -44,7 +44,7 @@ const entrepreneurs = [
 const Features = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.1 });
+  // const isInView = useInView(ref, { amount: 0.1 });
   const [hovered, setHovered] = useState<number | null>(null);
 
   const handleOutsideClick = () => {
@@ -54,8 +54,8 @@ const Features = () => {
   return (
     <motion.div
       ref={ref}
-      animate={isInView ? "show" : "hidden"}
-      initial="hidden"
+      // animate={isInView ? "show" : "hidden"}
+      // initial="hidden"
       className="w-full flex justify-center items-center py-5 xs:py-10"
       onClick={handleOutsideClick}
     >
@@ -139,8 +139,7 @@ const Features = () => {
                         src={item.imgUrl}
                         alt={`${item.id} image`}
                         fill
-                        objectFit="cover"
-                        className="z-0"
+                        className="z-0 object-cover"
                         style={{
                           objectPosition:
                             index === 0
@@ -193,8 +192,8 @@ const Features = () => {
                 className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8"
               >
                 <motion.div
-                  variants={scaleVariants}
-                  whileInView={scaleVariants.whileInView}
+                  // variants={scaleVariants}
+                  // whileInView={scaleVariants.whileInView}
                   className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
                   onHoverStart={() => setHovered(index)}
                   onHoverEnd={() => {
@@ -230,9 +229,9 @@ const Features = () => {
 
                   {hovered === index && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
+                      // initial={{ opacity: 0, y: 10 }}
+                      // animate={{ opacity: 1, y: 0 }}
+                      // transition={{ duration: 0.3 }}
                       className="absolute z-20 top-3 px-4 flex flex-col items-center justify-center w-full h-full"
                     >
                       <h2 className="text-white text-2xl font-bold">

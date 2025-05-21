@@ -1,6 +1,6 @@
 "use client";
 import { SectionWrapper } from "@/lib/hoc";
-import { scaleVariants, textVariant } from "@/lib/motion";
+import { fadeIn, textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
@@ -45,7 +45,7 @@ const marketingServices = [
 
 const Services = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.25 });
+  const isInView = useInView(ref, { amount: 0.25, once: true });
   const [hoveredCreative, setHoveredCreative] = useState<number | null>(null);
   const [hoveredMarketing, setHoveredMarketing] = useState<number | null>(null);
   const [iconSize, setIconSize] = useState(46);
@@ -112,8 +112,9 @@ const Services = () => {
             {creativeServices.map((service, index: number) => (
               <motion.div
                 key={index}
-                variants={scaleVariants}
-                whileInView={scaleVariants.whileInView}
+                variants={fadeIn("top", "spring", 0.1, 0.5)}
+                initial="hidden"
+                whileInView={"show"}
                 className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] border-t border-[#00E5FF] relative transition-all duration-300 group"
                 onHoverStart={() => setHoveredCreative(index)}
                 onHoverEnd={() => setHoveredCreative(null)}
@@ -233,8 +234,9 @@ const Services = () => {
             {marketingServices.map((service, index: number) => (
               <motion.div
                 key={index}
-                variants={scaleVariants}
-                whileInView={scaleVariants.whileInView}
+                variants={fadeIn("top", "tween", 0.2, 0.5)}
+                initial="hidden"
+                whileInView={"show"}
                 className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] border-t border-[#CC0B0B] relative transition-all duration-300 group"
                 onHoverStart={() => setHoveredMarketing(index)}
                 onHoverEnd={() => setHoveredMarketing(null)}
