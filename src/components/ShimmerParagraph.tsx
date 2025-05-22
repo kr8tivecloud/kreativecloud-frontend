@@ -4,11 +4,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface ShimmerParagraphProps {
-  text: string;
+  children: React.ReactNode;
   className?: string;
 }
 
-const ShimmerText: React.FC<ShimmerParagraphProps> = ({ text, className }) => {
+const ShimmerText: React.FC<ShimmerParagraphProps> = ({
+  children,
+  className,
+}) => {
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <motion.p
@@ -20,7 +23,7 @@ const ShimmerText: React.FC<ShimmerParagraphProps> = ({ text, className }) => {
           backgroundSize: "200% 100%",
         }}
       >
-        {text}
+        {children}
       </motion.p>
     </div>
   );

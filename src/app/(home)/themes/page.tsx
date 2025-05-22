@@ -11,7 +11,8 @@ import {
   shopifyLogo,
 } from "../../../../public/images";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import NeuralNoiseShader from "./components/neural-shader";
+import NeuralNoiseShader from "./components/neural-noise-shader";
+import ShimmerText from "@/components/ShimmerParagraph";
 // import
 
 interface Slide {
@@ -148,28 +149,38 @@ export default function ThemesPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-x-10 max-w-3xl mx-auto mt-16 text-[#86868B] font-bold">
           <ul className="space-y-5">
             <li>
-              <span className="text-white">Simple</span> and straightforward to
-              use
+              <ShimmerText>
+                <span className="text-white">Simple</span> and straightforward
+                to use
+              </ShimmerText>
             </li>
             <li>
-              Extremely <span className="text-white">affordable</span> compared
-              to most premium Shopify themes available.
+              <ShimmerText>
+                Extremely <span className="text-white">affordable</span>{" "}
+                compared to most premium Shopify themes available.
+              </ShimmerText>
             </li>
             <li>
-              Clean, modern, and professional design{" "}
-              <span className="text-white">ideal for new brands.</span>
+              <ShimmerText>
+                Clean, modern, and professional design{" "}
+                <span className="text-white">ideal for new brands.</span>
+              </ShimmerText>
             </li>
           </ul>
           <ul className="space-y-5">
             <li>
-              <span className="text-white">SEO-ready</span> with essential meta
-              tags for better visibility on search engines, helping you attract
-              more customers
+              <ShimmerText>
+                <span className="text-white">SEO-ready</span> with essential
+                meta tags for better visibility on search engines, helping you
+                attract more customers
+              </ShimmerText>
             </li>
             <li>
-              Fully <span className="text-white">responsive</span>, ensuring
-              seamless browsing experience across mobile, tablet, and desktop
-              devices.
+              <ShimmerText>
+                Fully <span className="text-white">responsive</span>, ensuring
+                seamless browsing experience across mobile, tablet, and desktop
+                devices.
+              </ShimmerText>
             </li>
           </ul>
         </div>

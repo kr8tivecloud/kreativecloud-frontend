@@ -54,14 +54,13 @@ export default function ServicesPage() {
                 Starts at $400
               </span>
             </div>
-            <ShimmerParagraph
-              className="my-5 leading-7"
-              text="We will create a custom website design tailored to your brand with
+            <ShimmerParagraph className="my-5 leading-7">
+              We will create a custom website design tailored to your brand with
               Intuitive user experience (UX) and navigation. We deliver seamless
               and visually appealing online experiences that reflects your
               brand’s identity. Whether you want to build from scratch, leverage
-              on any platform or revamp the aesthetics of your site, we got you!"
-            />
+              on any platform or revamp the aesthetics of your site, we got you!
+            </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton variant="outline" as={"link"} href="#">
                 HIRE US
@@ -102,14 +101,13 @@ export default function ServicesPage() {
                 Starts at $50
               </span>
             </div>
-            <ShimmerParagraph
-              className="my-5 leading-7"
-              text="We will bring your brand to life through compelling visuals and
+            <ShimmerParagraph className="my-5 leading-7">
+              We will bring your brand to life through compelling visuals and
               impactful designs that communicate your message clearly. Whether
               you need logos, marketing materials, concept designs, 3D elements,
               mockups or digital content, our creative team ensures your brand
-              stands out and makes a lasting impression."
-            />
+              stands out and makes a lasting impression.
+            </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
               <AnimatedButton>HIRE US</AnimatedButton>
@@ -151,15 +149,14 @@ export default function ServicesPage() {
               </span>
             </div>
 
-            <ShimmerParagraph
-              className="my-5 leading-7"
-              text="We will bring your brand to life. Our branding services include
+            <ShimmerParagraph className="my-5 leading-7">
+              We will bring your brand to life. Our branding services include
               creating unique and memorable logos, color palettes and typography
               that represent your style and values. We’ll provide comprehensive
               brand guidelines to ensure consistency across all platforms. We
               also offer rebranding services to update outdated visuals and
-              messaging to align with your current goals."
-            />
+              messaging to align with your current goals.
+            </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
               <AnimatedButton variant="outline">HIRE US</AnimatedButton>
@@ -199,14 +196,13 @@ export default function ServicesPage() {
               </span>
             </div>
 
-            <ShimmerParagraph
-              className="my-5 leading-7"
-              text="We will bring your brand to life through compelling visuals and
+            <ShimmerParagraph className="my-5 leading-7">
+              We will bring your brand to life through compelling visuals and
               impactful designs that communicate your message clearly. Whether
               you need logos, marketing materials, concept designs, 3D elements,
               mockups or digital content, our creative team ensures your brand
-              stands out and makes a lasting impression."
-            />
+              stands out and makes a lasting impression.
+            </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton variant="outline">HIRE US</AnimatedButton>
             </div>
@@ -244,16 +240,15 @@ export default function ServicesPage() {
                 Starts at $100
               </span>
             </div>
-            <ShimmerParagraph
-              className="my-5 leading-7"
-              text="We create content that connects with your audience and gets them
+            <ShimmerParagraph className="my-5 leading-7">
+              We create content that connects with your audience and gets them
               talking. From coming up with viral ideas to making sure everything
               matches your brand, we’ve got you covered. We’ll write blog posts,
               copies, scripts and product descriptions that are clear and
               engaging. We can also plan your content calendar and handle the
               graphics, videos, or any other media you need to bring your ideas
-              to life."
-            />
+              to life.
+            </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton as={"link"} variant="outline" href="#">
                 HIRE US
@@ -294,14 +289,13 @@ export default function ServicesPage() {
               </span>
             </div>
 
-            <ShimmerParagraph
-              className="my-5 leading-7"
-              text="We will create a custom website design tailored to your brand with
+            <ShimmerParagraph className="my-5 leading-7">
+              We will create a custom website design tailored to your brand with
               Intuitive user experience (UX) and navigation. We deliver seamless
               and visually appealing online experiences that reflects your
               brand’s identity. Whether you want to build from scratch, leverage
-              on any platform or revamp the aesthetics of your site, we got you!"
-            />
+              on any platform or revamp the aesthetics of your site, we got you!
+            </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
               <AnimatedButton variant="outline" as={"link"} href="#">

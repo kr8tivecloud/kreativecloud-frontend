@@ -63,17 +63,16 @@ export default function PortfolioPage() {
                     text="Black Diamond Entertainment"
                   />
                 </div>
-                <ShimmerParagraph
-                  className="my-5 leading-7"
-                  text="Black Diamond Entertainment, a premier party organizer, 
-                partnered with us to elevate their online presence. Renowned 
-                for hosting the most unforgettable events, their brand 
-                demanded a website that radiated energy and sophistication. 
-                Collaborating closely, we designed a dynamic concept that 
-                captured their vibrant essence. The result? A sleek, 
-                user-friendly website that showcases their expertise in 
-                curating the best parties and events, all built to perfection."
-                />
+                <ShimmerParagraph className="my-5 leading-7">
+                  Black Diamond Entertainment, a premier party organizer,
+                  partnered with us to elevate their online presence. Renowned
+                  for hosting the most unforgettable events, their brand
+                  demanded a website that radiated energy and sophistication.
+                  Collaborating closely, we designed a dynamic concept that
+                  captured their vibrant essence. The result? A sleek,
+                  user-friendly website that showcases their expertise in
+                  curating the best parties and events, all built to perfection.
+                </ShimmerParagraph>
                 <div className="flex items-center gap-x-5">
                   <AnimatedButton variant="solid" href="#" as={"link"}>
                     VIEW WEBSITE
@@ -109,17 +108,17 @@ export default function PortfolioPage() {
                     text="Mekkachi"
                   />
                 </div>
-                <ShimmerParagraph
-                  className="my-5 leading-7"
-                  text="Mekkachi, a bold and visionary fashion brand, they partnered 
-                with us to craft a digital presence that reflects their 
-                celebration of culture, craftsmanship, and individuality. 
-                Drawing from their African heritage and global influence, we 
-                meticulously designed and developed a Shopify website that 
-                embodies their mission of empowerment and sustainability. The 
-                result is a seamless online experience that showcases Mekkachi’s 
-                vibrant collections and honors their legacy of storytelling through fashion."
-                />
+                <ShimmerParagraph className="my-5 leading-7">
+                  Mekkachi, a bold and visionary fashion brand, they partnered
+                  with us to craft a digital presence that reflects their
+                  celebration of culture, craftsmanship, and individuality.
+                  Drawing from their African heritage and global influence, we
+                  meticulously designed and developed a Shopify website that
+                  embodies their mission of empowerment and sustainability. The
+                  result is a seamless online experience that showcases
+                  Mekkachi’s vibrant collections and honors their legacy of
+                  storytelling through fashion.
+                </ShimmerParagraph>
 
                 <div className="flex items-center gap-x-5">
                   <AnimatedButton
@@ -164,19 +163,18 @@ export default function PortfolioPage() {
                   />
                 </div>
 
-                <ShimmerParagraph
-                  className="my-5 leading-7"
-                  text="Atkins Attire, a brand born from a journey of self-discovery, 
-                partnered with us to bring their vision of casual luxury and 
-                individuality to life. Embracing their ethos of blending 
-                comfort with sophistication, we designed and developed a 
-                Shopify website that reflects their commitment to artistic 
-                freedom and connection. The site seamlessly showcases their 
-                versatile sweatshirts and sweatsuits while celebrating the 
-                brand’s unique identity and sense of community. The result is 
-                an online space that feels as refined and personal as Atkins 
-                Attire’s distinctive designs."
-                />
+                <ShimmerParagraph className="my-5 leading-7">
+                  Atkins Attire, a brand born from a journey of self-discovery,
+                  partnered with us to bring their vision of casual luxury and
+                  individuality to life. Embracing their ethos of blending
+                  comfort with sophistication, we designed and developed a
+                  Shopify website that reflects their commitment to artistic
+                  freedom and connection. The site seamlessly showcases their
+                  versatile sweatshirts and sweatsuits while celebrating the
+                  brand’s unique identity and sense of community. The result is
+                  an online space that feels as refined and personal as Atkins
+                  Attire’s distinctive designs.
+                </ShimmerParagraph>
 
                 <div className="flex items-center gap-x-5">
                   <AnimatedButton variant="solid" href="#" as={"link"}>
