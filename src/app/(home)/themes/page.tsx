@@ -6,11 +6,12 @@ import React, { useState, useEffect, useRef } from "react"; // Added useState, u
 import {
   aboutMockup,
   cloudStartImage,
-  cloudyBg,
+  // cloudyBg,
   homeMockup,
   shopifyLogo,
 } from "../../../../public/images";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import NeuralNoiseShader from "./components/neural-shader";
 // import
 
 interface Slide {
@@ -92,13 +93,14 @@ export default function ThemesPage() {
       {/* HERO  */}
       <div className="relative overflow-hidden">
         <div className="px-4 sm:container min-h-dvh pt-10 pb-32">
-          <Image
+          {/* <Image
             src={cloudyBg}
             alt=""
             className="absolute left-0 right-0 top-0 object-fill h-full w-full"
             style={{ objectFit: "cover" }}
             priority // Prioritize hero background
-          />
+          /> */}
+          <NeuralNoiseShader />
           <div className="relative z-[1]">
             <Image
               src={shopifyLogo}
