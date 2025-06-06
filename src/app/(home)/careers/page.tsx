@@ -46,7 +46,7 @@ export default function ContactPage() {
             whileInView={{ y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: "all" }}
-            className="font-bold mt-3"
+            className="font-bold mt-3 md:hidden"
           >
             Join our team. Let’s innovate!
           </motion.p>

@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   return (
     <section className="relative z-[1]">
-      <div className="px-4 sm:container py-16">
+      <div className="px-4 sm:container pb-18">
         <div className="text-center">
           <h3 className="text-5xl text-white font-bold">Get in touch</h3>
           <p className="text-[#E7E9F7] text-sm mt-1">

@@ -106,7 +106,7 @@ const PastFeatures = () => {
               >
                 <motion.div
                   variants={scaleVariants}
-                  whileInView={scaleVariants.whileInView}
+                  whileInView={scaleVariants.whileInView()}
                   className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
                   onHoverStart={() => setHovered(index)}
                   onHoverEnd={() => {

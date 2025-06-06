@@ -49,15 +49,15 @@ export default function TemplatesSubmenu() {
 
         <div className="flex items-center gap-x-6 mt-5">
           <AnimatedButton
-            onClick={() => {
-              router.push("/coming-soon");
-            }}
+            as={"link"}
+            href={"/templates"}
             variant="outline"
             className="flex-1 font-normal"
           >
             Skip
           </AnimatedButton>
           <AnimatedButton
+            type="button"
             onClick={() => {
               router.push("/coming-soon");
             }}

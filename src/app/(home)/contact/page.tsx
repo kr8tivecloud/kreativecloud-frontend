@@ -47,7 +47,7 @@ export default function ContactPage() {
             whileInView={{ y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: "all" }}
-            className="font-bold mt-3"
+            className="font-bold mt-3 md:hidden"
           >
             Send us a message, lets schedule a meeting.
           </motion.p>
