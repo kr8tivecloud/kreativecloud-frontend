@@ -38,7 +38,7 @@ export default function JoinUsForm() {
 
   return (
     <section className="relative z-[1]">
-      <div className="px-4 sm:container py-16">
+      <div className="px-4 sm:container pb-8">
         <div className="text-center">
           <h3 className="text-5xl text-white font-bold">Join Us</h3>
           <p className="text-[#E7E9F7] text-sm mt-1">

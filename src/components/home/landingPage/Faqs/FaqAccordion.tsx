@@ -1,7 +1,7 @@
 "use client";
 
 import { scaleVariants } from "@/lib/motion";
-import { motion, AnimatePresence, useInView } from "framer-motion"; // Import useInView
+import { motion, AnimatePresence } from "framer-motion"; // Import useInView
 import { useRef } from "react"; // Import useRef
 import { FiPlus, FiMinus } from "react-icons/fi";
 
@@ -21,14 +21,13 @@ const FaqAccordion = ({
   lastIndex: number;
 }) => {
   const ref = useRef(null); // Create a ref
-  const isInView = useInView(ref, { once: true }); // Use useInView with once: true
 
   return (
     <motion.div
       ref={ref} // Attach the ref
       variants={scaleVariants}
-      initial="hidden" // Set initial state
-      animate={isInView ? "show" : "hidden"} // Animate based on isInView
+      whileInView={scaleVariants.whileInView(0.8)}
+      viewport={{ once: true }}
       onClick={onToggle}
       className={`w-full h-fit ${index === 0 ? "border-t" : ""} ${
         index !== lastIndex ? "border-b" : ""

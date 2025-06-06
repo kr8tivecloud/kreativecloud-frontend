@@ -159,11 +159,12 @@ export default function Navbar() {
         <Nav />
 
         <div className="relative z-[1]">
-          <MotionLink
-            href={"/contact"}
-            className="max-lg:hidden font-bold text-[#FE922A] hover:text-white transition-colors duration-300"
-          >
-            GET IN TOUCH
+          <MotionLink href={"/contact"} className="max-lg:hidden">
+            <FlipText
+              text="GET IN TOUCH"
+              className="font-bold text-[#FE922A] hover:text-white transition-colors duration-300"
+            />
+            {/* GET IN TOUCH */}
           </MotionLink>
 
           <button onClick={handleOpenNavbar} className="w-7 h-5 lg:hidden">

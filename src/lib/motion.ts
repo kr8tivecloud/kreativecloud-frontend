@@ -1,4 +1,4 @@
-export const textVariant = (delay: number) => {
+export const textVariant = (delay: number, duration: number = 1.25) => {
   return {
     hidden: {
       y: -50,
@@ -9,7 +9,7 @@ export const textVariant = (delay: number) => {
       opacity: 1,
       transition: {
         type: "spring",
-        duration: 1.25,
+        duration: duration,
         delay: delay,
       },
     },
@@ -101,12 +101,12 @@ export const staggerContainer = (
 };
 
 export const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
+  whileInView: (duration: number = 0.5) => ({
+    scaleX: [0, 1],
     opacity: [0, 1],
     transition: {
-      duration: 0.5,
+      duration,
       ease: "easeInOut",
     },
-  },
+  }),
 };

@@ -1,7 +1,7 @@
 "use client";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { SectionWrapper } from "@/lib/hoc";
-import { textVariant } from "@/lib/motion";
+import { scaleVariants, textVariant } from "@/lib/motion";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -192,8 +192,8 @@ const Features = () => {
                 className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8"
               >
                 <motion.div
-                  // variants={scaleVariants}
-                  // whileInView={scaleVariants.whileInView}
+                  variants={scaleVariants}
+                  whileInView={scaleVariants.whileInView()}
                   className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
                   onHoverStart={() => setHovered(index)}
                   onHoverEnd={() => {

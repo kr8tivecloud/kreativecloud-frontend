@@ -57,6 +57,7 @@ export default function TemplatesSubmenu() {
             Skip
           </AnimatedButton>
           <AnimatedButton
+            type="button"
             onClick={() => {
               router.push("/coming-soon");
             }}

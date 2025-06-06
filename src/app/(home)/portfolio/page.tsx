@@ -49,7 +49,7 @@ export default function PortfolioPage() {
       <div className="px-4 sm:container mt-14 space-y-14">
         {/* WEBSITE DESIGN SECTION */}
         <div>
-          <div className="text-[#F6F6F6] font-bold text-4xl mb-6">
+          <div className="text-[#F6F6F6] font-bold text-4xl md:text-5xl mb-4 sm:mb-6">
             Website Design
           </div>
           <div className="space-y-10 mb-14">
@@ -85,7 +85,7 @@ export default function PortfolioPage() {
                 initial={"default"}
                 variants={mockupImageVariants}
                 whileInView={"inView"}
-                viewport={{ once: true, amount: "all" }}
+                viewport={{ once: true, amount: "some" }}
                 className="overflow-hidden flex-1 min-w-0 max-w-full"
               >
                 <MotionImage
@@ -137,14 +137,14 @@ export default function PortfolioPage() {
                 initial={"default"}
                 variants={mockupImageVariants}
                 whileInView={"inView"}
-                viewport={{ once: true, amount: "all" }}
+                viewport={{ once: true, amount: "some" }}
                 className="overflow-hidden flex-1 min-w-0 max-w-full"
               >
                 <MotionImage
                   src={MekkachiMock}
                   alt="Mekkachi"
                   height={460}
-                  viewport={{ amount: "all" }}
+                  viewport={{ amount: "some" }}
                   width={600}
                   className=""
                 />
@@ -188,7 +188,7 @@ export default function PortfolioPage() {
                 initial={"default"}
                 variants={mockupImageVariants}
                 whileInView={"inView"}
-                viewport={{ once: true, amount: "all" }}
+                viewport={{ once: true, amount: "some" }}
                 className="overflow-hidden flex-1 min-w-0 max-w-full"
               >
                 <Image

@@ -66,8 +66,9 @@ const Faqs: React.FC = () => {
       >
         <div className="w-full lg:w-[50%] flex flex-col ">
           <motion.div
-            variants={textVariant(0.1)}
+            variants={textVariant(0.1, 2)}
             className="w-full 2xs:w-[80%] lg:w-[70%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
+            viewport={{ once: true }}
           >
             <h1 className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-bold">
               Frequently Asked Questions{" "}
