@@ -37,7 +37,7 @@ body {
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 120% 100%;
 }
 
 .left-cloud-bg {
@@ -45,7 +45,7 @@ body {
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 110% 100%;
 }
 
 .animate-cloud-fadeIn {

@@ -10,11 +10,22 @@ import {
 } from "@/lib/animationVariants/entreprenuerVariant";
 import { SocialLink } from "@/lib/types";
 
-const TypewriterText = ({ text }: { text: string }) => {
+const TypewriterText = ({
+  text,
+  animate = true,
+}: {
+  text: string;
+  animate?: boolean;
+}) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!animate) {
+      setDisplayText(text);
+      return;
+    }
+
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setDisplayText((prev) => prev + text[currentIndex]);
@@ -23,7 +34,7 @@ const TypewriterText = ({ text }: { text: string }) => {
 
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, text]);
+  }, [currentIndex, text, animate]);
 
   return (
     <motion.div
@@ -33,7 +44,9 @@ const TypewriterText = ({ text }: { text: string }) => {
       transition={{ duration: 0.5 }}
     >
       {displayText}
-      {currentIndex < text.length && <span className="animate-pulse">|</span>}
+      {animate && currentIndex < text.length && (
+        <span className="animate-pulse">|</span>
+      )}
     </motion.div>
   );
 };
@@ -53,6 +66,22 @@ const Hero: React.FC<HeroProps> = ({
   socialLinks,
   websiteLink,
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
   return (
     <motion.div
       className="w-full flex flex-col md:flex-row items-center gap-6 pt-6"
@@ -75,7 +104,7 @@ const Hero: React.FC<HeroProps> = ({
       </motion.div>
 
       <div className="sm:pl-5 lg:pl-10 w-full md:w-1/2 flex flex-col gap-4">
-        <TypewriterText text={title} />
+        <TypewriterText text={title} animate={!isMobile} />
 
         <motion.p variants={itemVariants}>{subtitle}</motion.p>
 
@@ -103,7 +132,7 @@ const Hero: React.FC<HeroProps> = ({
           variants={itemVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-fit bg-transparent text-black hover:bg-[#C0C0C0] bg-white border-white font-bold text-smfont-sans py-3.5 md:py-4 px-5 md:px-6"
+          className="w-fit bg-transparent text-black hover:bg-[#C0C0C0] bg-white border-white font-bold text-sm font-sans py-3.5 md:py-4 px-5 md:px-6"
         >
           VISIT WEBSITE
         </motion.a>

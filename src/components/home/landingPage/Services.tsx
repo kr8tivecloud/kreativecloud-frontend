@@ -1,6 +1,6 @@
 "use client";
 import { SectionWrapper } from "@/lib/hoc";
-import { scaleVariants, textVariant } from "@/lib/motion";
+import { textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
@@ -112,9 +112,7 @@ const Services = () => {
             {creativeServices.map((service, index: number) => (
               <motion.div
                 key={index}
-                variants={scaleVariants}
-                whileInView={scaleVariants.whileInView}
-                className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] border-t border-[#00E5FF] relative transition-all duration-300 group"
+                className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] relative transition-all duration-300 group"
                 onHoverStart={() => setHoveredCreative(index)}
                 onHoverEnd={() => setHoveredCreative(null)}
                 onClick={() =>
@@ -122,7 +120,7 @@ const Services = () => {
                 }
               >
                 <div
-                  className={`absolute inset-0 border-t border-[#00E5FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#00E5FF] before:animate-borderPulse`}
+                  className={`absolute inset-0 border-t border-[#00E5FF] transition-opacity duration-700 before:absolute before:inset-0 before:border-t-[2px] before:border-[#00E5FF] before:origin-left before:scale-x-0 group-hover:before:scale-x-100 before:transition-transform before:duration-300`}
                 ></div>
 
                 <div className="w-fit flex justify-center items-center bg-[#15151D] p-2 xs:p-2.5 xl:p-3.5 rounded-full">
@@ -233,8 +231,7 @@ const Services = () => {
             {marketingServices.map((service, index: number) => (
               <motion.div
                 key={index}
-                variants={scaleVariants}
-                whileInView={scaleVariants.whileInView}
+                initial="hidden"
                 className="cursor-pointer flex flex-col justify-between h-40 2xs:h-44 xs:h-48 sm:h-52 xl:h-56 px-4 2xs:px-6 xs:px-8 py-6 xs:py-8 bg-[#15151D99] border-t border-[#CC0B0B] relative transition-all duration-300 group"
                 onHoverStart={() => setHoveredMarketing(index)}
                 onHoverEnd={() => setHoveredMarketing(null)}
@@ -243,7 +240,7 @@ const Services = () => {
                 }
               >
                 <div
-                  className={`absolute inset-0 border-t border-[#CC0B0B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 before:absolute before:inset-0 before:border-t-[2px] before:border-[#CC0B0B] before:animate-borderPulse`}
+                  className={`absolute inset-0 border-t border-[#CC0B0B] transition-opacity duration-700 before:absolute before:inset-0 before:border-t-[2px] before:border-[#CC0B0B] before:origin-left before:scale-x-0 group-hover:before:scale-x-100 before:transition-transform before:duration-300`}
                 ></div>
 
                 <div className="w-fit flex justify-center items-center bg-[#15151D] p-2 xs:p-2.5 xl:p-3.5 rounded-full">
