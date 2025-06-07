@@ -148,7 +148,7 @@ const TimelineCard = ({
           {timeline.title}
         </h3>
 
-        {(isActive || true) && (
+        {isActive && (
           <>
             {/* <div
               className={cn(
