@@ -6,54 +6,68 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import cn from "classnames";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
+import {
+  cloudImage1,
+  cloudImage2,
+  cloudImage3,
+  cloudImage4,
+  cloudImage5,
+} from "../../../../../public/images";
+import Image from "next/image";
 
 interface TimelineItem {
   id: number;
   title: string;
   tag: string;
-  content: string;
+  cloudImg: string;
+  position: "left" | "right";
 }
 
-const timelines = [
+const timelines: TimelineItem[] = [
   {
     id: 1,
     title: "Consultation",
     tag: "30mins",
     position: "left",
-    content:
-      "We'll schedule a meeting to understand your vision, goals, and project, ensuring we align with your expectations.",
+    cloudImg: cloudImage1,
+    // content:
+    //   "We'll schedule a meeting to understand your vision, goals, and project, ensuring we align with your expectations.",
   },
   {
     id: 2,
     title: "Initial Submission",
     tag: "",
     position: "right",
-    content:
-      "Send in necessary materials needed to kickstart the design process.",
+    cloudImg: cloudImage2,
+    // content:
+    //   "Send in necessary materials needed to kickstart the design process.",
   },
   {
     id: 3,
     title: "Design & Development",
     tag: "Flexible",
     position: "left",
-    content:
-      "Our team will begin the creative process, developing concepts and structuring the project to bring your vision to life.",
+    cloudImg: cloudImage3,
+    // content:
+    //   "Our team will begin the creative process, developing concepts and structuring the project to bring your vision to life.",
   },
   {
     id: 4,
     title: "Review & Revisions",
     tag: "Flexible",
     position: "right",
-    content:
-      "Project/Design will be reviewed to ensure it's tailored to your desired needs & expectation.",
+    cloudImg: cloudImage4,
+    // content:
+    //   "Project/Design will be reviewed to ensure it's tailored to your desired needs & expectation.",
   },
   {
     id: 5,
     title: "Launch & Support",
     tag: "",
     position: "left",
-    content:
-      "Once finalized, we’ll deliver the completed project and provide any necessary support to ensure a seamless experience.",
+    cloudImg: cloudImage5,
+    // content:
+    //   "Once finalized, we’ll deliver the completed project and provide any necessary support to ensure a seamless experience.",
   },
 ];
 
@@ -134,24 +148,45 @@ const TimelineCard = ({
           {timeline.title}
         </h3>
 
-        {isActive && (
-          <div
-            className={cn(
-              "absolute flex justify-center items-center text-center text-[8px] min-[400px]:text-[10px] 2xs:text-xs xs:text-sm z-10 p-3 xs:p-4 w-32 min-[400px]:w-40 2xs:w-48 xs:w-56 sm:w-64 lg:w-56 xl:w-60 h-32 min-[400px]:h-40 2xs:h-48 xs:h-56 sm:h-64 lg:h-56 xl:h-60 bg-transparent opacity-0 animate-cloud-fadeIn",
-              {
-                "left-[calc(100%+70px)] min-[400px]:left-[calc(100%+75px)] 2xs:left-[calc(100%+85px)] xl:left-[calc(100%+100px)] right-cloud-bg":
-                  position === "left",
-                "right-[calc(100%+70px)] min-[400px]:right-[calc(100%+75px)] 2xs:right-[calc(100%+85px)] xl:right-[calc(100%+100px)] left-cloud-bg":
-                  position === "right",
-              }
-            )}
-            style={{
-              top: "50%",
-              transform: "translateY(-50%)",
-            }}
-          >
-            {timeline.content}
-          </div>
+        {(isActive || true) && (
+          <>
+            {/* <div
+              className={cn(
+                "absolute flex justify-center items-center text-[8px] min-[400px]:text-[10px] 2xs:text-xs xs:text-sm z-10 p-3 xs:p-4 bg-transparent opacity-0 animate-cloud-fadeIn",
+                {
+                  "left-[calc(100%+70px)] min-[400px]:left-[calc(100%+75px)] 2xs:left-[calc(100%+85px)] xl:left-[calc(100%+100px)] right-cloud-bg text-right":
+                    position === "left",
+                  "right-[calc(100%+70px)] min-[400px]:right-[calc(100%+75px)] 2xs:right-[calc(100%+85px)] xl:right-[calc(100%+100px)] left-cloud-bg text-left":
+                    position === "right",
+                },
+                "w-40 min-[400px]:w-40 2xs:w-48 xs:w-56 sm:w-64 lg:w-56 xl:w-60 h-40 min-[400px]:h-40 2xs:h-48 xs:h-56 sm:h-64 lg:h-56 xl:h-60",
+                "leading-normal"
+              )}
+              style={{
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+            >
+              {timeline.content}
+            </div> */}
+
+            <Image
+              src={timeline.cloudImg}
+              alt="Cloud Image"
+              width={100}
+              height={100}
+              className={cn(
+                "absolute z-0 -top-14 xs:-top-20 sm:-top-24 md:-top-20 xl:-top-24",
+                {
+                  "left-[calc(100%+70px)] min-[400px]:left-[calc(100%+75px)] 2xs:left-[calc(100%+85px)] xl:left-[calc(100%+100px)] 2xl:left-[calc(100%+120px)]":
+                    timeline.position === "left",
+                  "right-[calc(100%+70px)] min-[400px]:right-[calc(100%+75px)] 2xs:right-[calc(100%+85px)] xl:right-[calc(100%+100px)] 2xl:right-[calc(100%+120px)]":
+                    timeline.position === "right",
+                },
+                "w-40 min-[400px]:w-40 2xs:w-48 xs:w-56 sm:w-64 lg:w-56 xl:w-60 h-40 min-[400px]:h-40 2xs:h-48 xs:h-56 sm:h-64 lg:h-56 xl:h-60"
+              )}
+            />
+          </>
         )}
       </div>
     </VerticalTimelineElement>

@@ -1,7 +1,7 @@
 "use client";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { SectionWrapper } from "@/lib/hoc";
-import { scaleVariants, textVariant } from "@/lib/motion";
+import { imageVariants, textVariant } from "@/lib/motion";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -10,6 +10,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import useNavigate from "@/lib/hooks/useNavigate";
+
+const MotionImage = motion(Image);
 
 const entrepreneurs = [
   {
@@ -44,7 +46,6 @@ const entrepreneurs = [
 const Features = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
-  // const isInView = useInView(ref, { amount: 0.1 });
   const [hovered, setHovered] = useState<number | null>(null);
 
   const handleOutsideClick = () => {
@@ -54,8 +55,6 @@ const Features = () => {
   return (
     <motion.div
       ref={ref}
-      // animate={isInView ? "show" : "hidden"}
-      // initial="hidden"
       className="w-full flex justify-center items-center py-5 xs:py-10"
       onClick={handleOutsideClick}
     >
@@ -115,10 +114,8 @@ const Features = () => {
                   <div className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8 pb-12 xs:pb-16">
                     <motion.div
                       className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
-                      // onHoverStart={() => setHovered(index)}
-                      // onHoverEnd={() => setHovered(null)}
                       onClick={(e) => {
-                        e.stopPropagation(); // Prevent parent click handler
+                        e.stopPropagation();
                         setHovered(index);
 
                         if (hovered !== index) {
@@ -135,7 +132,7 @@ const Features = () => {
                           hovered === index ? "opacity-80" : "opacity-10"
                         } z-10 transition-opacity duration-300 backdrop-blur-sm`}
                       ></div>
-                      <Image
+                      <MotionImage
                         src={item.imgUrl}
                         alt={`${item.id} image`}
                         fill
@@ -149,6 +146,10 @@ const Features = () => {
                               : "100% 0%",
                         }}
                         quality={100}
+                        variants={imageVariants.zoomRotate()}
+                        initial="initial"
+                        whileInView="whileInView"
+                        viewport={{ margin: "200px", once: true }}
                         priority
                       />
 
@@ -192,8 +193,6 @@ const Features = () => {
                 className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8"
               >
                 <motion.div
-                  variants={scaleVariants}
-                  whileInView={scaleVariants.whileInView()}
                   className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
                   onHoverStart={() => setHovered(index)}
                   onHoverEnd={() => {
@@ -209,7 +208,7 @@ const Features = () => {
                       hovered === index ? "opacity-80" : "opacity-10"
                     } z-10 transition-opacity duration-300 backdrop-blur-sm`}
                   ></div>
-                  <Image
+                  <MotionImage
                     src={item.imgUrl}
                     alt={`${item.id} image`}
                     fill
@@ -224,6 +223,10 @@ const Features = () => {
                           : "100% 0%",
                     }}
                     quality={100}
+                    variants={imageVariants.zoomRotate()}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ margin: "100px", once: true }}
                     priority
                   />
 

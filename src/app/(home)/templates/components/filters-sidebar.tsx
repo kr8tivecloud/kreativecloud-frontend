@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useFilter } from "./filter-context-provider";
 import { Sheet, SheetContent, SheetTitle } from "@/components/shared/Sheet";
 import { useIsMobile } from "@/lib/hooks/use-mobile";
+import Checkbox from "@/components/Checkbox";
 
 export default function FiltersSidebar() {
   const { open, setOpen } = useFilter();
@@ -57,11 +58,17 @@ function FilterSidebarContent() {
       <ul className="space-y-4 mt-4">
         {Object.entries(filters).map(([key, isChecked]) => (
           <li key={key} className="flex items-center">
-            <input
+            {/* 
+             <input
               type="checkbox"
               checked={isChecked}
               onChange={() => handleCheckboxChange(key as FilterKeys)}
-              className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2 mr-2"
+            />
+            */}
+            <Checkbox
+              checked={isChecked}
+              onChange={() => handleCheckboxChange(key as FilterKeys)}
+              className="w-4 h-4 mr-2"
             />
             <label className="text-sm">{key}</label>
           </li>

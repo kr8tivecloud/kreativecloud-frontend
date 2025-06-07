@@ -7,6 +7,7 @@ export type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  // TODO: Put a preloader in this website that shows while assets and most especially javascript is loading
   return (
     <>
       <html lang="en">

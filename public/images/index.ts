@@ -102,3 +102,9 @@ export { default as socialMedia6 } from "./templates/categories/social-media/soc
 export { default as _3dMockup1 } from "./templates/categories/3d-mockups/3d-mockup-1.png";
 export { default as _3dMockup2 } from "./templates/categories/3d-mockups/3d-mockup-2.png";
 export { default as _3dMockup3 } from "./templates/categories/3d-mockups/3d-mockup-3.png";
+
+export { default as cloudImage1 } from "./home/landingPage/cloud-img1.svg";
+export { default as cloudImage2 } from "./home/landingPage/cloud-img2.svg";
+export { default as cloudImage3 } from "./home/landingPage/cloud-img3.svg";
+export { default as cloudImage4 } from "./home/landingPage/cloud-img4.svg";
+export { default as cloudImage5 } from "./home/landingPage/cloud-img5.svg";

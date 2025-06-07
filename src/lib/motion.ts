@@ -110,3 +110,18 @@ export const scaleVariants = {
     },
   }),
 };
+
+export const imageVariants = {
+  zoomRotate: (
+    customScale = 1.6,
+    customRotate = -15,
+    customDuration = 1.2
+  ) => ({
+    initial: { scale: customScale, rotate: customRotate },
+    whileInView: {
+      scale: 1,
+      rotate: 0,
+      transition: { duration: customDuration, ease: "easeInOut" },
+    },
+  }),
+};

@@ -126,7 +126,7 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
                   alt={item.title}
                   width={320}
                   height={320}
-                  className="w-full"
+                  className="w-full aspect-video object-cover"
                 />
               </Link>
               <p className="text-sm text-[#9F9F9F] line-clamp-2 my-1">

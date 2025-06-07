@@ -131,7 +131,7 @@ export default function ImageOverview() {
         alt={`Selected template image ${activeIndex + 1}`}
         width={660}
         height={561}
-        className="w-full object-cover md:aspect-square"
+        className="w-full object-cover max-h-[80vh]"
         priority // Prioritize the main image
       />
 

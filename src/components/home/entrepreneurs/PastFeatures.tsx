@@ -1,11 +1,13 @@
 "use client";
 import { SectionWrapper } from "@/lib/hoc";
-import { scaleVariants, textVariant } from "@/lib/motion";
+import { imageVariants, textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import images from "../../../../public/images";
 import useNavigate from "@/lib/hooks/useNavigate";
+
+const MotionImage = motion(Image);
 
 const entrepreneurs = [
   {
@@ -105,8 +107,8 @@ const PastFeatures = () => {
                 className="h-full flex flex-col gap-4 xs:gap-6 lg:gap-8"
               >
                 <motion.div
-                  variants={scaleVariants}
-                  whileInView={scaleVariants.whileInView()}
+                  // variants={scaleVariants}
+                  // whileInView={scaleVariants.whileInView()}
                   className="cursor-pointer relative w-full h-60 md:h-80 overflow-hidden shadow-lg"
                   onHoverStart={() => setHovered(index)}
                   onHoverEnd={() => {
@@ -122,7 +124,7 @@ const PastFeatures = () => {
                       hovered === index ? "opacity-80" : "opacity-10"
                     } z-10 transition-opacity duration-300 backdrop-blur-sm`}
                   ></div>
-                  <Image
+                  <MotionImage
                     src={item.imgUrl}
                     alt={`${item.id} image`}
                     fill
@@ -132,6 +134,10 @@ const PastFeatures = () => {
                       objectPosition: index === 1 ? "50% 20%" : "",
                     }}
                     quality={100}
+                    variants={imageVariants.zoomRotate()}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ margin: "100px", once: true }}
                     priority
                   />
 
