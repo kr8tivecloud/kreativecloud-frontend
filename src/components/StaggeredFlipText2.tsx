@@ -6,11 +6,15 @@ import { motion } from "motion/react";
 interface StaggeredFlipText2Props {
   text: string;
   className?: string;
+  duration?: number;
+  staggerDelay?: number;
 }
 
 const StaggeredFlipText2: React.FC<StaggeredFlipText2Props> = ({
   text,
   className,
+  duration = 0.3,
+  staggerDelay = 0.05,
 }) => {
   // Split text into characters, including handling spaces
   const characters = text
@@ -30,8 +34,8 @@ const StaggeredFlipText2: React.FC<StaggeredFlipText2Props> = ({
           initial={{ y: "100%" }}
           whileInView={{ y: "0%" }}
           transition={{
-            delay: index * 0.05,
-            duration: 0.3,
+            delay: index * staggerDelay,
+            duration: duration,
             ease: "easeOut",
           }}
           viewport={{ once: true }}

@@ -6,7 +6,6 @@ import { AnimatedButton } from "@/components/AnimatedButton";
 import StaggeredFlipText2 from "@/components/StaggeredFlipText2";
 import ShimmerParagraph from "@/components/ShimmerParagraph";
 import { motion, Variants } from "motion/react";
-import FlipText from "@/components/FlipText";
 import BlackdiamondMock from "@/assets/images/portfolio/websites/blackdiamond.png";
 import AtkinsMock from "@/assets/images/portfolio/websites/atkins-attire.png";
 import MekkachiMock from "@/assets/images/portfolio/websites/mekkachi.png";
@@ -58,9 +57,10 @@ export default function PortfolioPage() {
               {/* TEXT CONTENT */}
               <div className="flex-1 min-w-0">
                 <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
-                  <FlipText
+                  <StaggeredFlipText2
                     className="whitespace-break-spaces"
                     text="Black Diamond Entertainment"
+                    staggerDelay={0.035}
                   />
                 </div>
                 <ShimmerParagraph className="my-5 leading-7">
