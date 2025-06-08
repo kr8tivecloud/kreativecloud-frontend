@@ -15,7 +15,7 @@ export default function TemplatesSubmenu() {
         What templates are you looking for?
       </p>
 
-      <form className="min-w-80 border border-[#151515] p-2 mt-1">
+      <form className="max-w-full 2xs:min-w-80 border border-[#151515] p-2 mt-1">
         <Input placeholder="Search for templates" className="w-full" />
 
         <p className="text-xs mt-4 mb-2">Popular Templates</p>

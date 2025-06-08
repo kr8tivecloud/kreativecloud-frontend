@@ -227,7 +227,7 @@ function MobileNav({ navbarOpen }: MobileNavProps) {
         type: "spring",
         bounce: 0,
       }}
-      className="fixed flex flex-col lg:hidden inset-0 min-w-96 bg-black"
+      className="fixed flex flex-col lg:hidden inset-0 max-w-full 2xs:min-w-96 bg-black"
     >
       <div className="h-20 bg-black"></div>
       <div
