@@ -22,7 +22,6 @@ const imagesPreview = [
   images.landingPage.portfolio9,
   images.landingPage.portfolio10,
   images.landingPage.portfolio11,
-  images.landingPage.portfolio12,
 ];
 
 const Portfolio = () => {
@@ -56,7 +55,7 @@ const Portfolio = () => {
               waitForTransition: true,
             }}
             slideToClickedSlide={true}
-            speed={2000}
+            speed={3000}
             loop={true}
             slidesPerView="auto"
             spaceBetween={0}

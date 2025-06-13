@@ -48,7 +48,6 @@ import portfolio8 from "./home/landingPage/portfolio8.png";
 import portfolio9 from "./home/landingPage/portfolio9.png";
 import portfolio10 from "./home/landingPage/portfolio10.png";
 import portfolio11 from "./home/landingPage/portfolio11.png";
-import portfolio12 from "./home/landingPage/portfolio12.png";
 
 import logo from "./logo.svg";
 
@@ -88,7 +87,6 @@ const landingPage = {
   portfolio9,
   portfolio10,
   portfolio11,
-  portfolio12,
 
   entrepreneur1,
   entrepreneur2,
