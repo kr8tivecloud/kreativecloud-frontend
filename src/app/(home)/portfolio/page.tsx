@@ -231,7 +231,11 @@ export default function PortfolioPage() {
               {/* FLYERS/BANNERS */}
               <div>
                 <p className="text-3xl font-bold mb-4">Flyers/Banners</p>
-                <Image src={GraphicsTemplate} alt="Graphics Design Templates" />
+                <Image
+                  src={GraphicsTemplate}
+                  className="w-full min-h-[300px] object-cover"
+                  alt="Graphics Design Templates"
+                />
               </div>
               {/* END FLYERS/BANNERS */}
 
