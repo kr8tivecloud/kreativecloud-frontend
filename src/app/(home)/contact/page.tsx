@@ -42,15 +42,6 @@ export default function ContactPage() {
           >
             Get&nbsp;your discounted website&nbsp;today!
           </motion.h2>
-          <motion.p
-            initial={{ y: 10 }}
-            whileInView={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: "all" }}
-            className="font-bold mt-3 md:hidden"
-          >
-            Send us a message, lets schedule a meeting.
-          </motion.p>
         </div>
 
         {/* TODO: It is on top of every element on the page */}

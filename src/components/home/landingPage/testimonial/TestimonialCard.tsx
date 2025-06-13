@@ -9,17 +9,20 @@ interface TestimonialCardProps {
   content: string;
   starNumber: number;
   social: React.ComponentType;
+  date: string;
 }
+
 const TestimonialCard = ({
   image,
   name,
   content,
   tag,
   social: SocialIcon,
+  date,
 }: TestimonialCardProps) => {
   return (
     <div className="h-full">
-      <div className="px-6 2xs:px-4 lg:px-6 py-6 2xs:py-4 lg:py-6 w-full h-full flex flex-col bg-black rounded-2xl border border-white/25">
+      <div className="px-6 2xs:px-4 lg:px-6 py-6 2xs:py-4 lg:py-6 w-full h-full flex flex-col bg-black rounded-2xl border border-dashed border-white/25">
         <div className="w-full flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <div className="cursor-pointer relative w-10 h-10 overflow-hidden rounded-full">
@@ -27,8 +30,7 @@ const TestimonialCard = ({
                 src={image}
                 alt="profile"
                 fill
-                objectFit="cover"
-                className="z-0"
+                className="z-0 object-cover"
                 quality={100}
                 priority
               />
@@ -57,13 +59,7 @@ const TestimonialCard = ({
 
         <p className="text-base text-white font-light flex-grow">{content}</p>
 
-        <p className="mt-1 flex self-end text-xs text-[#536471]">
-          {new Date().toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
+        <p className="mt-1 flex self-end text-xs text-[#536471]">{date}</p>
       </div>
     </div>
   );

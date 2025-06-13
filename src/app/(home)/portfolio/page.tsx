@@ -13,7 +13,6 @@ import GraphicsTemplate from "@/assets/images/portfolio/graphic-design/flyers_or
 import SobSnlLogo from "@/assets/images/portfolio/graphic-design/sob-snl.webp";
 import TmentalLogo from "@/assets/images/portfolio/graphic-design/t-mental.gif";
 import GunThudLogo from "@/assets/images/portfolio/graphic-design/gun-thud.gif";
-import Pagination from "@/components/Pagination";
 
 const MotionImage = motion.create(Image);
 
@@ -74,7 +73,12 @@ export default function PortfolioPage() {
                   curating the best parties and events, all built to perfection.
                 </ShimmerParagraph>
                 <div className="flex items-center gap-x-5">
-                  <AnimatedButton variant="solid" href="#" as={"link"}>
+                  <AnimatedButton
+                    target="_blank"
+                    variant="solid"
+                    href="https://www.eventsbyblackdiamond.com/"
+                    as={"link"}
+                  >
                     VIEW WEBSITE
                   </AnimatedButton>
                 </div>
@@ -124,7 +128,7 @@ export default function PortfolioPage() {
                   <AnimatedButton
                     variant="solid"
                     as={"link"}
-                    href="https://eventsbyblackdiamond.com"
+                    href="https://mekkachi.myshopify.com/"
                     target="_blank"
                   >
                     VIEW WEBSITE
@@ -177,7 +181,11 @@ export default function PortfolioPage() {
                 </ShimmerParagraph>
 
                 <div className="flex items-center gap-x-5">
-                  <AnimatedButton variant="solid" href="#" as={"link"}>
+                  <AnimatedButton
+                    variant="solid"
+                    href="https://atkinsattiregallery.com/"
+                    as={"link"}
+                  >
                     VIEW WEBSITE
                   </AnimatedButton>
                 </div>
@@ -203,13 +211,13 @@ export default function PortfolioPage() {
             {/* END BRANDING SECTION */}
           </div>
 
-          <Pagination
+          {/* <Pagination
             noOfPages={10}
             current={1}
             onNext={() => {}}
             onPrev={() => {}}
             gotoPage={() => {}}
-          />
+          /> */}
         </div>
         {/* END WEBSITE DESIGN SECTION */}
 

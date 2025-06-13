@@ -33,7 +33,7 @@ const Heroarea = () => {
           transform: "scale(1.1)",
         }}
       />
-      <div className="z-10 w-[90%] xl:w-[80%] h-full inset-0 mx-auto flex items-center justify-between">
+      <div className="w-[90%] xl:w-[80%] h-full inset-0 mx-auto flex items-center justify-between">
         <div className="w-full sm:w-[90%] lg:w-[80%] sm:py-32 lg:py-40 xl:py-44 2xl:py-48 flex flex-col gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <motion.div
             variants={textVariant(0.1)}
@@ -44,12 +44,22 @@ const Heroarea = () => {
             </h1>
           </motion.div>
 
-          <div className="w-full flex max-sm:flex-col-reverse sm:items-center gap-4 sm:gap-6 md:gap-8 ">
+          <Image
+            src={images.landingPage.animation1}
+            alt="animation"
+            className="min-w-[80rem] sm:min-w-[60rem] absolute top-1/2 -translate-y-1/2 rotate-[270deg] -left-[10rem] sm:left-[5rem] md:left-[13rem] lg:left-[15rem]"
+            style={{
+              // transform: "rotate(270deg)",
+              minHeight: "auto",
+            }}
+          />
+          {/* The relative class is to make the z-index higher and make it on top of it */}
+          <div className="relative w-full flex max-sm:flex-col-reverse sm:items-center gap-4 sm:gap-6 md:gap-8 ">
             <div className="flex">
               <AnimatedButton
                 className="w-fit py-4 md:py-5 px-6 md:px-8 "
                 as="link"
-                href="/contact"
+                href="/services"
                 variant="outline"
               >
                 EXPLORE{" "}
@@ -62,16 +72,6 @@ const Heroarea = () => {
           </div>
         </div>
       </div>
-
-      <Image
-        src={images.landingPage.animation1}
-        alt="animation"
-        className="min-w-[80rem] sm:min-w-[60rem] absolute -left-[10rem] sm:left-[5rem] md:left-[13rem] lg:left-[15rem] z-20"
-        style={{
-          transform: "rotate(270deg)",
-          minHeight: "auto",
-        }}
-      />
     </motion.div>
   );
 };

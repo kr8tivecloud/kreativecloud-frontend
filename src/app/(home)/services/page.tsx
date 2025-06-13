@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React from "react";
@@ -58,14 +59,16 @@ export default function ServicesPage() {
               We will create a custom website design tailored to your brand with
               Intuitive user experience (UX) and navigation. We deliver seamless
               and visually appealing online experiences that reflects your
-              brand’s identity. Whether you want to build from scratch, leverage
+              brand's identity. Whether you want to build from scratch, leverage
               on any platform or revamp the aesthetics of your site, we got you!
             </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
-              <AnimatedButton variant="outline" as={"link"} href="#">
+              <AnimatedButton variant="outline" as={"link"} href="/contact">
                 HIRE US
               </AnimatedButton>
-              <AnimatedButton variant="solid">BUY SHOPIFY THEME</AnimatedButton>
+              <AnimatedButton variant="solid" as={"link"} href="/coming-soon">
+                BUY SHOPIFY THEME
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -110,8 +113,12 @@ export default function ServicesPage() {
             </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
-              <AnimatedButton>HIRE US</AnimatedButton>
-              <AnimatedButton variant="solid">BUY SHOPIFY THEME</AnimatedButton>
+              <AnimatedButton as="link" href="/contact">
+                HIRE US
+              </AnimatedButton>
+              <AnimatedButton variant="solid" as="link" href="/coming-soon">
+                BUY TEMPLATE
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -152,14 +159,16 @@ export default function ServicesPage() {
             <ShimmerParagraph className="my-5 leading-7 text-justify">
               We will bring your brand to life. Our branding services include
               creating unique and memorable logos, color palettes and typography
-              that represent your style and values. We’ll provide comprehensive
+              that represent your style and values. We'll provide comprehensive
               brand guidelines to ensure consistency across all platforms. We
               also offer rebranding services to update outdated visuals and
               messaging to align with your current goals.
             </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
-              <AnimatedButton variant="outline">HIRE US</AnimatedButton>
+              <AnimatedButton variant="outline" as="link" href="/contact">
+                HIRE US
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}
@@ -204,7 +213,9 @@ export default function ServicesPage() {
               stands out and makes a lasting impression.
             </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
-              <AnimatedButton variant="outline">HIRE US</AnimatedButton>
+              <AnimatedButton variant="outline" as="link" href="/contact">
+                HIRE US
+              </AnimatedButton>
             </div>
           </div>
           {/* END TEXT CONTENT */}

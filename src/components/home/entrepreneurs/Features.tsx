@@ -98,8 +98,7 @@ const Features = () => {
                     src={item.imgUrl}
                     alt={`${item.id} image`}
                     fill
-                    objectFit="cover"
-                    className="z-0"
+                    className="z-0 object-cover"
                     style={{
                       objectPosition:
                         index === 0

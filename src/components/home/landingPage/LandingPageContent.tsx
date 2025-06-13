@@ -1,5 +1,5 @@
 import Faqs from "./Faqs/Faqs";
-import Features from "./Features";
+// import Features from "./Features";
 import Heroarea from "./Heroarea";
 import Portfolio from "./Portfolio";
 import Process from "./process/Process";
@@ -11,7 +11,7 @@ const LandingPageContent = () => {
     <div className="w-full flex flex-col overflow-hidden">
       <Heroarea />
       <Portfolio />
-      <Features />
+      {/* <Features /> */}
       <Services />
       <Testimonial />
       <Process />

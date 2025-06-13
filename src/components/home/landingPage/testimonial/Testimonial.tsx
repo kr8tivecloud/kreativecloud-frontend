@@ -5,13 +5,14 @@ import { useInView, motion } from "motion/react";
 import { StaticImageData } from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import images from "../../../../../public/images";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import TestimonialCard from "./TestimonialCard";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
 
 interface TestimonialCardProps {
   image: StaticImageData;
@@ -20,85 +21,100 @@ interface TestimonialCardProps {
   content: string;
   starNumber: number;
   social: React.ComponentType;
+  date: string;
 }
 
 const testimonials: TestimonialCardProps[] = [
   {
-    image: images.landingPage.testimonial,
+    image: images.landingPage.person1,
     name: "Puff Mo 💨",
     tag: "@Verta",
     content: "Stellar service! My website looks flawless and so user-friendly",
     starNumber: 5,
-    social: FaXTwitter,
+    social: FaInstagram,
+    date: "March 15, 2024",
   },
   {
-    image: images.landingPage.testimonial,
-    name: "Ganga",
-    tag: "@NGanga",
+    image: images.landingPage.person2,
+    name: "Sarah Chen",
+    tag: "@sarahchen.design",
     content:
-      "Working with Kreative Cloud has been a game-changer for my brand. I used their graphic design service, and I’m thrilled with the result. My logo looks sharp, and the social media graphics was fire. ",
+      "Working with Kreative Cloud has been a game-changer for my brand. I used their graphic design service, and I'm thrilled with the result. My logo looks sharp, and the social media graphics was fire. ",
     starNumber: 5,
     social: FaXTwitter,
+    date: "February 28, 2024",
   },
-
   {
-    image: images.landingPage.testimonial,
-    name: "Ganga",
-    tag: "@NGanga",
+    image: images.landingPage.person3,
+    name: "Maya Johnson",
+    tag: "@mayaj.creative",
     content:
-      "Kreative Cloud’s design service was fantastic. They got my brand’s look perfectly!",
+      "Kreative Cloud's design service was fantastic. They got my brand's look perfectly!",
     starNumber: 5,
-    social: FaXTwitter,
+    social: FaFacebook,
+    date: "January 10, 2024",
   },
-
   {
-    image: images.landingPage.testimonial,
-    name: "Ganga",
-    tag: "@NGanga",
+    image: images.landingPage.person4,
+    name: "Aisha Patel",
+    tag: "@aishapatel.digital",
     content:
-      "Working with Kreative Cloud has been a game-changer for my brand. I used their graphic design service, and I’m thrilled with the result. My logo looks sharp, and the social media graphics was fire. ",
+      "Working with Kreative Cloud has been a game-changer for my brand. I used their graphic design service, and I'm thrilled with the result. My logo looks sharp, and the social media graphics was fire. ",
     starNumber: 5,
     social: FaXTwitter,
+    date: "April 2, 2024",
   },
 ];
 
 const testimonials2: TestimonialCardProps[] = [
   {
-    image: images.landingPage.testimonial,
+    image: images.landingPage.person6,
     name: "Blacka",
     tag: "@Blavckala",
     content:
-      "Absolutely love the templates! They’re easy to use and saved me so much time. Highly recommended!",
+      "Absolutely love the templates! They're easy to use and saved me so much time. Highly recommended!",
     starNumber: 5,
-    social: FaXTwitter,
+    social: FaInstagram,
+    date: "March 22, 2024",
   },
-
   {
-    image: images.landingPage.testimonial,
+    image: images.landingPage.person7,
     name: "Tbas",
     tag: "@TbasKing",
     content:
       "Honestly, best investment I made all year. Smooth process, killer designs. 💯",
     starNumber: 5,
     social: FaXTwitter,
+    date: "February 5, 2024",
   },
-
   {
-    image: images.landingPage.testimonial,
+    image: images.landingPage.person8,
     name: "Banama",
     tag: "@banama",
     content: "These guys understood the assignment! My website = goals. 🤩👏",
     starNumber: 5,
-    social: FaXTwitter,
+    social: FaInstagram,
+    date: "January 18, 2024",
   },
   {
     image: images.landingPage.testimonial,
-    name: "Ganga",
-    tag: "@NGanga",
+    name: "Liam O'Connor",
+    tag: "@liamoconnor.tech",
     content:
-      "Kreative Cloud got my brand lookin’ 🔥! The templates saved my life 😍🙌",
+      "Kreative Cloud got my brand lookin' 🔥! The templates saved my life 😍🙌",
     starNumber: 5,
-    social: FaXTwitter,
+    social: FaFacebook,
+    date: "April 8, 2024",
+  },
+  {
+    image: images.landingPage.testimonial,
+    name: "Emma Rodriguez",
+    tag: "@emmarodriguez.design",
+    content:
+      "The attention to detail is incredible! My brand has never looked better. These templates are pure gold! ✨",
+    starNumber: 5,
+    social: FaInstagram,
+    date: "March 30, 2024",
   },
 ];
 
@@ -106,7 +122,7 @@ const SwiperNavButtons = () => {
   const swiper = useSwiper();
 
   return (
-    <div className="w-full flex justify-center items-center gap-4 mt-0 2xs:mt-5">
+    <div className="w-full flex justify-center items-center gap-4 mt-3 2xs:mt-5">
       <div
         className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-white text-white text-base cursor-pointer"
         onClick={() => swiper.slidePrev()}
@@ -149,14 +165,17 @@ const Testimonial = () => {
           </h1>
         </motion.div>
 
+        {/* Start of Laptop Swipers */}
         <div className="max-xs:hidden w-full overflow-hidden flex flex-col gap-6 xl:gap-8">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             slidesPerView={2.2}
             spaceBetween={width < 640 ? 12 : 15}
             autoplay={{
               disableOnInteraction: false,
             }}
+            centeredSlides={true}
+            loop={true}
             breakpoints={{
               200: {
                 slidesPerView: 1.0,
@@ -190,12 +209,15 @@ const Testimonial = () => {
           </Swiper>
 
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             slidesPerView={2.2}
             spaceBetween={width < 640 ? 12 : 15}
             autoplay={{
               disableOnInteraction: false,
+              reverseDirection: true,
             }}
+            centeredSlides={true}
+            loop={true}
             breakpoints={{
               200: {
                 slidesPerView: 1.0,
@@ -231,8 +253,10 @@ const Testimonial = () => {
             {/* <SwiperNavButtons /> */}
           </Swiper>
         </div>
+        {/* End of Laptop Swipers */}
 
-        <div className="xs:hidden w-full overflow-hidden">
+        {/* Start of Mobile Swiper */}
+        <div className="xs:hidden w-full overflow-hidden px-4 sm:px-12 flex max-lg:flex-col gap-16 xl:gap-8">
           <Swiper
             modules={[Navigation]}
             slidesPerView={1.0}
@@ -277,6 +301,7 @@ const Testimonial = () => {
             <SwiperNavButtons />
           </Swiper>
         </div>
+        {/* End of mobile swiper */}
       </div>
     </motion.div>
   );

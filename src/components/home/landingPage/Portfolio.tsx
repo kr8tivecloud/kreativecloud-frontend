@@ -8,18 +8,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import images from "../../../../public/images";
-import { useWindowSize } from "@/lib/hooks/useWindowSize";
+// import { useWindowSize } from "@/lib/hooks/useWindowSize";
 
 const imagesPreview = [
   images.landingPage.portfolio1,
   images.landingPage.portfolio2,
   images.landingPage.portfolio3,
+  images.landingPage.portfolio4,
+  images.landingPage.portfolio5,
+  images.landingPage.portfolio6,
+  images.landingPage.portfolio7,
+  images.landingPage.portfolio8,
+  images.landingPage.portfolio9,
+  images.landingPage.portfolio10,
+  images.landingPage.portfolio11,
+  images.landingPage.portfolio12,
 ];
 
 const Portfolio = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.25 });
-  const width = useWindowSize();
+  // const width = useWindowSize();
 
   return (
     <motion.div
@@ -45,7 +54,8 @@ const Portfolio = () => {
             speed={3000}
             loop={true}
             slidesPerView="auto"
-            spaceBetween={width < 640 ? 10 : 15}
+            spaceBetween={0}
+            // spaceBetween={width < 640 ? 10 : 15}
             grabCursor={true}
             freeMode={true}
             allowTouchMove={false}

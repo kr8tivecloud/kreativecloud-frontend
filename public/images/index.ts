@@ -37,9 +37,18 @@ const socialLinks = {
   linkedin,
 };
 
-import portfolio1 from "./home/landingPage/portfolio1.svg";
-import portfolio2 from "./home/landingPage/portfolio2.svg";
-import portfolio3 from "./home/landingPage/portfolio3.svg";
+import portfolio1 from "./home/landingPage/portfolio1.png";
+import portfolio2 from "./home/landingPage/portfolio2.png";
+import portfolio3 from "./home/landingPage/portfolio3.png";
+import portfolio4 from "./home/landingPage/portfolio4.png";
+import portfolio5 from "./home/landingPage/portfolio5.png";
+import portfolio6 from "./home/landingPage/portfolio6.png";
+import portfolio7 from "./home/landingPage/portfolio7.png";
+import portfolio8 from "./home/landingPage/portfolio8.png";
+import portfolio9 from "./home/landingPage/portfolio9.png";
+import portfolio10 from "./home/landingPage/portfolio10.png";
+import portfolio11 from "./home/landingPage/portfolio11.png";
+import portfolio12 from "./home/landingPage/portfolio12.png";
 
 import logo from "./logo.svg";
 
@@ -56,10 +65,28 @@ import animation1 from "./home/landingPage/animations/animation1.png";
 import animation2 from "./home/landingPage/animations/animation2.png";
 import animation3 from "./home/landingPage/animations/animation3.png";
 
+import person1 from "./home/landingPage/testimonial-avatars/person1.jpg";
+import person2 from "./home/landingPage/testimonial-avatars/person2.jpg";
+import person3 from "./home/landingPage/testimonial-avatars/person3.jpg";
+import person4 from "./home/landingPage/testimonial-avatars/person4.jpg";
+import person5 from "./home/landingPage/testimonial-avatars/person5.jpg";
+import person6 from "./home/landingPage/testimonial-avatars/person6.jpg";
+import person7 from "./home/landingPage/testimonial-avatars/person7.jpg";
+import person8 from "./home/landingPage/testimonial-avatars/person8.jpg";
+
 const landingPage = {
   portfolio1,
   portfolio2,
   portfolio3,
+  portfolio4,
+  portfolio5,
+  portfolio6,
+  portfolio7,
+  portfolio8,
+  portfolio9,
+  portfolio10,
+  portfolio11,
+  portfolio12,
 
   entrepreneur1,
   entrepreneur2,
@@ -73,9 +100,20 @@ const landingPage = {
   animation1,
   animation2,
   animation3,
+
+  person1,
+  person2,
+  person3,
+  person4,
+  person5,
+  person6,
+  person7,
+  person8,
 };
 
-export default { landingPage, entrepreneurPage, socialLinks, logo };
+const imageExports = { landingPage, entrepreneurPage, socialLinks, logo };
+
+export default imageExports;
 
 export { default as templateImage } from "./mock-images/template-image.png";
 export { default as templateCalloutHero } from "./templates/template-callout-hero.png";

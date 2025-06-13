@@ -12,7 +12,7 @@ import { SocialLink } from "@/lib/types";
 
 const TypewriterText = ({
   text,
-  animate = true,
+  animate = false,
 }: {
   text: string;
   animate?: boolean;
@@ -38,7 +38,7 @@ const TypewriterText = ({
 
   return (
     <motion.div
-      className="text-4xl lg:text-5xl xl:text-6xl leading-[50px] lg:leading-[70px] xl:leading-[80px] font-sans w-[80%]"
+      className="text-4xl lg:text-5xl xl:text-6xl leading-[50px] font-sans w-[80%]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -66,25 +66,25 @@ const Hero: React.FC<HeroProps> = ({
   socialLinks,
   websiteLink,
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
-    };
+  // useEffect(() => {
+  //   const checkScreenSize = () => {
+  //     setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
+  //   };
 
-    // Initial check
-    checkScreenSize();
+  //   // Initial check
+  //   checkScreenSize();
 
-    // Add event listener for window resize
-    window.addEventListener("resize", checkScreenSize);
+  //   // Add event listener for window resize
+  //   window.addEventListener("resize", checkScreenSize);
 
-    // Cleanup
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  //   // Cleanup
+  //   return () => window.removeEventListener("resize", checkScreenSize);
+  // }, []);
   return (
     <motion.div
-      className="w-full flex flex-col md:flex-row items-center gap-6 pt-6"
+      className="w-full flex flex-col md:flex-row items-center gap-6 mt-6 md:max-h-[75vh] overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -97,14 +97,14 @@ const Hero: React.FC<HeroProps> = ({
           src={bgImage}
           alt="hero Image"
           fill
-          className="object-cover"
+          className="object-cover object-left-bottom"
           quality={100}
           priority
         />
       </motion.div>
 
       <div className="sm:pl-5 lg:pl-10 w-full md:w-1/2 flex flex-col gap-4">
-        <TypewriterText text={title} animate={!isMobile} />
+        <TypewriterText text={title} animate={false} />
 
         <motion.p variants={itemVariants}>{subtitle}</motion.p>
 

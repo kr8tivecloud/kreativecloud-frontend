@@ -79,8 +79,16 @@ const PrivatePolicyPage = () => {
               className="border-[1px] border-[#333333] bg-[#151515] rounded-none"
             >
               <p className="text-xs sm:text-sm xl:text-base font-sans">
-                Respectful alcohol consumption within legal limits and a
-                smoke-free environment are our community priorities.
+                We use your information to:
+                <ul className="list-disc pl-6">
+                  <li>Provide and maintain our services</li>
+                  <li>Process your transactions and orders</li>
+                  <li>Send you important updates and notifications</li>
+                  <li>Improve our website and user experience</li>
+                  <li>Communicate with you about our services</li>
+                  <li>Comply with legal obligations</li>
+                  <li>Protect against fraud and unauthorized access</li>
+                </ul>
               </p>
             </Accordion>
           </motion.div>
@@ -97,8 +105,19 @@ const PrivatePolicyPage = () => {
               className="border-[1px] border-[#333333] bg-[#151515] rounded-none"
             >
               <p className="text-xs sm:text-sm xl:text-base font-sans">
-                Respectful alcohol consumption within legal limits and a
-                smoke-free environment are our community priorities.
+                We may share your information with:
+                <ul className="list-disc pl-6">
+                  <li>
+                    Service providers who assist in operating our website and
+                    services
+                  </li>
+                  <li>Business partners with your consent</li>
+                  <li>Legal authorities when required by law</li>
+                  <li>
+                    Third parties in case of business transfers or mergers
+                  </li>
+                </ul>
+                We do not sell your personal information to third parties.
               </p>
             </Accordion>
           </motion.div>

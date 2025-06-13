@@ -16,30 +16,17 @@ const adData = {
   items: [], // This structure is compatible with how templates are mapped
 };
 
-// Remove the direct mutation of the imported array:
-// templates.splice(1, 0, adData);
-
 export default function Templates() {
   const displayTemplates = useMemo(() => {
     const newTemplates = [...originalTemplates]; // Create a shallow copy
-
-    // Insert adData at index 1.
-    // Array.prototype.splice behavior:
-    // If index is greater than the length of the array, new item(s) will be added at the end of the array.
-    // If newTemplates is empty, splice(1,0,adData) results in [adData].
-    // If newTemplates has 1 element, splice(1,0,adData) results in [originalElement, adData].
-    // If newTemplates has 2+ elements, splice(1,0,adData) inserts adData at index 1.
     newTemplates.splice(1, 0, adData);
-
     return newTemplates;
-  }, []); // Empty dependency array ensures this logic runs only once after component mount,
-  // as originalTemplates (from import) and adData (constant) don't change.
+  }, []);
 
   return (
     <div className="flex-1">
       <div className="md:pl-6 border-0 md:border-l border-[#B7B7B7] space-y-6">
         {displayTemplates.map((template) => {
-          // Use the memoized displayTemplates
           if (template.id === "ad") {
             return (
               <div key={template.id}>
@@ -75,7 +62,7 @@ export default function Templates() {
             <TemplateGroup
               key={template.id}
               title={template.category}
-              items={template.items as TemplateGroupProps["items"]} // Cast items if necessary, adData.items is []
+              items={template.items as TemplateGroupProps["items"]}
             />
           );
         })}
@@ -107,11 +94,8 @@ type TemplateGroupProps = {
     image: string | StaticImageData;
   }[];
 };
+
 function TemplateGroup({ title, items }: TemplateGroupProps) {
-  const handleAddToCart = (id: string) => {
-    // TODO: Implement add to cart functionality
-    console.log("Add to cart:", id);
-  };
   return (
     <div>
       <h3 className="font-bold text-base">{title}</h3>
@@ -135,19 +119,17 @@ function TemplateGroup({ title, items }: TemplateGroupProps) {
               <p className="text-base text-[#B7B7B7]">USD {item.price}</p>
               <div className="flex items-center gap-x-1 mb-1">
                 <FiDownloadCloud />
-
                 <span className="text-[#B7B7B7] font-bold text-xs">
                   Digital Download
                 </span>
               </div>
 
-              <AnimatedButton
-                onClick={() => handleAddToCart(item.id)}
-                className="border-[#222222] flex items-center space-x-2 py-3 text-[#B7B7B7]"
-              >
-                <FaPlus size={14} />
-                <span>Add to cart</span>
-              </AnimatedButton>
+              <Link href="/coming-soon">
+                <AnimatedButton className="border-[#222222] flex items-center space-x-2 py-3 text-[#B7B7B7]">
+                  <FaPlus size={14} />
+                  <span>Add to cart</span>
+                </AnimatedButton>
+              </Link>
             </div>
           );
         })}

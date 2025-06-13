@@ -2,24 +2,52 @@
 
 import Input from "@/components/Input";
 import ServiceCategoryPill from "@/components/ServiceCategoryPill";
-import React from "react";
+import React, { useState } from "react";
 import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormError } from "@/components/FormError";
 import { AnimatedButton } from "@/components/AnimatedButton";
-import { joinUsFormSchema } from "@/apis/join-us/join-us.schemas";
-// import { FiX } from "react-icons/fi";
+import { joinUsFormSchema } from "@/app/api/join-us/join-us.schemas";
 import { HiPaperClip } from "react-icons/hi2";
+import { toast } from "react-hot-toast";
 
 export default function JoinUsForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const joinUsForm = useForm<z.infer<typeof joinUsFormSchema>>({
     resolver: zodResolver(joinUsFormSchema),
   });
-  // const attachmentInputRef = useRef<HTMLInputElement>(null);
 
-  function onSubmit(values: z.infer<typeof joinUsFormSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof joinUsFormSchema>) {
+    try {
+      setIsSubmitting(true);
+
+      const formData = new FormData();
+      Object.entries(values).forEach(([key, value]) => {
+        if (value instanceof File) {
+          formData.append(key, value);
+        } else if (value !== undefined && value !== null) {
+          formData.append(key, String(value));
+        }
+      });
+
+      const response = await fetch("/api/join-us", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      toast.success("Form submitted successfully!");
+      joinUsForm.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to submit form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const setAttachment: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -27,14 +55,6 @@ export default function JoinUsForm() {
       joinUsForm.setValue("portfolio", e.target.files[0]);
     }
   };
-
-  // const clearAttachment: React.MouseEventHandler = (e) => {
-  //   e.stopPropagation();
-  //   joinUsForm.setValue("portfolio", null);
-  //   if (attachmentInputRef.current?.value) {
-  //     attachmentInputRef.current.value = "";
-  //   }
-  // };
 
   return (
     <section className="relative z-[1]">
@@ -53,27 +73,48 @@ export default function JoinUsForm() {
         >
           <div className="flex gap-x-4 min-w-0">
             <div className="flex-1 min-w-0">
-              <Input className="w-full" placeholder="First name" />
+              <Input
+                className="w-full"
+                placeholder="First name"
+                {...joinUsForm.register("firstName")}
+              />
               <FormError error={joinUsForm.formState.errors.firstName} />
             </div>
             <div className="flex-1 min-w-0">
-              <Input className="w-full" placeholder="Last name" />
+              <Input
+                className="w-full"
+                placeholder="Last name"
+                {...joinUsForm.register("lastName")}
+              />
               <FormError error={joinUsForm.formState.errors.lastName} />
             </div>
           </div>
 
           <div>
-            <Input type="email" placeholder="Email" className="w-full" />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="w-full"
+              {...joinUsForm.register("email")}
+            />
             <FormError error={joinUsForm.formState.errors.email} />
           </div>
 
           <div>
-            <Input placeholder="Phone Number" className="w-full" />
+            <Input
+              placeholder="Phone Number"
+              className="w-full"
+              {...joinUsForm.register("phone")}
+            />
             <FormError error={joinUsForm.formState.errors.phone} />
           </div>
 
           <div>
-            <Input placeholder="Your social media" className="w-full" />
+            <Input
+              placeholder="Your social media"
+              className="w-full"
+              {...joinUsForm.register("socialMedia")}
+            />
             <FormError error={joinUsForm.formState.errors.socialMedia} />
           </div>
 
@@ -130,8 +171,12 @@ export default function JoinUsForm() {
           </div>
           {/* END ATTACHMENT UPLOAD */}
 
-          <AnimatedButton variant="outline" className="w-full">
-            SEND
+          <AnimatedButton
+            variant="outline"
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "SENDING..." : "SEND"}
           </AnimatedButton>
         </form>
       </div>

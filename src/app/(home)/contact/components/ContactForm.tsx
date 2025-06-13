@@ -1,22 +1,46 @@
 "use client";
 
-import { contactFormSchema } from "@/apis/contact/contact.schemas";
+import { contactFormSchema } from "@/app/api/contact/contact.schemas";
 import Input from "@/components/Input";
 import ServiceCategoryPill from "@/components/ServiceCategoryPill";
-import React from "react";
+import React, { useState } from "react";
 import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormError } from "@/components/FormError";
 import { AnimatedButton } from "@/components/AnimatedButton";
+import { toast } from "react-hot-toast";
 
 export default function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const contactForm = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  function onSubmit(values: z.infer<typeof contactFormSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof contactFormSchema>) {
+    try {
+      setIsSubmitting(true);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      toast.success("Message sent successfully!");
+      contactForm.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -36,27 +60,48 @@ export default function ContactForm() {
         >
           <div className="flex gap-x-4 min-w-0">
             <div className="flex-1 min-w-0">
-              <Input className="w-full" placeholder="First name" />
+              <Input
+                className="w-full"
+                placeholder="First name"
+                {...contactForm.register("firstName")}
+              />
               <FormError error={contactForm.formState.errors.firstName} />
             </div>
             <div className="flex-1 min-w-0">
-              <Input className="w-full" placeholder="Last name" />
+              <Input
+                className="w-full"
+                placeholder="Last name"
+                {...contactForm.register("lastName")}
+              />
               <FormError error={contactForm.formState.errors.lastName} />
             </div>
           </div>
 
           <div>
-            <Input type="email" placeholder="Email" className="w-full" />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="w-full"
+              {...contactForm.register("email")}
+            />
             <FormError error={contactForm.formState.errors.email} />
           </div>
 
           <div>
-            <Input placeholder="Phone Number" className="w-full" />
+            <Input
+              placeholder="Phone Number"
+              className="w-full"
+              {...contactForm.register("phone")}
+            />
             <FormError error={contactForm.formState.errors.phone} />
           </div>
 
           <div>
-            <Input placeholder="Your business name" className="w-full" />
+            <Input
+              placeholder="Your business name"
+              className="w-full"
+              {...contactForm.register("businessName")}
+            />
             <FormError error={contactForm.formState.errors.businessName} />
           </div>
 
@@ -88,12 +133,17 @@ export default function ContactForm() {
               placeholder="Tell us about your idea"
               rows={4}
               className="bg-[#15151D]/60 text-sm text-white p-4 outline outline-1 outline-white/25 focus:outline-white/50 transition-colors w-full"
+              {...contactForm.register("message")}
             ></textarea>
             <FormError error={contactForm.formState.errors.message} />
           </div>
 
-          <AnimatedButton variant="outline" className="w-full">
-            SEND
+          <AnimatedButton
+            variant="outline"
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "SENDING..." : "SEND"}
           </AnimatedButton>
         </form>
       </div>

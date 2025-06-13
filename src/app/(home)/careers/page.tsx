@@ -41,15 +41,6 @@ export default function ContactPage() {
           >
             Your&nbsp;creativity deserves a&nbsp;home.
           </motion.h2>
-          <motion.p
-            initial={{ y: 10 }}
-            whileInView={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: "all" }}
-            className="font-bold mt-3 md:hidden"
-          >
-            Join our team. Let’s innovate!
-          </motion.p>
         </div>
 
         {/* TODO: It is on top of every element on the page */}
