@@ -62,7 +62,7 @@ export default function ContactForm() {
             <div className="flex-1 min-w-0">
               <Input
                 className="w-full"
-                placeholder="First name"
+                placeholder="First name *"
                 {...contactForm.register("firstName")}
               />
               <FormError error={contactForm.formState.errors.firstName} />
@@ -70,7 +70,7 @@ export default function ContactForm() {
             <div className="flex-1 min-w-0">
               <Input
                 className="w-full"
-                placeholder="Last name"
+                placeholder="Last name *"
                 {...contactForm.register("lastName")}
               />
               <FormError error={contactForm.formState.errors.lastName} />
@@ -80,7 +80,7 @@ export default function ContactForm() {
           <div>
             <Input
               type="email"
-              placeholder="Email"
+              placeholder="Email *"
               className="w-full"
               {...contactForm.register("email")}
             />
@@ -89,7 +89,7 @@ export default function ContactForm() {
 
           <div>
             <Input
-              placeholder="Phone Number"
+              placeholder="Phone Number *"
               className="w-full"
               {...contactForm.register("phone")}
             />
@@ -105,7 +105,7 @@ export default function ContactForm() {
             <FormError error={contactForm.formState.errors.businessName} />
           </div>
 
-          <p className="font-bold text-sm">You need help with:</p>
+          <p className="font-bold text-sm">You need help with: *</p>
           {/* SERVICE CATEGORY */}
           <div>
             <ServiceCategoryPill
@@ -130,7 +130,7 @@ export default function ContactForm() {
 
           <div>
             <textarea
-              placeholder="Tell us about your idea"
+              placeholder="Tell us about your idea *"
               rows={4}
               className="bg-[#15151D]/60 text-sm text-white p-4 outline outline-1 outline-white/25 focus:outline-white/50 transition-colors w-full"
               {...contactForm.register("message")}

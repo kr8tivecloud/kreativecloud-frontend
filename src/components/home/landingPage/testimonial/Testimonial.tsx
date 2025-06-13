@@ -11,8 +11,7 @@ import images from "../../../../../public/images";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import TestimonialCard from "./TestimonialCard";
-import { FaInstagram, FaXTwitter } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaXTwitter, FaFacebookF } from "react-icons/fa6";
 
 interface TestimonialCardProps {
   image: StaticImageData;
@@ -51,7 +50,7 @@ const testimonials: TestimonialCardProps[] = [
     content:
       "Kreative Cloud's design service was fantastic. They got my brand's look perfectly!",
     starNumber: 5,
-    social: FaFacebook,
+    social: FaFacebookF,
     date: "January 10, 2024",
   },
   {
@@ -103,7 +102,7 @@ const testimonials2: TestimonialCardProps[] = [
     content:
       "Kreative Cloud got my brand lookin' 🔥! The templates saved my life 😍🙌",
     starNumber: 5,
-    social: FaFacebook,
+    social: FaFacebookF,
     date: "April 8, 2024",
   },
   {

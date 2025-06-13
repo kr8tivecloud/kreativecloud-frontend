@@ -69,7 +69,7 @@ const Portfolio = () => {
                   className="h-full w-auto object-contain"
                   width={800}
                   height={600}
-                  priority={index === 0}
+                  priority
                 />
               </SwiperSlide>
             ))}

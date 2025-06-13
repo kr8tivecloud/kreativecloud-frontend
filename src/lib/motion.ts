@@ -1,14 +1,22 @@
-export const textVariant = (delay: number, duration: number = 1.25) => {
+import { Variants } from "framer-motion";
+
+type Direction = "left" | "right" | "up" | "down";
+type AnimationType = "spring" | "tween";
+
+export const textVariant = (
+  delay: number,
+  duration: number = 1.25
+): Variants => {
   return {
     hidden: {
-      y: -50,
+      y: -25,
       opacity: 0,
     },
     show: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "tween",
         duration: duration,
         delay: delay,
       },
@@ -17,11 +25,11 @@ export const textVariant = (delay: number, duration: number = 1.25) => {
 };
 
 export const fadeIn = (
-  direction: string,
-  type: string,
+  direction: Direction,
+  type: AnimationType,
   delay: number,
   duration: number
-) => {
+): Variants => {
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -42,7 +50,7 @@ export const fadeIn = (
   };
 };
 
-export const zoomIn = (delay: number, duration: number) => {
+export const zoomIn = (delay: number, duration: number): Variants => {
   return {
     hidden: {
       scale: 0,
@@ -62,11 +70,11 @@ export const zoomIn = (delay: number, duration: number) => {
 };
 
 export const slideIn = (
-  direction: string,
-  type: string,
+  direction: Direction,
+  type: AnimationType,
   delay: number,
   duration: number
-) => {
+): Variants => {
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
@@ -88,7 +96,7 @@ export const slideIn = (
 export const staggerContainer = (
   staggerChildren: number,
   delayChildren: number
-) => {
+): Variants => {
   return {
     hidden: {},
     show: {
@@ -116,7 +124,7 @@ export const imageVariants = {
     customScale = 1.6,
     customRotate = -15,
     customDuration = 1.2
-  ) => ({
+  ): Variants => ({
     initial: { scale: customScale, rotate: customRotate },
     whileInView: {
       scale: 1,

@@ -75,7 +75,7 @@ export default function JoinUsForm() {
             <div className="flex-1 min-w-0">
               <Input
                 className="w-full"
-                placeholder="First name"
+                placeholder="First name *"
                 {...joinUsForm.register("firstName")}
               />
               <FormError error={joinUsForm.formState.errors.firstName} />
@@ -83,7 +83,7 @@ export default function JoinUsForm() {
             <div className="flex-1 min-w-0">
               <Input
                 className="w-full"
-                placeholder="Last name"
+                placeholder="Last name *"
                 {...joinUsForm.register("lastName")}
               />
               <FormError error={joinUsForm.formState.errors.lastName} />
@@ -93,7 +93,7 @@ export default function JoinUsForm() {
           <div>
             <Input
               type="email"
-              placeholder="Email"
+              placeholder="Email *"
               className="w-full"
               {...joinUsForm.register("email")}
             />
@@ -102,7 +102,7 @@ export default function JoinUsForm() {
 
           <div>
             <Input
-              placeholder="Phone Number"
+              placeholder="Phone Number *"
               className="w-full"
               {...joinUsForm.register("phone")}
             />
@@ -118,7 +118,7 @@ export default function JoinUsForm() {
             <FormError error={joinUsForm.formState.errors.socialMedia} />
           </div>
 
-          <p className="font-bold text-sm">What is your speciality:</p>
+          <p className="font-bold text-sm">What is your speciality: *</p>
           {/* SERVICE CATEGORY */}
           <div>
             <ServiceCategoryPill
@@ -145,7 +145,7 @@ export default function JoinUsForm() {
           {/* ATTACHMENT UPLOAD */}
           <div>
             <p className="font-bold text-sm mb-3">
-              Upload your portfolio or CV:
+              Upload your portfolio or CV: *
             </p>
 
             <label
