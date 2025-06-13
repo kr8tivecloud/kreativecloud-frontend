@@ -97,7 +97,7 @@ const testimonials2: TestimonialCardProps[] = [
     date: "January 18, 2024",
   },
   {
-    image: images.landingPage.testimonial,
+    image: images.landingPage.person9,
     name: "Liam O'Connor",
     tag: "@liamoconnor.tech",
     content:
@@ -107,7 +107,7 @@ const testimonials2: TestimonialCardProps[] = [
     date: "April 8, 2024",
   },
   {
-    image: images.landingPage.testimonial,
+    image: images.landingPage.person10,
     name: "Emma Rodriguez",
     tag: "@emmarodriguez.design",
     content:

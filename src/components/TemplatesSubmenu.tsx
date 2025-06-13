@@ -50,7 +50,7 @@ export default function TemplatesSubmenu() {
         <div className="flex items-center gap-x-6 mt-5">
           <AnimatedButton
             as={"link"}
-            href={"/templates"}
+            href={"/coming-soon"}
             variant="outline"
             className="flex-1 font-normal"
           >

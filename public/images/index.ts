@@ -73,6 +73,8 @@ import person5 from "./home/landingPage/testimonial-avatars/person5.jpg";
 import person6 from "./home/landingPage/testimonial-avatars/person6.jpg";
 import person7 from "./home/landingPage/testimonial-avatars/person7.jpg";
 import person8 from "./home/landingPage/testimonial-avatars/person8.jpg";
+import person9 from "./home/landingPage/testimonial-avatars/person9.jpg";
+import person10 from "./home/landingPage/testimonial-avatars/person10.jpg";
 
 const landingPage = {
   portfolio1,
@@ -109,6 +111,8 @@ const landingPage = {
   person6,
   person7,
   person8,
+  person9,
+  person10,
 };
 
 const imageExports = { landingPage, entrepreneurPage, socialLinks, logo };

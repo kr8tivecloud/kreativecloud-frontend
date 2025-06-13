@@ -34,7 +34,7 @@ const resourceLinks: NavLinkType[] = [
   },
   {
     title: "Templates",
-    href: "/templates",
+    href: "/coming-soon",
   },
 ].map((link, index) => ({ ...link, id: index + 1 }));
 
