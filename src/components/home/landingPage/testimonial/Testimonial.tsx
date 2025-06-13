@@ -257,7 +257,7 @@ const Testimonial = () => {
         {/* Start of Mobile Swiper */}
         <div className="xs:hidden w-full overflow-hidden px-4 sm:px-12 flex max-lg:flex-col gap-16 xl:gap-8">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             slidesPerView={1.0}
             spaceBetween={width < 640 ? 12 : 15}
             autoplay={{
