@@ -5,6 +5,8 @@ import FaqAccordion from "./FaqAccordion";
 import { motion, useInView } from "framer-motion";
 import { SectionWrapper } from "@/lib/hoc";
 import { textVariant } from "@/lib/motion";
+import Image from "next/image";
+import images from "../../../../../public/images";
 
 const Faqs: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -64,7 +66,7 @@ const Faqs: React.FC = () => {
         className="w-full px-4 sm:px-12 flex max-lg:flex-col gap-10 xl:gap-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full lg:w-[50%] flex flex-col ">
+        <div className="w-full lg:w-[50%] flex flex-col relative">
           <motion.div
             variants={textVariant(0.1, 2)}
             className="w-full 2xs:w-[80%] lg:w-[70%] flex flex-col items-start justify-start gap-2 xs:gap-2.5 md:gap-4"
@@ -75,13 +77,13 @@ const Faqs: React.FC = () => {
             </h1>
           </motion.div>
 
-          {/* <Image
+          <Image
             src={images.landingPage.animation4}
             alt="animation"
-            className="absolute top-[6rem] lg:top-[8rem] -left-[14rem] 2xs:-left-[16rem] lg:-left-[8rem] w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[80%] xl:w-[60%]"
-          /> */}
+            className="absolute top-[6rem] lg:top-[8rem] -left-[14rem] 2xs:-left-[16rem] lg:-left-[0rem] w-full 2xs:w-[90%] xs:w-[80%] sm:w-[70%] md:w-[60%] lg:w-[80%] xl:w-[60%]"
+          />
         </div>
-        <div className="w-full lg:w-[50%] flex flex-col items-start bg-black z-40">
+        <div className="w-full lg:w-[50%] flex flex-col items-start z-40">
           {AccordionsData.map((item, index) => (
             <FaqAccordion
               key={index}

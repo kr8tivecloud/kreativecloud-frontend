@@ -31,7 +31,7 @@ const FaqAccordion = ({
       onClick={onToggle}
       className={`w-full h-fit ${index === 0 ? "border-t" : ""} ${
         index !== lastIndex ? "border-b" : ""
-      } border-[#4F4F4F] bg-black shadow-lg py-3 xs:py-4 lg:py-6 px-4 lg:px-6 flex flex-col gap-2.5 xs:gap-4 cursor-pointer`}
+      } border-[#4F4F4F] shadow-lg py-3 xs:py-4 lg:py-6 px-4 lg:px-6 flex flex-col gap-2.5 xs:gap-4 cursor-pointer`}
     >
       <div className="flex items-center justify-between gap-3">
         <h1 className="font-bold text-sm sm:text-base xl:text-lg">{title}</h1>

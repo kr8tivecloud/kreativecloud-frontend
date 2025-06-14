@@ -111,7 +111,7 @@ export default function JoinUsForm() {
 
           <div>
             <Input
-              placeholder="Your social media"
+              placeholder="Your social media *"
               className="w-full"
               {...joinUsForm.register("socialMedia")}
             />

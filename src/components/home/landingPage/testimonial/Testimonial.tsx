@@ -32,7 +32,7 @@ const testimonials: TestimonialCardProps[] = [
     content: "Stellar service! My website looks flawless and so user-friendly",
     starNumber: 5,
     social: FaInstagram,
-    date: "March 15, 2024",
+    date: "March 15, 2025",
     verified: true,
   },
   {
@@ -44,7 +44,7 @@ const testimonials: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaXTwitter,
     date: "February 28, 2024",
-    verified: true,
+    verified: false,
   },
   {
     image: images.landingPage.person3,
@@ -54,7 +54,7 @@ const testimonials: TestimonialCardProps[] = [
       "Kreative Cloud's design service was fantastic. They got my brand's look perfectly!",
     starNumber: 5,
     social: FaFacebookF,
-    date: "January 10, 2024",
+    date: "January 10, 2025",
     verified: true,
   },
   {
@@ -66,7 +66,7 @@ const testimonials: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaXTwitter,
     date: "April 2, 2024",
-    verified: true,
+    verified: false,
   },
 ];
 
@@ -90,8 +90,8 @@ const testimonials2: TestimonialCardProps[] = [
       "Honestly, best investment I made all year. Smooth process, killer designs. 💯",
     starNumber: 5,
     social: FaXTwitter,
-    date: "February 5, 2024",
-    verified: true,
+    date: "February 5, 2025",
+    verified: false,
   },
   {
     image: images.landingPage.person8,
@@ -111,8 +111,8 @@ const testimonials2: TestimonialCardProps[] = [
       "Kreative Cloud got my brand lookin' 🔥! The templates saved my life 😍🙌",
     starNumber: 5,
     social: FaFacebookF,
-    date: "April 8, 2024",
-    verified: true,
+    date: "April 8, 2025",
+    verified: false,
   },
   {
     image: images.landingPage.person10,

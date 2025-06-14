@@ -63,6 +63,7 @@ import rightChatBubble from "./home/landingPage/right-chat.svg";
 import animation1 from "./home/landingPage/animations/animation1.png";
 import animation2 from "./home/landingPage/animations/animation2.png";
 import animation3 from "./home/landingPage/animations/animation3.png";
+import animation4 from "./home/landingPage/animations/animation4.png";
 
 import person1 from "./home/landingPage/testimonial-avatars/person1.jpg";
 import person2 from "./home/landingPage/testimonial-avatars/person2.jpg";
@@ -100,6 +101,7 @@ const landingPage = {
   animation1,
   animation2,
   animation3,
+  animation4,
 
   person1,
   person2,

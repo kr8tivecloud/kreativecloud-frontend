@@ -90,7 +90,7 @@ const TermsPage = () => {
           {/* GOVERNING LAW */}
           <Content
             title="Governing Law"
-            body="These Terms are governed by the laws of United States of America, and any disputes will be resolved in the courts of [Your Jurisdiction]."
+            body="These Terms are governed by the laws of United States of America, and any disputes will be resolved in the courts of United States."
           />
 
           {/* CHANGES TO TERM */}
