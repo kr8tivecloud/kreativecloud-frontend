@@ -167,6 +167,7 @@ export default function Footer() {
                     <li key={`${link.href}-${index}`}>
                       <Link
                         href={link.href}
+                        target="_blank"
                         className="size-12 rounded-full grid place-items-center border border-[#F8F8F8] hover:bg-[#F8F8F8] hover:text-black transition-colors"
                       >
                         <link.Icon />
