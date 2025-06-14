@@ -6,9 +6,9 @@ import { IconNavLinkType, NavLinkType } from "@/lib/types";
 import Link from "next/link";
 import {
   FaXTwitter,
-  FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
+  FaTiktok,
 } from "react-icons/fa6";
 import images from "../../public/images";
 
@@ -50,21 +50,25 @@ const policyLinks: NavLinkType[] = [
 ].map((link, index) => ({ ...link, id: index + 1 }));
 
 const socialLinks: IconNavLinkType[] = [
-  {
-    Icon: FaFacebookF,
-    href: "#",
-  },
+  // {
+  //   Icon: FaFacebookF,
+  //   href: "#",
+  // },
   {
     Icon: FaXTwitter,
     href: "#",
   },
   {
     Icon: FaInstagram,
-    href: "#",
+    href: "https://www.instagram.com/kreativecloudd/",
   },
   {
     Icon: FaLinkedinIn,
     href: "#",
+  },
+  {
+    Icon: FaTiktok,
+    href: "https://www.tiktok.com/@kreativecloudd",
   },
 ];
 
