@@ -10,6 +10,7 @@ interface TestimonialCardProps {
   starNumber: number;
   social: React.ComponentType;
   date: string;
+  verified?: boolean;
 }
 
 const TestimonialCard = ({
@@ -19,6 +20,7 @@ const TestimonialCard = ({
   tag,
   social: SocialIcon,
   date,
+  verified = false,
 }: TestimonialCardProps) => {
   return (
     <div className="h-full">
@@ -39,7 +41,7 @@ const TestimonialCard = ({
             <div className="flex flex-col">
               <div className="flex items-center gap-1">
                 <h2 className="text-base text-white font-bold">{name}</h2>
-                <RiVerifiedBadgeFill className="text-[#1D9BF0]" />
+                {verified && <RiVerifiedBadgeFill className="text-[#1D9BF0]" />}
               </div>
               <p className="text-sm text-[#536471]">{tag}</p>
             </div>

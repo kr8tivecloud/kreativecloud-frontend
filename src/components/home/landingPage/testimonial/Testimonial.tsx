@@ -21,6 +21,7 @@ interface TestimonialCardProps {
   starNumber: number;
   social: React.ComponentType;
   date: string;
+  verified?: boolean;
 }
 
 const testimonials: TestimonialCardProps[] = [
@@ -32,6 +33,7 @@ const testimonials: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaInstagram,
     date: "March 15, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person2,
@@ -42,6 +44,7 @@ const testimonials: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaXTwitter,
     date: "February 28, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person3,
@@ -52,6 +55,7 @@ const testimonials: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaFacebookF,
     date: "January 10, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person4,
@@ -62,6 +66,7 @@ const testimonials: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaXTwitter,
     date: "April 2, 2024",
+    verified: true,
   },
 ];
 
@@ -75,6 +80,7 @@ const testimonials2: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaInstagram,
     date: "March 22, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person7,
@@ -85,6 +91,7 @@ const testimonials2: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaXTwitter,
     date: "February 5, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person8,
@@ -94,6 +101,7 @@ const testimonials2: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaInstagram,
     date: "January 18, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person9,
@@ -104,6 +112,7 @@ const testimonials2: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaFacebookF,
     date: "April 8, 2024",
+    verified: true,
   },
   {
     image: images.landingPage.person10,
@@ -114,6 +123,7 @@ const testimonials2: TestimonialCardProps[] = [
     starNumber: 5,
     social: FaInstagram,
     date: "March 30, 2024",
+    verified: true,
   },
 ];
 
