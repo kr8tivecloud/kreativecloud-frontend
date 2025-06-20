@@ -56,6 +56,7 @@ import entrepreneur2 from "./home/landingPage/entrepreneur2.jpg";
 import entrepreneur3 from "./home/landingPage/entrepreneur3.jpg";
 
 import testimonial from "./home/landingPage/testimonial.jpg";
+import testimonialBg from "./home/landingPage/testimonial-bg.png";
 
 import leftChatBubble from "./home/landingPage/left-chat.svg";
 import rightChatBubble from "./home/landingPage/right-chat.svg";
@@ -94,6 +95,7 @@ const landingPage = {
   entrepreneur3,
 
   testimonial,
+  testimonialBg,
 
   leftChatBubble,
   rightChatBubble,

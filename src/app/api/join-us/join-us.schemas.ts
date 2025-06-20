@@ -10,7 +10,9 @@ export const joinUsFormSchema = z.object({
   email: z
     .string({ required_error: "Email is required" })
     .email("Please provide a valid email address"),
-  phone: z.string().optional(),
+  phone: z
+    .string({ required_error: "Phone number is required" })
+    .min(1, "Phone number is required"),
   socialMedia: z
     .string({ required_error: "Social media is required" })
     .min(1, "Social media is required"),

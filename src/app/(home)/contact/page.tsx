@@ -40,7 +40,7 @@ export default function ContactPage() {
             viewport={{ once: true, amount: "all" }}
             className="text-5xl xl:text-8xl font-bold md:max-w-sm"
           >
-            Get&nbsp;your discounted website&nbsp;today!
+            Get&nbsp;your discounted service&nbsp;today!
           </motion.h2>
         </div>
 

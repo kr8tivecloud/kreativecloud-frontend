@@ -162,7 +162,7 @@ export default function Navbar() {
           <MotionLink href={"/contact"} className="max-lg:hidden">
             <FlipText
               text="GET IN TOUCH"
-              className="font-bold text-[#FE922A] hover:text-white transition-colors duration-300"
+              className="font-bold text-[#FE922A]"
             />
             {/* GET IN TOUCH */}
           </MotionLink>

@@ -10,7 +10,9 @@ export const contactFormSchema = z.object({
   email: z
     .string({ required_error: "Email is required" })
     .email("Please provide a valid email address"),
-  phone: z.string().optional(),
+  phone: z
+    .string({ required_error: "Phone number is required" })
+    .min(1, "Phone number is required"),
   businessName: z.string().optional(),
   services: z.array(z.string()).optional(),
   message: z

@@ -43,9 +43,9 @@ const Portfolio = () => {
           </h1>
         </motion.div>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden pointer-events-none">
           <Swiper
-            wrapperClass="[transition-timing-function:linear!important]"
+            wrapperClass="[transition-timing-function:linear!important] pointer-events-none"
             modules={[Autoplay]}
             autoplay={{
               disableOnInteraction: false,
@@ -63,7 +63,7 @@ const Portfolio = () => {
             grabCursor={true}
             freeMode={true}
             allowTouchMove={false}
-            className="w-full h-80 xs:h-72 lg:h-80 xl:h-96"
+            className="w-full h-80 xs:h-72 lg:h-80 xl:h-96 pointer-events-none"
           >
             {[...imagesPreview, ...imagesPreview].map((image, index) => (
               <SwiperSlide key={index} className="!w-auto h-full">

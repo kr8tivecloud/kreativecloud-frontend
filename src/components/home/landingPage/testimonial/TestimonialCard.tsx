@@ -23,8 +23,8 @@ const TestimonialCard = ({
   verified = false,
 }: TestimonialCardProps) => {
   return (
-    <div className="h-full">
-      <div className="px-6 2xs:px-4 lg:px-6 py-6 2xs:py-4 lg:py-6 w-full h-full flex flex-col bg-black rounded-2xl border border-dashed border-white/25">
+    <div className="h-full bg-[url('/images/home/landingPage/testimonial-bg.png')]">
+      <div className="px-6 2xs:px-4 lg:px-6 py-6 2xs:py-4 lg:py-6 w-full h-full flex flex-col bg-black/95 border border-dashed border-white/25">
         <div className="w-full flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <div className="cursor-pointer relative w-10 h-10 overflow-hidden rounded-full">

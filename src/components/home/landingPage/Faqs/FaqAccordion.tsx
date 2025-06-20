@@ -27,7 +27,7 @@ const FaqAccordion = ({
       ref={ref} // Attach the ref
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView(0.8)}
-      viewport={{ once: true }}
+      // viewport={{ once: true }}
       onClick={onToggle}
       className={`w-full h-fit ${index === 0 ? "border-t" : ""} ${
         index !== lastIndex ? "border-b" : ""
