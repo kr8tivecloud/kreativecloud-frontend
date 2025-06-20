@@ -23,8 +23,10 @@ const TestimonialCard = ({
   verified = false,
 }: TestimonialCardProps) => {
   return (
-    <div className="h-full bg-[url('/images/home/landingPage/testimonial-bg.png')]">
-      <div className="px-6 2xs:px-4 lg:px-6 py-6 2xs:py-4 lg:py-6 w-full h-full flex flex-col bg-black/95 border border-dashed border-white/25">
+    <div className="h-full relative">
+      {/* Background image with opacity using a pseudo-element approach */}
+
+      <div className="relative z-10 px-6 2xs:px-4 lg:px-6 py-6 2xs:py-4 lg:py-6 w-full h-full flex flex-col border border-dashed rounded-2xl border-white/25 overflow-hidden">
         <div className="w-full flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <div className="cursor-pointer relative w-10 h-10 overflow-hidden rounded-full">
@@ -50,7 +52,10 @@ const TestimonialCard = ({
             <SocialIcon />
           </div>
         </div>
-
+        <div
+          className="absolute inset-0 z-0 bg-[url('/images/home/landingPage/testimonial-bg.png')] bg-cover bg-center opacity-[8%]"
+          aria-hidden="true"
+        />
         <div className="flex items-center gap-0.5 text-xl text-[#F2E2A5] mb-4">
           <FaStar />
           <FaStar />
