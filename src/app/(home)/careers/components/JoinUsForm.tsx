@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/Input";
-import ServiceCategoryPill from "@/components/ServiceCategoryPill";
+import CategoryPicker from "@/components/CategoryPicker";
 import React, { useState } from "react";
 import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -121,7 +121,7 @@ export default function JoinUsForm() {
           <p className="font-bold text-sm">What is your speciality: *</p>
           {/* SERVICE CATEGORY */}
           <div>
-            <ServiceCategoryPill
+            <CategoryPicker
               categories={[
                 "Full stack development",
                 "Graphic design",

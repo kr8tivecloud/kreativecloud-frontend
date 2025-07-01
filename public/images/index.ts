@@ -152,3 +152,21 @@ export { default as cloudImage2 } from "./home/landingPage/cloud-img2.svg";
 export { default as cloudImage3 } from "./home/landingPage/cloud-img3.svg";
 export { default as cloudImage4 } from "./home/landingPage/cloud-img4.svg";
 export { default as cloudImage5 } from "./home/landingPage/cloud-img5.svg";
+
+export { default as TeamHero } from "./team/hero.jpg";
+export { default as TeamHead } from "./team/team-head.png";
+export { default as MemberPlaceholder } from "./team/members-placeholder.png";
+
+export { default as KreativeCloud } from "./portfolio/kreative-cloud.png";
+export { default as BlackdiamondMockup } from "./portfolio/blackdiamond-mockup.png";
+export { default as AtkinsMockup } from "./portfolio/atkins-mockup.png";
+export { default as NewPurposeMockup } from "./portfolio/new-purpose-mockup.png";
+export { default as WnyICCMockup } from "./portfolio/wnyicc-mockup.png";
+export { default as BlackdiamondItem1 } from "./portfolio/blackdiamond/item-1.png";
+export { default as BlackdiamondItem2 } from "./portfolio/blackdiamond/item-2.png";
+export { default as BlackdiamondItem3 } from "./portfolio/blackdiamond/item-3.png";
+export { default as BlackdiamondItem4 } from "./portfolio/blackdiamond/item-4.png";
+export { default as BlackdiamondItem5 } from "./portfolio/blackdiamond/item-5.png";
+export { default as BlackdiamondItem6 } from "./portfolio/blackdiamond/item-6.png";
+export { default as BlackdiamondItem7 } from "./portfolio/blackdiamond/item-7.png";
+export { default as BlackdiamondItem8 } from "./portfolio/blackdiamond/item-8.png";
