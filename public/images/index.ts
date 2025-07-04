@@ -157,7 +157,7 @@ export { default as TeamHero } from "./team/hero.jpg";
 export { default as TeamHead } from "./team/team-head.png";
 export { default as MemberPlaceholder } from "./team/members-placeholder.png";
 
-export { default as KreativeCloud } from "./portfolio/kreative-cloud.png";
+export { default as KreativeCloud } from "./portfolio/kreative-cloud.svg";
 export { default as BlackdiamondMockup } from "./portfolio/blackdiamond-mockup.png";
 export { default as AtkinsMockup } from "./portfolio/atkins-mockup.png";
 export { default as NewPurposeMockup } from "./portfolio/new-purpose-mockup.png";
