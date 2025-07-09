@@ -1,7 +1,7 @@
 import Faqs from "./Faqs/Faqs";
 // import Features from "./Features";
 import Heroarea from "./Heroarea";
-import Portfolio from "./Portfolio";
+import Portfolio from "./portfolio/Portfolio";
 import Process from "./process/Process";
 import Services from "./Services";
 import Testimonial from "./testimonial/Testimonial";

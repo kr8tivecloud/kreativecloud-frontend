@@ -2,7 +2,7 @@
 
 import { contactFormSchema } from "@/app/api/contact/contact.schemas";
 import Input from "@/components/Input";
-import CategoryPicker from "@/components/CategoryPicker";
+import { CategoryPickerMulti } from "@/components/CategoryPicker";
 import React, { useState } from "react";
 import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -108,7 +108,7 @@ export default function ContactForm() {
           <p className="font-bold text-sm">You need help with: *</p>
           {/* SERVICE CATEGORY */}
           <div>
-            <CategoryPicker
+            <CategoryPickerMulti
               categories={[
                 "Website",
                 "Graphic Design",

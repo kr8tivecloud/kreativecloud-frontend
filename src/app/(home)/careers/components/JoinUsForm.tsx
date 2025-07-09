@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/Input";
-import CategoryPicker from "@/components/CategoryPicker";
+import { CategoryPickerMulti } from "@/components/CategoryPicker";
 import React, { useState } from "react";
 import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -121,7 +121,7 @@ export default function JoinUsForm() {
           <p className="font-bold text-sm">What is your speciality: *</p>
           {/* SERVICE CATEGORY */}
           <div>
-            <CategoryPicker
+            <CategoryPickerMulti
               categories={[
                 "Full stack development",
                 "Graphic design",
@@ -133,7 +133,7 @@ export default function JoinUsForm() {
               ]}
               selected={joinUsForm.watch("specialty")}
               setSelected={(selected) =>
-                joinUsForm.setValue("specialty", selected)
+                selected && joinUsForm.setValue("specialty", selected)
               }
             />
             <FormError

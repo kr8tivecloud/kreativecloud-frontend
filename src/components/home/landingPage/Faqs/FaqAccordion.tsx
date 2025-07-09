@@ -25,9 +25,9 @@ const FaqAccordion = ({
   return (
     <motion.div
       ref={ref} // Attach the ref
-      variants={scaleVariants}
-      whileInView={scaleVariants.whileInView(0.8)}
-      // viewport={{ once: true }}
+      // variants={scaleVariants}
+      whileInView={scaleVariants.whileInView(0.8, index)}
+      viewport={{ once: true }}
       onClick={onToggle}
       className={`w-full h-fit ${index === 0 ? "border-t" : ""} ${
         index !== lastIndex ? "border-b" : ""

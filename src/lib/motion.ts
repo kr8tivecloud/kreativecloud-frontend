@@ -109,12 +109,13 @@ export const staggerContainer = (
 };
 
 export const scaleVariants = {
-  whileInView: (duration: number = 0.5) => ({
+  whileInView: (duration: number = 0.5, index: number = 0) => ({
     scaleX: [0, 1],
     opacity: [0, 1],
     transition: {
       duration,
       ease: "easeInOut",
+      delay: 0.1 * index,
     },
   }),
 };

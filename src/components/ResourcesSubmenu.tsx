@@ -3,6 +3,7 @@ import ServicesImage from "@/assets/images/navbar/services-image.png";
 import PortfolioImage from "@/assets/images/navbar/portfolio-image.png";
 import PrivacyPolicyImage from "@/assets/images/navbar/privacy-policy-image.png";
 import TermsOfServiceImage from "@/assets/images/navbar/terms-of-service-image.png";
+import OurTeamImage from "@/assets/images/navbar/our-team-image.png";
 import Image, { StaticImageData } from "next/image";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import Link from "next/link";
@@ -25,6 +26,11 @@ const resourcesLinks: ResourcesLink[] = [
     title: "Portfolio",
     href: "/portfolio",
     image: PortfolioImage,
+  },
+  {
+    title: "Our Team",
+    href: "/team",
+    image: OurTeamImage,
   },
   {
     title: "Privacy Policy",

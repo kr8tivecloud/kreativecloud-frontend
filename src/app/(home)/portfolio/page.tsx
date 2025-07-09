@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 export default function PortfolioPage() {
   const [pageLoaded, setPageLoaded] = React.useState(false);
+  const [animationEnded, setAnimationEnded] = React.useState(false);
 
   React.useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -24,20 +25,25 @@ export default function PortfolioPage() {
   return (
     <div className="mt-28">
       {/* ENTRANCE OVERLAY */}
-      <motion.div
-        data-loaded={pageLoaded}
-        initial={{
-          opacity: 100,
-        }}
-        animate={{
-          opacity: 0,
-        }}
-        transition={{
-          delay: 2,
-          duration: 0.5,
-        }}
-        className="absolute inset-0 bg-[#FE922A] z-50"
-      ></motion.div>
+      {!animationEnded && (
+        <motion.div
+          data-loaded={pageLoaded}
+          initial={{
+            opacity: 100,
+          }}
+          animate={
+            pageLoaded && {
+              opacity: 0,
+            }
+          }
+          transition={{
+            delay: 2,
+            duration: 0.5,
+          }}
+          onAnimationComplete={() => setAnimationEnded(true)}
+          className="absolute inset-0 bg-[#FE922A] z-50"
+        ></motion.div>
+      )}
       {/* END ENTRANCE OVERLAY */}
       {/* TITLE */}
       <motion.div
@@ -46,7 +52,7 @@ export default function PortfolioPage() {
         layout
         className="px-4 sm:container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 data-[loaded=true]:static data-[loaded=true]:top-0 data-[loaded=true]:left-0 data-[loaded=true]:-translate-x-0 data-[loaded=true]:-translate-y-0"
       >
-        <div className="text-2xl lg:text-3xl text-center max-w-[801px] mx-auto">
+        <div className="text-2xl lg:text-3xl text-center max-w-[801px] mx-auto pt-10 pb-12">
           At{" "}
           <Image
             src={KreativeCloud}

@@ -170,3 +170,21 @@ export { default as BlackdiamondItem5 } from "./portfolio/blackdiamond/item-5.pn
 export { default as BlackdiamondItem6 } from "./portfolio/blackdiamond/item-6.png";
 export { default as BlackdiamondItem7 } from "./portfolio/blackdiamond/item-7.png";
 export { default as BlackdiamondItem8 } from "./portfolio/blackdiamond/item-8.png";
+
+export { default as AtkinsAttireItem1 } from "./portfolio/atkins-attire/item-1.png";
+export { default as AtkinsAttireItem2 } from "./portfolio/atkins-attire/item-2.png";
+export { default as AtkinsAttireItem3 } from "./portfolio/atkins-attire/item-3.png";
+export { default as AtkinsAttireItem4 } from "./portfolio/atkins-attire/item-4.png";
+export { default as AtkinsAttireItem5 } from "./portfolio/atkins-attire/item-5.png";
+export { default as AtkinsAttireItem6 } from "./portfolio/atkins-attire/item-6.png";
+export { default as AtkinsAttireItem7 } from "./portfolio/atkins-attire/item-7.png";
+export { default as AtkinsAttireItem8 } from "./portfolio/atkins-attire/item-8.png";
+
+export { default as NewPurposeCounsellingItem1 } from "./portfolio/new-purpose-counselling/item-1.png";
+export { default as NewPurposeCounsellingItem2 } from "./portfolio/new-purpose-counselling/item-2.png";
+export { default as NewPurposeCounsellingItem3 } from "./portfolio/new-purpose-counselling/item-3.png";
+export { default as NewPurposeCounsellingItem4 } from "./portfolio/new-purpose-counselling/item-4.png";
+export { default as NewPurposeCounsellingItem5 } from "./portfolio/new-purpose-counselling/item-5.png";
+
+export { default as WnyICCItem1 } from "./portfolio/wnyicc/item-1.png";
+export { default as WnyICCItem2 } from "./portfolio/wnyicc/item-2.png";

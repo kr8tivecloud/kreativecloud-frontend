@@ -2,27 +2,28 @@
 import { SectionWrapper } from "@/lib/hoc";
 import { textVariant } from "@/lib/motion";
 import { useInView, motion } from "motion/react";
-import Image from "next/image";
+// import Image from "next/image";
 import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import images from "../../../../public/images";
+// import images from "../../../../../public/images";
+import InfiniteCarousel from "./InfiniteCarousel";
 // import { useWindowSize } from "@/lib/hooks/useWindowSize";
 
-const imagesPreview = [
-  images.landingPage.portfolio1,
-  images.landingPage.portfolio2,
-  images.landingPage.portfolio3,
-  images.landingPage.portfolio4,
-  images.landingPage.portfolio5,
-  images.landingPage.portfolio6,
-  images.landingPage.portfolio7,
-  images.landingPage.portfolio8,
-  images.landingPage.portfolio9,
-  images.landingPage.portfolio10,
-  images.landingPage.portfolio11,
-];
+// const imagesPreview = [
+//   images.landingPage.portfolio1,
+//   images.landingPage.portfolio2,
+//   images.landingPage.portfolio3,
+//   images.landingPage.portfolio4,
+//   images.landingPage.portfolio5,
+//   images.landingPage.portfolio6,
+//   images.landingPage.portfolio7,
+//   images.landingPage.portfolio8,
+//   images.landingPage.portfolio9,
+//   images.landingPage.portfolio10,
+//   images.landingPage.portfolio11,
+// ];
 
 const Portfolio = () => {
   const ref = useRef(null);
@@ -43,7 +44,8 @@ const Portfolio = () => {
           </h1>
         </motion.div>
 
-        <div className="w-full overflow-hidden pointer-events-none">
+        <InfiniteCarousel />
+        {/* <div className="w-full overflow-hidden pointer-events-none">
           <Swiper
             wrapperClass="[transition-timing-function:linear!important] pointer-events-none"
             modules={[Autoplay]}
@@ -78,7 +80,7 @@ const Portfolio = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

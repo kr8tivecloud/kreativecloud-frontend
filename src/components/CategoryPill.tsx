@@ -3,7 +3,7 @@ import React, { ComponentProps } from "react";
 
 interface CategoryPillProps extends ComponentProps<"button"> {
   category: string;
-  selected: string[] | undefined;
+  selected: boolean;
   handleSelect: (category: string) => void;
 }
 
@@ -19,9 +19,7 @@ export default function CategoryPill({
       key={category}
       type="button"
       className={cn(
-        selected?.includes(category)
-          ? "bg-white/25"
-          : "bg-[#15151D] hover:bg-[#0D0D11]",
+        selected ? "bg-white/25" : "bg-[#15151D] hover:bg-[#0D0D11]",
         "text-white text-sm lg:text-base border border-white/25 px-3 py-1 rounded-full transition-colors",
         className
       )}
