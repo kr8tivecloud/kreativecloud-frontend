@@ -162,14 +162,14 @@ export { default as BlackdiamondMockup } from "./portfolio/blackdiamond-mockup.p
 export { default as AtkinsMockup } from "./portfolio/atkins-mockup.png";
 export { default as NewPurposeMockup } from "./portfolio/new-purpose-mockup.png";
 export { default as WnyICCMockup } from "./portfolio/wnyicc-mockup.png";
-export { default as BlackdiamondItem1 } from "./portfolio/blackdiamond/item-1.png";
-export { default as BlackdiamondItem2 } from "./portfolio/blackdiamond/item-2.png";
-export { default as BlackdiamondItem3 } from "./portfolio/blackdiamond/item-3.png";
-export { default as BlackdiamondItem4 } from "./portfolio/blackdiamond/item-4.png";
-export { default as BlackdiamondItem5 } from "./portfolio/blackdiamond/item-5.png";
-export { default as BlackdiamondItem6 } from "./portfolio/blackdiamond/item-6.png";
-export { default as BlackdiamondItem7 } from "./portfolio/blackdiamond/item-7.png";
-export { default as BlackdiamondItem8 } from "./portfolio/blackdiamond/item-8.png";
+export { default as BlackdiamondItem1 } from "./portfolio/blackdiamond/item-1.webp";
+export { default as BlackdiamondItem2 } from "./portfolio/blackdiamond/item-2.webp";
+export { default as BlackdiamondItem3 } from "./portfolio/blackdiamond/item-3.webp";
+export { default as BlackdiamondItem4 } from "./portfolio/blackdiamond/item-4.webp";
+export { default as BlackdiamondItem5 } from "./portfolio/blackdiamond/item-5.webp";
+export { default as BlackdiamondItem6 } from "./portfolio/blackdiamond/item-6.webp";
+export { default as BlackdiamondItem7 } from "./portfolio/blackdiamond/item-7.webp";
+export { default as BlackdiamondItem8 } from "./portfolio/blackdiamond/item-8.webp";
 
 export { default as AtkinsAttireItem1 } from "./portfolio/atkins-attire/item-1.png";
 export { default as AtkinsAttireItem2 } from "./portfolio/atkins-attire/item-2.png";
