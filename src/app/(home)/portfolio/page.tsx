@@ -69,16 +69,18 @@ export default function PortfolioPage() {
         className="px-4 sm:container"
         // className="px-4 sm:container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 data-[start=true]:relative data-[start=true]:top-0 data-[start=true]:left-0 data-[start=true]:-translate-x-0 data-[start=true]:-translate-y-0"
       >
-        <div className="text-2xl lg:text-3xl text-center max-w-[801px] mx-auto pt-10 pb-12">
+        <div className="text-2xl lg:text-3xl text-center max-w-[801px] mx-auto pb-4">
           At{" "}
           <Image
             src={KreativeCloud}
             alt=""
             height={26}
-            className="inline-block mb-1.5 h-[21px] lg:h-[26px]"
+            width={0}
+            className="inline-block mb-1.5 h-[21px] lg:h-[26px] max-lg:w-[150px]"
           />
-          , we blend strategy and design to create works that innovates,
-          connects, and empowers. Every project is a story. This is ours.
+          , <br className="lg:hidden" />
+          we blend strategy and design to create works that innovates, connects,
+          and empowers. Every project is a story. This is ours.
         </div>
       </motion.div>
       {/* END TITLE */}
