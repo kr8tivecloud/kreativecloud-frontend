@@ -60,7 +60,7 @@ export default function PageContent() {
   return (
     <div>
       {/* HERO */}
-      <div className="relative max-h-[80vh] h-[375px] lg:h-[900px] overflow-hidden flex items-center justify-center">
+      <div className="relative max-h-[80vh] h-[80vh] min-h-[375px] lg:h-[900px] overflow-hidden flex items-center justify-center">
         <Image
           src={TeamHero}
           alt=""
