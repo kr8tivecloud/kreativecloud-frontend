@@ -82,7 +82,7 @@ export default function PortfolioItems() {
   }
 
   return (
-    <div className="px-4 sm:container mt-16 mb-28">
+    <div className="px-4 sm:container mb-28">
       {/* CATEGORY PICKER */}
       <CategoryPickerSingle
         categories={categories}

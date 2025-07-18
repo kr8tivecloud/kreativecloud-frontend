@@ -69,7 +69,7 @@ export default function PortfolioPage() {
         className="px-4 sm:container"
         // className="px-4 sm:container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 data-[start=true]:relative data-[start=true]:top-0 data-[start=true]:left-0 data-[start=true]:-translate-x-0 data-[start=true]:-translate-y-0"
       >
-        <div className="text-2xl lg:text-3xl text-center max-w-[801px] mx-auto pb-4">
+        <div className="text-2xl lg:text-3xl text-center max-w-[801px] mx-auto pb-6">
           At{" "}
           <Image
             src={KreativeCloud}
