@@ -17,7 +17,7 @@ const Faqs: React.FC = () => {
     {
       title: "Why should I have a website?",
       content:
-        "A website is the first step toward growing an online presence for your business or passion project, whether you’re looking to sell online or create a portfolio. With Squarespace, you can get started with a best-in-class website template for nearly any use case and customize it to fit your brand. Our all-in-one platform also makes it easy to add a blog, an online store, or appointment scheduling to your website and leverage marketing tools to reach your audience.",
+        "A website is the first step toward growing an online presence for your business or passion project, whether you’re looking to sell online or create a portfolio. With Squarespace, you can get started with a best in class website template for nearly any use case and customize it to fit your brand. Our all in one platform also makes it easy to add a blog, an online store, or appointment scheduling to your website and leverage marketing tools to reach your audience.",
     },
     {
       title: "What features do you offer with Kreative Cloud?",

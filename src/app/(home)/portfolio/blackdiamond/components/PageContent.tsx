@@ -66,9 +66,7 @@ export default function PageContent() {
     <div className="px-4 sm:container my-24">
       {/* TITLE */}
       <div>
-        <h2 className="text-sm lg:text-base font-bold text-3xl">
-          Black Diamond Entertainment
-        </h2>
+        <h2 className="font-bold text-3xl">Black Diamond Entertainment</h2>
         <ServicePills services={services} />
         <p className="max-w-[670px]">
           Black Diamond Entertainment needed a modern, engaging, and easy-to-use

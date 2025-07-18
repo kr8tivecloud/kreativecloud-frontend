@@ -55,7 +55,7 @@ export default function ServicesPage() {
                 Starts at $400
               </span>
             </div>
-            <ShimmerParagraph className="my-5 leading-7 text-justify">
+            <ShimmerParagraph className="my-5 leading-7">
               We will create a custom website design tailored to your brand with
               Intuitive user experience (UX) and navigation. We deliver seamless
               and visually appealing online experiences that reflects your
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                 Starts at $50
               </span>
             </div>
-            <ShimmerParagraph className="my-5 leading-7 text-justify">
+            <ShimmerParagraph className="my-5 leading-7">
               We will bring your brand to life through compelling visuals and
               impactful designs that communicate your message clearly. Whether
               you need logos, marketing materials, concept designs, 3D elements,
@@ -156,7 +156,7 @@ export default function ServicesPage() {
               </span>
             </div>
 
-            <ShimmerParagraph className="my-5 leading-7 text-justify">
+            <ShimmerParagraph className="my-5 leading-7">
               We will bring your brand to life. Our branding services include
               creating unique and memorable logos, color palettes and typography
               that represent your style and values. We'll provide comprehensive
@@ -205,7 +205,7 @@ export default function ServicesPage() {
               </span>
             </div>
 
-            <ShimmerParagraph className="my-5 leading-7 text-justify">
+            <ShimmerParagraph className="my-5 leading-7">
               We will bring your brand to life through compelling visuals and
               impactful designs that communicate your message clearly. Whether
               you need logos, marketing materials, concept designs, 3D elements,
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                 Starts at $100
               </span>
             </div>
-            <ShimmerParagraph className="my-5 leading-7 text-justify">
+            <ShimmerParagraph className="my-5 leading-7">
               We create content that connects with your audience and gets them
               talking. From coming up with viral ideas to making sure everything
               matches your brand, we’ve got you covered. We’ll write blog posts,
@@ -300,7 +300,7 @@ export default function ServicesPage() {
               </span>
             </div>
 
-            <ShimmerParagraph className="my-5 leading-7 text-justify">
+            <ShimmerParagraph className="my-5 leading-7">
               We will create a custom website design tailored to your brand with
               Intuitive user experience (UX) and navigation. We deliver seamless
               and visually appealing online experiences that reflects your

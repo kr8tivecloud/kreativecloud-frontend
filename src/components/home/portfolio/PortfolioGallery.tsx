@@ -25,7 +25,7 @@ export function PortfolioGallery({ images }: { images: GalleryImage[] }) {
               "lg:col-span-2": img.cols === 2,
             },
             {
-              "lg:h-[min(740px,_80vh)]": img.cols === 6,
+              "lg:h-auto max-h-[80vh]": img.cols === 6,
               "lg:h-[min(637px,_60vh)]": img.cols === 3,
               "lg:h-[min(460px,_60vh)]": img.cols === 2,
             }

@@ -66,7 +66,7 @@ const Heroarea = () => {
               </AnimatedButton>
             </div>
             <p className="text-[#FFFFFFB3] w-[70%] xs:w-[60%] sm:w-[45%] md:w-[40%] xl:w-[30%] font-bold text-sm lg:text-base">
-              Your all-in-one creative team. We provide everything your business
+              Your all in one creative team. We provide everything your business
               needs to thrive.
             </p>
           </div>
