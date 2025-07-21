@@ -39,7 +39,7 @@ export default function PortfolioPage() {
   // }, [pageLoaded]);
 
   return (
-    <div className="mt-32">
+    <div className="mt-24">
       {/* ENTRANCE OVERLAY */}
       {/* {!animationEnded && (
         <motion.div
