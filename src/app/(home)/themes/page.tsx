@@ -131,8 +131,8 @@ export default function ThemesPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <AnimatedButton variant="outline">DOWNLOAD NOW</AnimatedButton>
               <AnimatedButton variant="solid">VIEW LIVE DEMO</AnimatedButton>
+              <AnimatedButton variant="outline">DOWNLOAD NOW</AnimatedButton>
             </div>
           </div>
         </div>

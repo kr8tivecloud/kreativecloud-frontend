@@ -29,6 +29,7 @@ const Heroarea = () => {
               rgba(124, 254, 253, 0) 80%
             )
           `,
+          //  TODO: Make the blur a function of the screen width or do different blur for different screen sizes
           filter: "blur(576.73px)",
           transform: "scale(1.1)",
         }}

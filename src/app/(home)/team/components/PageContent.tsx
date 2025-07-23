@@ -14,42 +14,47 @@ import { motion } from "motion/react";
 const teamMembers = [
   {
     name: "Nonso Amadin",
-    title: "Managing Director",
+    title: "Content Strategist",
     image: MemberPlaceholder,
   },
   {
-    name: "Russel Deep",
-    title: "Head of Growth",
+    name: "Mercy",
+    title: "SEO Specialist",
     image: MemberPlaceholder,
   },
   {
-    name: "Nana Jojo",
-    title: "Head of Accounts",
+    name: "Steve",
+    title: "Content Strategist",
     image: MemberPlaceholder,
   },
   {
     name: "Gaga Graphix",
-    title: "Head of Design",
+    title: "Product Designer",
     image: MemberPlaceholder,
   },
   {
-    name: "Ibadin Gayrico",
-    title: "Senior Developer",
+    name: "Cissie",
+    title: "Branding Specialist",
     image: MemberPlaceholder,
   },
   {
-    name: "Spanky D Man",
-    title: "Senior Graphic Designer",
-    image: MemberPlaceholder,
-  },
-  {
-    name: "BIG MJ",
+    name: "Spanky",
     title: "Graphic Designer",
     image: MemberPlaceholder,
   },
   {
+    name: "MJ",
+    title: "Creative Designer",
+    image: MemberPlaceholder,
+  },
+  {
+    name: "Island",
+    title: "Marketing Expert",
+    image: MemberPlaceholder,
+  },
+  {
     name: "Manuel",
-    title: "Developer",
+    title: "Fullstack Developer",
     image: MemberPlaceholder,
   },
 ];

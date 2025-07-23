@@ -14,6 +14,7 @@ import {
   cloudImage5,
 } from "../../../../../public/images";
 import Image from "next/image";
+import useScrollDirection from "@/lib/hooks/useScrollDirection";
 
 interface TimelineItem {
   id: number;
@@ -198,6 +199,7 @@ const Timeline = () => {
   const [isMobile, setIsMobile] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const width = useWindowSize();
+  const scrollDirection = useScrollDirection();
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -354,7 +356,7 @@ const Timeline = () => {
     >
       <style>{customTimelineStyles}</style>
       <VerticalTimeline
-        animate={true}
+        animate={scrollDirection === "down"}
         layout="2-columns"
         lineColor="#00E5FF"
         className={cn({

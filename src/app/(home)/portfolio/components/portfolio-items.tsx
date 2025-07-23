@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import {
   AtkinsMockup,
   BlackdiamondMockup,
+  NewPurposeMockup,
   WnyICCMockup,
 } from "../../../../../public/images";
 import Image, { StaticImageData } from "next/image";
@@ -45,7 +46,7 @@ const portfolioData: PortfolioData[] = [
   },
   {
     name: "New Purpose Counselling PLLC",
-    image: AtkinsMockup,
+    image: NewPurposeMockup,
     services: ["Website", "UI/UX Design"],
     category: ["Health Care"],
     link: "/portfolio/new-purpose-counselling",

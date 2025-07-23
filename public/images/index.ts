@@ -123,7 +123,7 @@ export default imageExports;
 
 export { default as templateImage } from "./mock-images/template-image.png";
 export { default as templateCalloutHero } from "./templates/template-callout-hero.png";
-export { default as shopifyLogo } from "./themes/shopify-logo.png";
+export { default as shopifyLogo } from "./themes/shopify-logo.svg";
 export { default as cloudStartImage } from "./themes/cloudstart-image.png";
 export { default as cloudyBg } from "./themes/cloudy-bg.png";
 export { default as homeMockup } from "./themes/home-mockup.png";
