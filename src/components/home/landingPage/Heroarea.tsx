@@ -30,7 +30,7 @@ const Heroarea = () => {
             )
           `,
           //  TODO: Make the blur a function of the screen width or do different blur for different screen sizes
-          filter: "blur(576.73px)",
+          filter: "blur(110px)",
           transform: "scale(1.1)",
         }}
       />
