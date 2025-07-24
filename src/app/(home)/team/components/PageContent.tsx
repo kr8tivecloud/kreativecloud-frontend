@@ -89,7 +89,7 @@ export default function PageContent() {
       {/* END HERO */}
 
       {/* TEAM HEAD */}
-      <div className="px-4 sm:container mt-12">
+      <div className="px-4 sm:container xl:mt-12">
         {" "}
         {/* MOBILE SCREENS HEADER */}
         <h3 className="text-3xl font-bold leading-8 mb-4 xl:hidden max-w-[350px] text-center mx-auto">
@@ -125,7 +125,7 @@ export default function PageContent() {
               of Kreative Cloud.
             </h3>
             {/* END LARGE SCREENS HEADER */}
-            <p className="text-justify mt-4">
+            <p className="mt-4">
               Chuka Ibezim is a serial digital marketer, master networker, and
               creative director shaping the future of global creative
               collaboration. As the founder of Kreative Cloud, he is on a
@@ -134,12 +134,12 @@ export default function PageContent() {
               talent with businesses and creators around the world.
             </p>
             <br />
-            <p className="text-justify">
+            <p className="">
               Under Chuka’s leadership, Kreative Cloud has become more than a
               digital marketing agency, it’s a global ecosystem driven by
               innovation, empowerment, and purpose.
             </p>
-            <p className="text-justify">
+            <p className="">
               From grassroots startups to corporate organizations, Chuka and his
               team help brands amplify their voice, achieve their goals, and
               grow with clarity and creativity. From web development and
@@ -147,7 +147,7 @@ export default function PageContent() {
               committed to delivering high quality, cost effective creative
               strategies that drive real results.
             </p>
-            <p className="text-justify">
+            <p className="">
               Fueled by strategy, design, and impact, Chuka Ibezim is redefining
               how brands connect, grow, and thrive in a digital first world.
             </p>

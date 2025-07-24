@@ -13,6 +13,7 @@ import SocialMediaManagement from "@/assets/images/services/social-media-managem
 import StaggeredFlipText2 from "@/components/StaggeredFlipText2";
 import ShimmerParagraph from "@/components/ShimmerParagraph";
 import { motion, Variants } from "motion/react";
+import BulletIcon from "@/assets/images/services/list-icon.png";
 
 const MotionImage = motion.create(Image);
 
@@ -29,6 +30,32 @@ const brandImageVariants: Variants = {
     },
   },
 };
+
+// Custom List with Bullet Image
+function BulletList({ children }: { children: React.ReactNode }) {
+  return (
+    <ul className="space-y-1">
+      {React.Children.map(children, (child, idx) => {
+        const element = child as React.ReactElement<{
+          children: React.ReactNode;
+        }>;
+
+        return React.isValidElement(child) ? (
+          <li className="flex items-start gap-x-2 ml-3" key={idx}>
+            <Image
+              src={BulletIcon}
+              alt="•"
+              width={16}
+              height={16}
+              className="mt-1 w-4 h-4 flex-shrink-0"
+            />
+            <span>{element.props.children}</span>
+          </li>
+        ) : null;
+      })}
+    </ul>
+  );
+}
 
 export default function ServicesPage() {
   return (
@@ -56,11 +83,21 @@ export default function ServicesPage() {
               </span>
             </div>
             <ShimmerParagraph className="my-5 leading-7">
-              We will create a custom website design tailored to your brand with
-              Intuitive user experience (UX) and navigation. We deliver seamless
-              and visually appealing online experiences that reflects your
-              brand's identity. Whether you want to build from scratch, leverage
-              on any platform or revamp the aesthetics of your site, we got you!
+              We design sleek, responsive websites tailored to your brand’s
+              aesthetic, identity, and goals. Whether launching from scratch or
+              upgrading an outdated platform, we ensure smooth functionality,
+              modern visuals, and mobile optimization.
+              <br />
+              <div className="mt-3">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Custom layout &amp; UX/UI design</li>
+                  <li>Mobile optimization</li>
+                  <li>Shopify, WordPress, Wix, and other platform support</li>
+                  <li>eCommerce integration &amp; product page setup</li>
+                  <li>Domain, hosting, and technical launch assistance</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton variant="outline" as={"link"} href="/contact">
@@ -105,11 +142,20 @@ export default function ServicesPage() {
               </span>
             </div>
             <ShimmerParagraph className="my-5 leading-7">
-              We will bring your brand to life through compelling visuals and
-              impactful designs that communicate your message clearly. Whether
-              you need logos, marketing materials, concept designs, 3D elements,
-              mockups or digital content, our creative team ensures your brand
-              stands out and makes a lasting impression.
+              We craft powerful visuals that communicate your message with
+              clarity and creativity. From marketing materials to product
+              mockups, we ensure consistency across all platforms.
+              <br />
+              <div className="mt-3 ">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Logos, icons, and typography design</li>
+                  <li>Flyers, brochures, posters, and business cards</li>
+                  <li>Branded pitch decks and presentations</li>
+                  <li>Product packaging, labels & 3D mockups</li>
+                  <li>Digital graphics for ads, websites, and social</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
@@ -163,6 +209,17 @@ export default function ServicesPage() {
               brand guidelines to ensure consistency across all platforms. We
               also offer rebranding services to update outdated visuals and
               messaging to align with your current goals.
+              <br />
+              <div className="mt-3">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Logo suite, color palette &amp; type system</li>
+                  <li>Brand personality and messaging tone</li>
+                  <li>Comprehensive brand guidelines (PDF &amp; web-ready)</li>
+                  <li>Rebranding for established businesses</li>
+                  <li>Naming, tagline, and positioning strategy</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
@@ -206,11 +263,21 @@ export default function ServicesPage() {
             </div>
 
             <ShimmerParagraph className="my-5 leading-7">
-              We will bring your brand to life through compelling visuals and
-              impactful designs that communicate your message clearly. Whether
-              you need logos, marketing materials, concept designs, 3D elements,
-              mockups or digital content, our creative team ensures your brand
-              stands out and makes a lasting impression.
+              We create and manage marketing campaigns that amplify your reach
+              and drive engagement. Whether you're launching a product,
+              promoting a service, or running an event, our strategies are
+              tailored for impact.
+              <br />
+              <div className="mt-3">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Digital &amp; email campaign development</li>
+                  <li>Paid advertising setup (Google Ads, Meta, LinkedIn)</li>
+                  <li>Influencer outreach &amp; brand collaborations</li>
+                  <li>Event and product promotion strategy</li>
+                  <li>Ad performance analytics &amp; optimization</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton variant="outline" as="link" href="/contact">
@@ -252,13 +319,20 @@ export default function ServicesPage() {
               </span>
             </div>
             <ShimmerParagraph className="my-5 leading-7">
-              We create content that connects with your audience and gets them
-              talking. From coming up with viral ideas to making sure everything
-              matches your brand, we’ve got you covered. We’ll write blog posts,
-              copies, scripts and product descriptions that are clear and
-              engaging. We can also plan your content calendar and handle the
-              graphics, videos, or any other media you need to bring your ideas
-              to life.
+              We produce original content that captures attention and
+              communicates value. Whether you're educating, inspiring, or
+              selling, we help you tell your story with clarity and consistency.
+              <br />
+              <div className="mt-3">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Blog posts, newsletters, and copywriting</li>
+                  <li>Product descriptions &amp; service content</li>
+                  <li>Short-form video scripts (Reels, TikToks, ads)</li>
+                  <li>Visual content (carousels, infographics, quote cards)</li>
+                  <li>Content calendar development &amp; rollout strategy</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton as={"link"} variant="outline" href="#">
@@ -301,11 +375,20 @@ export default function ServicesPage() {
             </div>
 
             <ShimmerParagraph className="my-5 leading-7">
-              We will create a custom website design tailored to your brand with
-              Intuitive user experience (UX) and navigation. We deliver seamless
-              and visually appealing online experiences that reflects your
-              brand’s identity. Whether you want to build from scratch, leverage
-              on any platform or revamp the aesthetics of your site, we got you!
+              We manage your social presence with strategic planning, content
+              creation, and community engagement. Our goal: consistent posting,
+              strong branding, and measurable growth.
+              <br />
+              <div className="mt-3">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Social platform setup or revamp</li>
+                  <li>Weekly content creation, scheduling &amp; captions</li>
+                  <li>Audience engagement &amp; hashtag research</li>
+                  <li>Direct message &amp; comment management</li>
+                  <li>Monthly reporting &amp; performance insight</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
 
             <div className="flex items-center gap-x-5">
