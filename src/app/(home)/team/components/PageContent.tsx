@@ -24,7 +24,7 @@ const teamMembers = [
     image: MemberPlaceholder,
   },
   {
-    name: "Spanky",
+    name: "Emmanuel E.",
     title: "Graphic Design Director",
     image: MemberPlaceholder,
   },
