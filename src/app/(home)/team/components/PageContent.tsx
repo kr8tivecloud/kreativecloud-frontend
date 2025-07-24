@@ -14,7 +14,7 @@ import { motion } from "motion/react";
 const teamMembers = [
   {
     name: "Munjie M.",
-    title: "Senior Project Manager",
+    title: "Product Director",
     image: MemberPlaceholder,
   },
   {
@@ -24,38 +24,33 @@ const teamMembers = [
   },
   {
     name: "Spanky",
-    title: "Senior Graphic Design Director",
+    title: "Graphic Design Director",
     image: MemberPlaceholder,
   },
   {
     name: "Chiwuzo E.",
-    title: "Senior Fullstack Developer",
+    title: "Fullstack Developer",
     image: MemberPlaceholder,
   },
 
   {
     name: "Adigwu C.",
-    title: "Director of Branding",
+    title: "Brand Director",
     image: MemberPlaceholder,
   },
   {
     name: "Russel D.",
-    title: "Operations Manager",
-    image: MemberPlaceholder,
-  },
-  {
-    name: "Island",
-    title: "Creative Director",
+    title: "Operations Director",
     image: MemberPlaceholder,
   },
   {
     name: "Opoku B.",
-    title: "Operations Manager",
+    title: "Marketing Director",
     image: MemberPlaceholder,
   },
   {
     name: "Akinola C.",
-    title: "Branding Manager",
+    title: "Brand Manager",
     image: MemberPlaceholder,
   },
   {

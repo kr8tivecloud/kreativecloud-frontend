@@ -13,7 +13,7 @@ import SocialMediaManagement from "@/assets/images/services/social-media-managem
 import StaggeredFlipText2 from "@/components/StaggeredFlipText2";
 import ShimmerParagraph from "@/components/ShimmerParagraph";
 import { motion, Variants } from "motion/react";
-import BulletIcon from "@/assets/images/services/list-icon.png";
+import BulletIcon from "@/assets/images/services/list-icon.svg";
 
 const MotionImage = motion.create(Image);
 
