@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Image from "next/image";
 import {
@@ -10,6 +9,7 @@ import {
 } from "../../../../../public/images";
 import MemberCard from "./../components/member-card";
 import { motion } from "motion/react";
+import { KreativeCloud } from "../../../../../public/images";
 
 const teamMembers = [
   {
@@ -89,7 +89,15 @@ export default function PageContent() {
         {/* MOBILE SCREENS HEADER */}
         <h3 className="text-3xl font-bold leading-8 mb-4 xl:hidden max-w-[350px] text-center mx-auto">
           Meet the head, <br />
-          of Kreative Cloud.
+          of{" "}
+          <Image
+            src={KreativeCloud}
+            alt=""
+            height={26}
+            width={0}
+            className="inline-block mb-2.5 max-w-[200px]"
+          />
+          .
         </h3>
         {/* END MOBILE SCREENS HEADER */}
         <div className="flex flex-col md:flex-row gap-x-12 xl:gap-x-24 text-sm lg:text-base">
@@ -117,7 +125,15 @@ export default function PageContent() {
             {/* LARGE SCREENS HEADER */}
             <h3 className="text-5xl font-bold leading-10 max-xl:hidden">
               Meet the head, <br />
-              of Kreative Cloud.
+              of{" "}
+              <Image
+                src={KreativeCloud}
+                alt=""
+                height={26}
+                width={0}
+                className="inline-block mb-2 h-[26px]"
+              />
+              .
             </h3>
             <div className="max-w-80 mt-6 max-xl:hidden">
               <h3 className="text-[#FE922A] font-bold text-2xl mb-1">
