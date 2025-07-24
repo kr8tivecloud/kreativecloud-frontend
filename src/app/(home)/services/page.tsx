@@ -59,7 +59,7 @@ function BulletList({ children }: { children: React.ReactNode }) {
 
 export default function ServicesPage() {
   return (
-    <div className="pt-28">
+    <div className="pt-20">
       <div className="px-4 sm:container">
         <div className="text-left lg:text-center">
           <h1 className="text-white text-5xl font-bold">Services </h1>
