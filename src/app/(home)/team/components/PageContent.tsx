@@ -10,6 +10,7 @@ import {
 import MemberCard from "./../components/member-card";
 import { motion } from "motion/react";
 import { KreativeCloud } from "../../../../../public/images";
+import ShimmerText from "@/components/ShimmerParagraph";
 
 const teamMembers = [
   {
@@ -115,7 +116,9 @@ export default function PageContent() {
               <h3 className="text-[#FE922A] font-bold text-2xl mb-2.5">
                 Chuka Ibezim
               </h3>
-              <p className="">Founder & CEO | Creative Director</p>
+              <ShimmerText className="">
+                Founder & CEO | Creative Director
+              </ShimmerText>
             </div>
           </div>
           {/* END IMAGE */}
@@ -139,19 +142,21 @@ export default function PageContent() {
               <h3 className="text-[#FE922A] font-bold text-2xl mb-1">
                 Chuka Ibezim
               </h3>
-              <p className="">Founder & CEO | Creative Director</p>
+              <ShimmerText className="">
+                Founder & CEO | Creative Director
+              </ShimmerText>
             </div>
             {/* END LARGE SCREENS HEADER */}
-            <p className="mt-4">
-              Chuka Ibezim is a serial digital marketer, master networker, and
+            <ShimmerText className="mt-4">
+              Chuka Ibezim is a serial digital marketer, network developer, and
               creative director shaping the future of global creative
               collaboration. As the founder of Kreative Cloud, he is on a
               mission to disrupt the traditional brokerage model by building a
               streamlined platform that directly connects top tier creative
               talent with businesses and creators around the world.
-            </p>
+            </ShimmerText>
             <br />
-            <p className="">
+            <ShimmerText className="">
               Under Chuka’s leadership, Kreative Cloud has become more than a
               digital marketing agency, it’s a global ecosystem driven by
               innovation, empowerment, and purpose. From grassroots startups to
@@ -163,7 +168,7 @@ export default function PageContent() {
               results. Fueled by strategy, design, and impact, Chuka Ibezim is
               redefining how brands connect, grow, and thrive in a
               digital first world.
-            </p>
+            </ShimmerText>
           </div>
           {/* END DESCRIPTION */}
         </div>
@@ -172,9 +177,11 @@ export default function PageContent() {
 
       {/* TEAM MEMBERS */}
       <div className="px-4 sm:container mt-28 mb-24">
-        <h3 className="font-bold text-3xl xl:text-4xl mx-auto text-center mb-12">
-          Meet the Team
-        </h3>
+        <ShimmerText>
+          <h3 className="font-bold text-3xl xl:text-4xl mx-auto text-center mb-12">
+            Meet the Team
+          </h3>
+        </ShimmerText>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-12">
           {teamMembers.map((member) => {

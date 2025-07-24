@@ -1,5 +1,5 @@
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
-import NextTopLoader from "nextjs-toploader";
+// import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "react-hot-toast";
 
 export type RootLayoutProps = {
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 duration: 2000,
               }}
             />
-            <NextTopLoader color="#4BD2E4" showSpinner={false} />
+            {/* <NextTopLoader color="#4BD2E4" showSpinner={false} /> */}
             <main className="">{children}</main>
           </ReactQueryProvider>
         </body>
