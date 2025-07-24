@@ -103,7 +103,7 @@ export default function PageContent() {
               className="w-full max-w-full lg:w-[400px] max-h-screen min-h-[500px] h-[500px] object-cover object-top"
             />
 
-            <div className="max-w-80 mt-6">
+            <div className="max-w-80 mt-6 xl:hidden">
               <h3 className="text-[#FE922A] font-bold text-2xl mb-2.5">
                 Chuka Ibezim
               </h3>
@@ -119,6 +119,12 @@ export default function PageContent() {
               Meet the head, <br />
               of Kreative Cloud.
             </h3>
+            <div className="max-w-80 mt-6 max-xl:hidden">
+              <h3 className="text-[#FE922A] font-bold text-2xl mb-1">
+                Chuka Ibezim
+              </h3>
+              <p className="">Founder & CEO | Creative Director</p>
+            </div>
             {/* END LARGE SCREENS HEADER */}
             <p className="mt-4">
               Chuka Ibezim is a serial digital marketer, master networker, and
@@ -132,19 +138,15 @@ export default function PageContent() {
             <p className="">
               Under Chuka’s leadership, Kreative Cloud has become more than a
               digital marketing agency, it’s a global ecosystem driven by
-              innovation, empowerment, and purpose.
-            </p>
-            <p className="">
-              From grassroots startups to corporate organizations, Chuka and his
-              team help brands amplify their voice, achieve their goals, and
-              grow with clarity and creativity. From web development and
-              branding to digital design and app solutions, Chuka leads a team
-              committed to delivering high quality, cost effective creative
-              strategies that drive real results.
-            </p>
-            <p className="">
-              Fueled by strategy, design, and impact, Chuka Ibezim is redefining
-              how brands connect, grow, and thrive in a digital first world.
+              innovation, empowerment, and purpose. From grassroots startups to
+              corporate organizations, Chuka and his team help brands amplify
+              their voice, achieve their goals, and grow with clarity and
+              creativity. From web development and branding to digital design
+              and app solutions, Chuka leads a team committed to delivering high
+              quality, cost effective creative strategies that drive real
+              results. Fueled by strategy, design, and impact, Chuka Ibezim is
+              redefining how brands connect, grow, and thrive in a
+              digital first world.
             </p>
           </div>
           {/* END DESCRIPTION */}
