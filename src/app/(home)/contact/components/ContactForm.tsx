@@ -132,7 +132,7 @@ export default function ContactForm() {
             <textarea
               placeholder="Tell us about your idea *"
               rows={4}
-              className="bg-[#15151D]/60 text-sm text-white p-4 outline outline-1 outline-white/25 focus:outline-white/50 transition-colors w-full"
+              className="bg-[#15151D]/60 text-white p-4 outline outline-1 outline-white/25 focus:outline-white/50 transition-colors w-full"
               {...contactForm.register("message")}
             ></textarea>
             <FormError error={contactForm.formState.errors.message} />

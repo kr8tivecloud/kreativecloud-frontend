@@ -19,7 +19,7 @@ export default function CategoryPill({
       key={category}
       type="button"
       className={cn(
-        selected ? "bg-white/25" : "bg-[#15151D] hover:bg-[#0D0D11]",
+        selected ? "bg-[#FE922A]" : "bg-[#15151D] hover:bg-white/25",
         "text-white text-sm lg:text-base border border-white/25 px-3 py-1 rounded-full transition-colors",
         className
       )}

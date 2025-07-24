@@ -13,47 +13,58 @@ import { motion } from "motion/react";
 
 const teamMembers = [
   {
-    name: "Nonso Amadin",
-    title: "Content Strategist",
+    name: "Munjie M.",
+    title: "Senior Project Manager",
     image: MemberPlaceholder,
   },
   {
-    name: "Mercy",
-    title: "SEO Specialist",
-    image: MemberPlaceholder,
-  },
-  {
-    name: "Steve",
-    title: "Content Strategist",
-    image: MemberPlaceholder,
-  },
-  {
-    name: "Gaga Graphix",
-    title: "Product Designer",
-    image: MemberPlaceholder,
-  },
-  {
-    name: "Cissie",
-    title: "Branding Specialist",
+    name: "Esieboma G.",
+    title: "Senior Product Designer",
     image: MemberPlaceholder,
   },
   {
     name: "Spanky",
-    title: "Graphic Designer",
+    title: "Senior Graphic Design Director",
     image: MemberPlaceholder,
   },
   {
-    name: "MJ",
-    title: "Creative Designer",
+    name: "Chiwuzo E.",
+    title: "Senior Fullstack Developer",
+    image: MemberPlaceholder,
+  },
+
+  {
+    name: "Adigwu C.",
+    title: "Director of Branding",
+    image: MemberPlaceholder,
+  },
+  {
+    name: "Russel D.",
+    title: "Operations Manager",
     image: MemberPlaceholder,
   },
   {
     name: "Island",
-    title: "Marketing Expert",
+    title: "Creative Director",
     image: MemberPlaceholder,
   },
   {
-    name: "Manuel",
+    name: "Opoku B.",
+    title: "Operations Manager",
+    image: MemberPlaceholder,
+  },
+  {
+    name: "Akinola C.",
+    title: "Branding Manager",
+    image: MemberPlaceholder,
+  },
+  {
+    name: "Abdulmajeed B.",
+    title: "Graphic Designer",
+    image: MemberPlaceholder,
+  },
+  {
+    name: "Ibadin M.",
     title: "Fullstack Developer",
     image: MemberPlaceholder,
   },
@@ -65,7 +76,7 @@ export default function PageContent() {
   return (
     <div>
       {/* HERO */}
-      <div className="relative h-screen min-h-[375px] lg:h-[900px] overflow-hidden flex items-center justify-center">
+      <div className="relative h-screen min-h-[375px] overflow-hidden flex items-center justify-center">
         <Image
           src={TeamHero}
           alt=""
@@ -82,10 +93,11 @@ export default function PageContent() {
         {" "}
         {/* MOBILE SCREENS HEADER */}
         <h3 className="text-3xl font-bold leading-8 mb-4 xl:hidden max-w-[350px] text-center mx-auto">
-          Meet the head, of Kreative Cloud.
+          Meet the head, <br />
+          of Kreative Cloud.
         </h3>
         {/* END MOBILE SCREENS HEADER */}
-        <div className="flex flex-col xl:flex-row gap-x-24 text-sm lg:text-base">
+        <div className="flex flex-col md:flex-row gap-x-12 xl:gap-x-24 text-sm lg:text-base">
           {/* IMAGE */}
           <div className="shrink-0">
             <Image
@@ -93,17 +105,14 @@ export default function PageContent() {
               alt=""
               width={630}
               height={500}
-              className="w-full h-[300px] xl:w-[630px] lg:h-[500px] object-cover"
+              className="w-full max-w-full lg:w-[400px] max-h-screen min-h-[500px] h-[500px] object-cover object-top"
             />
 
             <div className="max-w-80 mt-6">
               <h3 className="text-[#FE922A] font-bold text-2xl mb-2.5">
-                Liam Ibezim
+                Chuka Ibezim
               </h3>
-              <p className="">
-                Founder and CEO, Serial Entrepreneur, Creative Director,
-                Marketing Machine
-              </p>
+              <p className="">Founder & CEO | Creative Director</p>
             </div>
           </div>
           {/* END IMAGE */}
@@ -112,26 +121,35 @@ export default function PageContent() {
           <div>
             {/* LARGE SCREENS HEADER */}
             <h3 className="text-5xl font-bold leading-10 max-xl:hidden">
-              Meet the head, of Kreative Cloud.
+              Meet the head, <br />
+              of Kreative Cloud.
             </h3>
             {/* END LARGE SCREENS HEADER */}
             <p className="text-justify mt-4">
-              Liam Ibezim is a visionary serial entrepreneur, master networker,
-              and creative director with a passion for transforming businesses
-              through design and innovation. As the CEO of Black Diamond and
-              Kreative Cloud, he has built platforms that bridge the gap between
-              designers and entrepreneurs, empowering businesses with creative
-              solutions that drive success.
+              Chuka Ibezim is a serial digital marketer, master networker, and
+              creative director shaping the future of global creative
+              collaboration. As the founder of Kreative Cloud, he is on a
+              mission to disrupt the traditional brokerage model by building a
+              streamlined platform that directly connects top tier creative
+              talent with businesses and creators around the world.
             </p>
             <br />
             <p className="text-justify">
-              With a mission to uplift design, influence industries, and spark
-              meaningful collaborations, Liam founded Kreative Cloud—a dynamic
-              ecosystem where creativity meets entrepreneurship. His work is not
-              just about aesthetics; it's about impact, strategy, and the power
-              of design to shape the future. A force of nature in the creative
-              and business worlds, Liam Ibezim is redefining how brands connect,
-              grow, and thrive.
+              Under Chuka’s leadership, Kreative Cloud has become more than a
+              digital marketing agency, it’s a global ecosystem driven by
+              innovation, empowerment, and purpose.
+            </p>
+            <p className="text-justify">
+              From grassroots startups to corporate organizations, Chuka and his
+              team help brands amplify their voice, achieve their goals, and
+              grow with clarity and creativity. From web development and
+              branding to digital design and app solutions, Chuka leads a team
+              committed to delivering high quality, cost effective creative
+              strategies that drive real results.
+            </p>
+            <p className="text-justify">
+              Fueled by strategy, design, and impact, Chuka Ibezim is redefining
+              how brands connect, grow, and thrive in a digital first world.
             </p>
           </div>
           {/* END DESCRIPTION */}
