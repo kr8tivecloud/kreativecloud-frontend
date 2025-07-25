@@ -64,6 +64,11 @@ const teamMembers = [
     title: "Fullstack Developer",
     image: MemberPlaceholder,
   },
+  {
+    name: "Autumn Owens",
+    title: "Client Success Manager",
+    image: MemberPlaceholder,
+  },
 ];
 
 const MotionMemberCard = motion(MemberCard);
