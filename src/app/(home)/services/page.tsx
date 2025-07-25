@@ -56,7 +56,7 @@ function BulletList({
               height={16}
               className="mt-1 w-4 h-4 flex-shrink-0"
             />
-            <span>{element.props.children}</span>
+            <span className="text-base">{element.props.children}</span>
           </li>
         ) : null;
       })}
@@ -99,6 +99,7 @@ export default function ServicesPage() {
               <Accordion
                 title={<span className="font-semibold">Includes</span>}
                 className="lg:hidden px-0"
+                titleBorder
               >
                 <BulletList>
                   <li>Custom layout &amp; UX/UI design</li>
@@ -171,6 +172,7 @@ export default function ServicesPage() {
               <Accordion
                 title={<span className="font-semibold">Includes</span>}
                 className="lg:hidden px-0"
+                titleBorder
               >
                 <BulletList>
                   <li>Logos, icons, and typography design</li>
@@ -249,6 +251,7 @@ export default function ServicesPage() {
               <Accordion
                 title={<span className="font-semibold">Includes</span>}
                 className="lg:hidden px-0"
+                titleBorder
               >
                 <BulletList>
                   <li>Logo suite, color palette &amp; type system</li>
@@ -321,6 +324,7 @@ export default function ServicesPage() {
               <Accordion
                 title={<span className="font-semibold">Includes</span>}
                 className="lg:hidden px-0"
+                titleBorder
               >
                 <BulletList>
                   <li>Digital &amp; email campaign development</li>
@@ -390,6 +394,7 @@ export default function ServicesPage() {
               <Accordion
                 title={<span className="font-semibold">Includes</span>}
                 className="lg:hidden px-0"
+                titleBorder
               >
                 <BulletList>
                   <li>Blog posts, newsletters, and copywriting</li>
@@ -460,6 +465,7 @@ export default function ServicesPage() {
               <Accordion
                 title={<span className="font-semibold">Includes</span>}
                 className="lg:hidden px-0"
+                titleBorder
               >
                 <BulletList>
                   <li>Social platform setup or revamp</li>

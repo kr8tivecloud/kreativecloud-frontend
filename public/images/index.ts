@@ -154,7 +154,7 @@ export { default as cloudImage4 } from "./home/landingPage/cloud-img4.svg";
 export { default as cloudImage5 } from "./home/landingPage/cloud-img5.svg";
 
 export { default as TeamHero } from "./team/hero.jpg";
-export { default as TeamHead } from "./team/team-head.jpeg";
+export { default as TeamHead } from "./team/team-head.png";
 export { default as MemberPlaceholder } from "./team/members-placeholder.png";
 
 export { default as KreativeCloud } from "./portfolio/kreative-cloud.svg";

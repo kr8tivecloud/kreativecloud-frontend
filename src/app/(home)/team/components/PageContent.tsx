@@ -114,7 +114,7 @@ export default function PageContent() {
               alt=""
               width={630}
               height={500}
-              className="w-full max-w-full lg:w-[400px] max-h-screen min-h-[500px] h-[500px] object-cover object-top"
+              className="w-full max-w-full max-h-screen md:max-lg:w-[350px] object-cover object-top"
             />
 
             <div className="max-w-80 mt-6 xl:hidden">
@@ -137,9 +137,9 @@ export default function PageContent() {
               <Image
                 src={KreativeCloud}
                 alt=""
-                height={26}
+                height={30}
                 width={0}
-                className="inline-block mb-2 h-[26px]"
+                className="inline-block mb-4 w-[300px]"
               />
               .
             </h3>

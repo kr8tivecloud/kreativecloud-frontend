@@ -25,7 +25,6 @@ const Accordion = ({
 
   return (
     <div
-      onClick={() => setIsOpen(!isOpen)}
       className={cn(
         "h-fit shadow-lg rounded-lg p-2.5 pr-0.5 flex flex-col gap-2.5 xs:gap-4 cursor-pointer",
         isOpen ? "border-secondary" : "",
@@ -33,6 +32,7 @@ const Accordion = ({
       )}
     >
       <div
+        onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "flex items-center justify-between gap-3",
           titleBorder && "border-b border-b-[#8C8C8C]"
@@ -57,9 +57,9 @@ const Accordion = ({
           <motion.div
             layout // Add layout prop for smoother height animation
             key="content"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }} // Add easing
             className="overflow-hidden" // overflow-hidden is important for height: 0 to work
           >

@@ -56,15 +56,15 @@ const socialLinks: IconNavLinkType[] = [
   // },
   {
     Icon: FaXTwitter,
-    href: "#",
+    href: "https://x.com/kr8tivecloud?s=21",
   },
   {
     Icon: FaInstagram,
-    href: "https://www.instagram.com/kreativecloudd/",
+    href: "https://www.instagram.com/kr8tivecloud?igsh=NjVnMmwxZW81NmJv",
   },
   {
     Icon: FaLinkedinIn,
-    href: "#",
+    href: "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F107894673%2Fadmin%2Fdashboard%2F&data=05%7C02%7Cchukaibe%40buffalo.edu%7C34d5fdcdf2064d9e4c6f08ddcb60bf9d%7C96464a8af8ed40b199e25f6b50a20250%7C0%7C0%7C638890338591090770%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=z6%2FP9jsygBSF3VrzrU8DXCy8dk9fJhVEc4ThSueBwF4%3D&reserved=0",
   },
   {
     Icon: FaTiktok,

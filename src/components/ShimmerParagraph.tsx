@@ -14,7 +14,7 @@ const ShimmerText: React.FC<ShimmerParagraphProps> = ({
 }) => {
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <motion.p
+      <motion.div
         className="text-transparent bg-clip-text bg-gradient-to-r from-white/60 via-white/100 to-white/60"
         initial={{ backgroundPosition: "200% 0" }}
         animate={{ backgroundPosition: "-200% 0" }}
@@ -24,7 +24,7 @@ const ShimmerText: React.FC<ShimmerParagraphProps> = ({
         }}
       >
         {children}
-      </motion.p>
+      </motion.div>
     </div>
   );
 };
