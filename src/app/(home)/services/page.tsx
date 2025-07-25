@@ -14,6 +14,7 @@ import StaggeredFlipText2 from "@/components/StaggeredFlipText2";
 import ShimmerParagraph from "@/components/ShimmerParagraph";
 import { motion, Variants } from "motion/react";
 import BulletIcon from "@/assets/images/services/list-icon.svg";
+import Accordion from "@/components/shared/Accordion";
 
 const MotionImage = motion.create(Image);
 
@@ -32,9 +33,15 @@ const brandImageVariants: Variants = {
 };
 
 // Custom List with Bullet Image
-function BulletList({ children }: { children: React.ReactNode }) {
+function BulletList({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <ul className="space-y-1">
+    <ul className={`space-y-1 ${className}`}>
       {React.Children.map(children, (child, idx) => {
         const element = child as React.ReactElement<{
           children: React.ReactNode;
@@ -88,7 +95,21 @@ export default function ServicesPage() {
               upgrading an outdated platform, we ensure smooth functionality,
               modern visuals, and mobile optimization.
               <br />
-              <div className="mt-3">
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes</span>}
+                className="lg:hidden px-0"
+              >
+                <BulletList>
+                  <li>Custom layout &amp; UX/UI design</li>
+                  <li>Mobile optimization</li>
+                  <li>Shopify, WordPress, Wix, and other platform support</li>
+                  <li>eCommerce integration &amp; product page setup</li>
+                  <li>Domain, hosting, and technical launch assistance</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
                 <span className="font-bold">Includes:</span>
                 <BulletList>
                   <li>Custom layout &amp; UX/UI design</li>
@@ -146,7 +167,21 @@ export default function ServicesPage() {
               clarity and creativity. From marketing materials to product
               mockups, we ensure consistency across all platforms.
               <br />
-              <div className="mt-3 ">
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes</span>}
+                className="lg:hidden px-0"
+              >
+                <BulletList>
+                  <li>Logos, icons, and typography design</li>
+                  <li>Flyers, brochures, posters, and business cards</li>
+                  <li>Branded pitch decks and presentations</li>
+                  <li>Product packaging, labels & 3D mockups</li>
+                  <li>Digital graphics for ads, websites, and social</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
                 <span className="font-bold">Includes:</span>
                 <BulletList>
                   <li>Logos, icons, and typography design</li>
@@ -210,7 +245,21 @@ export default function ServicesPage() {
               also offer rebranding services to update outdated visuals and
               messaging to align with your current goals.
               <br />
-              <div className="mt-3">
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes</span>}
+                className="lg:hidden px-0"
+              >
+                <BulletList>
+                  <li>Logo suite, color palette &amp; type system</li>
+                  <li>Brand personality and messaging tone</li>
+                  <li>Comprehensive brand guidelines (PDF &amp; web-ready)</li>
+                  <li>Rebranding for established businesses</li>
+                  <li>Naming, tagline, and positioning strategy</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
                 <span className="font-bold">Includes:</span>
                 <BulletList>
                   <li>Logo suite, color palette &amp; type system</li>
@@ -268,7 +317,21 @@ export default function ServicesPage() {
               promoting a service, or running an event, our strategies are
               tailored for impact.
               <br />
-              <div className="mt-3">
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes</span>}
+                className="lg:hidden px-0"
+              >
+                <BulletList>
+                  <li>Digital &amp; email campaign development</li>
+                  <li>Paid advertising setup (Google Ads, Meta, LinkedIn)</li>
+                  <li>Influencer outreach &amp; brand collaborations</li>
+                  <li>Event and product promotion strategy</li>
+                  <li>Ad performance analytics &amp; optimization</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
                 <span className="font-bold">Includes:</span>
                 <BulletList>
                   <li>Digital &amp; email campaign development</li>
@@ -323,7 +386,21 @@ export default function ServicesPage() {
               communicates value. Whether you're educating, inspiring, or
               selling, we help you tell your story with clarity and consistency.
               <br />
-              <div className="mt-3">
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes</span>}
+                className="lg:hidden px-0"
+              >
+                <BulletList>
+                  <li>Blog posts, newsletters, and copywriting</li>
+                  <li>Product descriptions &amp; service content</li>
+                  <li>Short-form video scripts (Reels, TikToks, ads)</li>
+                  <li>Visual content (carousels, infographics, quote cards)</li>
+                  <li>Content calendar development &amp; rollout strategy</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
                 <span className="font-bold">Includes:</span>
                 <BulletList>
                   <li>Blog posts, newsletters, and copywriting</li>
@@ -379,7 +456,21 @@ export default function ServicesPage() {
               creation, and community engagement. Our goal: consistent posting,
               strong branding, and measurable growth.
               <br />
-              <div className="mt-3">
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes</span>}
+                className="lg:hidden px-0"
+              >
+                <BulletList>
+                  <li>Social platform setup or revamp</li>
+                  <li>Weekly content creation, scheduling &amp; captions</li>
+                  <li>Audience engagement &amp; hashtag research</li>
+                  <li>Direct message &amp; comment management</li>
+                  <li>Monthly reporting &amp; performance insight</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
                 <span className="font-bold">Includes:</span>
                 <BulletList>
                   <li>Social platform setup or revamp</li>

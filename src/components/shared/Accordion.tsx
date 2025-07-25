@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
-import { ComponentProps, useState } from "react";
+import { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import classNames from "classnames";
 
@@ -13,8 +13,9 @@ const Accordion = ({
   closeIcon,
   className,
   titleBorder = false,
-}: ComponentProps<"div"> & {
-  title: string;
+}: {
+  className?: string;
+  title: React.ReactNode;
   children: React.ReactNode;
   openIcon?: React.ReactNode;
   closeIcon?: React.ReactNode;

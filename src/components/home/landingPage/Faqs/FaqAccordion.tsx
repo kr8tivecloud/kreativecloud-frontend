@@ -13,8 +13,8 @@ const FaqAccordion = ({
   index,
   lastIndex,
 }: {
-  title: string;
-  children: string;
+  title: React.ReactNode;
+  children: React.ReactNode;
   isOpen: boolean;
   onToggle: () => void;
   index: number;
