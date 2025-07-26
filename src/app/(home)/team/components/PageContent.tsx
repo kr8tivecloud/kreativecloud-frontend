@@ -15,12 +15,12 @@ import ShimmerText from "@/components/ShimmerParagraph";
 const teamMembers = [
   {
     name: "Munjie M.",
-    title: "Product Director",
+    title: "Project Director",
     image: MemberPlaceholder,
   },
   {
     name: "Esieboma G.",
-    title: "Senior Product Designer",
+    title: "Product Design Director",
     image: MemberPlaceholder,
   },
   {
@@ -67,6 +67,11 @@ const teamMembers = [
   {
     name: "Autumn Owens",
     title: "Client Success Manager",
+    image: MemberPlaceholder,
+  },
+  {
+    name: "Francis Kwayisi",
+    title: "Social Media Director",
     image: MemberPlaceholder,
   },
 ];

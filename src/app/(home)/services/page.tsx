@@ -97,14 +97,14 @@ export default function ServicesPage() {
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
-                title={<span className="font-semibold">Includes</span>}
+                title={<span className="font-semibold">Includes:</span>}
                 className="lg:hidden px-0"
                 titleBorder
               >
                 <BulletList>
                   <li>Custom layout &amp; UX/UI design</li>
                   <li>Mobile optimization</li>
-                  <li>Shopify, WordPress, Wix, and other platform support</li>
+                  <li>Shopify, WordPress, Wix, and other platforms</li>
                   <li>eCommerce integration &amp; product page setup</li>
                   <li>Domain, hosting, and technical launch assistance</li>
                 </BulletList>
@@ -115,7 +115,7 @@ export default function ServicesPage() {
                 <BulletList>
                   <li>Custom layout &amp; UX/UI design</li>
                   <li>Mobile optimization</li>
-                  <li>Shopify, WordPress, Wix, and other platform support</li>
+                  <li>Shopify, WordPress, Wix, and other platforms</li>
                   <li>eCommerce integration &amp; product page setup</li>
                   <li>Domain, hosting, and technical launch assistance</li>
                 </BulletList>
@@ -170,7 +170,7 @@ export default function ServicesPage() {
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
-                title={<span className="font-semibold">Includes</span>}
+                title={<span className="font-semibold">Includes:</span>}
                 className="lg:hidden px-0"
                 titleBorder
               >
@@ -249,7 +249,7 @@ export default function ServicesPage() {
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
-                title={<span className="font-semibold">Includes</span>}
+                title={<span className="font-semibold">Includes:</span>}
                 className="lg:hidden px-0"
                 titleBorder
               >
@@ -322,7 +322,7 @@ export default function ServicesPage() {
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
-                title={<span className="font-semibold">Includes</span>}
+                title={<span className="font-semibold">Includes:</span>}
                 className="lg:hidden px-0"
                 titleBorder
               >
@@ -392,7 +392,7 @@ export default function ServicesPage() {
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
-                title={<span className="font-semibold">Includes</span>}
+                title={<span className="font-semibold">Includes:</span>}
                 className="lg:hidden px-0"
                 titleBorder
               >
@@ -463,7 +463,7 @@ export default function ServicesPage() {
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
-                title={<span className="font-semibold">Includes</span>}
+                title={<span className="font-semibold">Includes:</span>}
                 className="lg:hidden px-0"
                 titleBorder
               >
