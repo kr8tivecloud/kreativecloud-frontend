@@ -15,6 +15,9 @@ import ShimmerParagraph from "@/components/ShimmerParagraph";
 import { motion, Variants } from "motion/react";
 import BulletIcon from "@/assets/images/services/list-icon.svg";
 import Accordion from "@/components/shared/Accordion";
+import TechnologySetup from "@/assets/images/services/technology-setup.png";
+import CorporatePhotography from "@/assets/images/services/corporate-photography.png";
+import PrintServices from "@/assets/images/services/print-services.png";
 
 const MotionImage = motion.create(Image);
 
@@ -513,6 +516,241 @@ export default function ServicesPage() {
           </motion.div>
         </div>
         {/* END SOCIAL MEDIA MANAGEMENT SECTION */}
+
+        {/* TECHNOLOGY SETUP SECTION */}
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
+          {/* TEXT CONTENT */}
+          <div className="flex-1 min-w-0">
+            <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
+              <StaggeredFlipText2
+                className="whitespace-break-spaces"
+                text="Technology Setup & IT Solutions"
+              />{" "}
+              <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
+                Starts at $100
+              </span>
+            </div>
+
+            <ShimmerParagraph className="my-5 leading-7">
+              We create content that connects with your audience and gets them
+              talking. From coming up with viral ideas to making sure everything
+              matches your brand, we’ve got you covered. We’ll write blog posts,
+              copies, scripts and product descriptions that are clear and
+              engaging. We can also plan your content calendar and handle the
+              graphics, videos, or any other media you need to bring your ideas
+              to life.
+              <br />
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes:</span>}
+                className="lg:hidden px-0"
+                titleBorder
+              >
+                <BulletList>
+                  <li>Network setup, VPNs, Wi-Fi &amp; cybersecurity</li>
+                  <li>Database management, cloud storage &amp; backups</li>
+                  <li>Email systems, hosting, domain setup</li>
+                  <li>Server solutions, VoIP, and telephony systems</li>
+                  <li>
+                    Surveillance systems, cabling &amp; hardware installation
+                  </li>
+                  <li>Remote helpdesk support &amp; team training</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Network setup, VPNs, Wi-Fi &amp; cybersecurity</li>
+                  <li>Database management, cloud storage &amp; backups</li>
+                  <li>Email systems, hosting, domain setup</li>
+                  <li>Server solutions, VoIP, and telephony systems</li>
+                  <li>
+                    Surveillance systems, cabling &amp; hardware installation
+                  </li>
+                  <li>Remote helpdesk support &amp; team training</li>
+                </BulletList>
+              </div>
+            </ShimmerParagraph>
+            <div className="flex items-center gap-x-5">
+              <AnimatedButton variant="outline" as="link" href="/contact">
+                HIRE US
+              </AnimatedButton>
+            </div>
+          </div>
+          {/* END TEXT CONTENT */}
+
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={TechnologySetup}
+              alt="Technology setup"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
+        </div>
+        {/* END TECHNOLOGY SETUP SECTION */}
+
+        {/* CORPORATE MEDIA PHOTOGRAPHY */}
+        <div className="flex items-center flex-col-reverse  lg:flex-row-reverse">
+          {/* TEXT CONTENT */}
+          <div className="flex-1 min-w-0">
+            <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
+              <StaggeredFlipText2
+                className="whitespace-break-spaces"
+                text="Corporate Media & Photography"
+              />
+              <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
+                Starts at $200
+              </span>
+            </div>
+            <ShimmerParagraph className="my-5 leading-7">
+              We deliver high-quality photo and video production to help
+              organizations showcase their work, tell compelling stories, and
+              document key moments.
+              <br />
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes:</span>}
+                className="lg:hidden px-0"
+                titleBorder
+              >
+                <BulletList>
+                  <li>Executive headshots &amp; leadership portraits</li>
+                  <li>Media coverage of events, meetings, and activations</li>
+                  <li>Success stories, interviews, and testimonial videos</li>
+                  <li>Branded content for campaigns and websites</li>
+                  <li>Food, venue, and product photography</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Executive headshots &amp; leadership portraits</li>
+                  <li>Media coverage of events, meetings, and activations</li>
+                  <li>Success stories, interviews, and testimonial videos</li>
+                  <li>Branded content for campaigns and websites</li>
+                  <li>Food, venue, and product photography</li>
+                </BulletList>
+              </div>
+            </ShimmerParagraph>
+            <div className="flex items-center gap-x-5">
+              <AnimatedButton as={"link"} variant="outline" href="#">
+                HIRE US
+              </AnimatedButton>
+            </div>
+          </div>
+          {/* END TEXT CONTENT */}
+
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={CorporatePhotography}
+              alt="Corporate Photography"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
+        </div>
+        {/* END CORPORATE MEDIA PHOTOGRAPHY */}
+
+        {/* PRINT AND FULFILLMENT SECTION */}
+        <div className="flex items-center flex-col-reverse  lg:flex-row">
+          {/* TEXT CONTENT */}
+          <div className="flex-1 min-w-0">
+            <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
+              <StaggeredFlipText2
+                className="whitespace-break-spaces"
+                text="Print & Fulfillment Services"
+              />{" "}
+              <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
+                Starts at $100
+              </span>
+            </div>
+
+            <ShimmerParagraph className="my-5 leading-7">
+              We create content that connects with your audience and gets them
+              talking. From coming up with viral ideas to making sure everything
+              matches your brand, we’ve got you covered. We’ll write blog posts,
+              copies, scripts and product descriptions that are clear and
+              engaging. We can also plan your content calendar and handle the
+              graphics, videos, or any other media you need to bring your ideas
+              to life.
+              <br />
+              {/* Mobile: Accordion for Includes */}
+              <Accordion
+                title={<span className="font-semibold">Includes:</span>}
+                className="lg:hidden px-0"
+                titleBorder
+              >
+                <BulletList>
+                  <li>Flyers, brochures, posters, and postcards</li>
+                  <li>Business cards, letterhead, booklets, and signage</li>
+                  <li>Vinyl banners, retractable displays, and yard signs</li>
+                  <li>Direct mail campaigns &amp; mass print fulfillment</li>
+                  <li>Custom packaging, stickers, labels &amp; promo items</li>
+                  <li>
+                    Print file prep, vendor coordination &amp; shipping
+                    logistics
+                  </li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
+                <span className="font-bold">Includes:</span>
+                <BulletList>
+                  <li>Flyers, brochures, posters, and postcards</li>
+                  <li>Business cards, letterhead, booklets, and signage</li>
+                  <li>Vinyl banners, retractable displays, and yard signs</li>
+                  <li>Direct mail campaigns &amp; mass print fulfillment</li>
+                  <li>Custom packaging, stickers, labels &amp; promo items</li>
+                  <li>
+                    Print file prep, vendor coordination &amp; shipping
+                    logistics
+                  </li>
+                </BulletList>
+              </div>
+            </ShimmerParagraph>
+
+            <div className="flex items-center gap-x-5">
+              <AnimatedButton variant="outline" as={"link"} href="#">
+                HIRE US
+              </AnimatedButton>
+            </div>
+          </div>
+          {/* END TEXT CONTENT */}
+
+          <motion.div
+            initial={"default"}
+            variants={brandImageVariants}
+            whileInView={"inView"}
+            viewport={{ once: true, amount: "all" }}
+            className="overflow-hidden flex-1 min-w-0 max-w-full"
+          >
+            <Image
+              src={PrintServices}
+              alt="SocialMediaManagement"
+              width={600}
+              height={460}
+              className="flex-1 min-w-0 max-w-full"
+            />
+          </motion.div>
+        </div>
+        {/* END PRINT AND FULFILLMENT SECTION */}
       </div>
       {/* END SERVICES */}
     </div>
