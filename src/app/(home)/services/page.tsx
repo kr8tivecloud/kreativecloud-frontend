@@ -524,7 +524,7 @@ export default function ServicesPage() {
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
               <StaggeredFlipText2
                 className="whitespace-break-spaces"
-                text="Technology Setup & IT Solutions"
+                text="Tech Setup & IT Solutions"
               />{" "}
               <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
                 Starts at $100
@@ -605,7 +605,7 @@ export default function ServicesPage() {
             <div className="text-2xl sm:text-3xl font-bold flex items-center gap-x-2 flex-wrap">
               <StaggeredFlipText2
                 className="whitespace-break-spaces"
-                text="Corporate Media & Photography"
+                text="Media & Photography"
               />
               <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
                 Starts at $200
