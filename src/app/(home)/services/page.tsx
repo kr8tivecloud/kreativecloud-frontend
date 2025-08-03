@@ -527,18 +527,15 @@ export default function ServicesPage() {
                 text="Tech Setup & IT Solutions"
               />{" "}
               <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
-                Starts at $100
+                Custom
               </span>
             </div>
 
             <ShimmerParagraph className="my-5 leading-7">
-              We create content that connects with your audience and gets them
-              talking. From coming up with viral ideas to making sure everything
-              matches your brand, we’ve got you covered. We’ll write blog posts,
-              copies, scripts and product descriptions that are clear and
-              engaging. We can also plan your content calendar and handle the
-              graphics, videos, or any other media you need to bring your ideas
-              to life.
+              We provide full-service technology infrastructure for nonprofits
+              and corporate teams. Our solutions ensure that your organization
+              is secure, connected, and built for growth—no in-house IT team
+              required.
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
@@ -608,7 +605,7 @@ export default function ServicesPage() {
                 text="Media & Photography"
               />
               <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
-                Starts at $200
+                Starts at $250
               </span>
             </div>
             <ShimmerParagraph className="my-5 leading-7">
@@ -641,10 +638,33 @@ export default function ServicesPage() {
                   <li>Food, venue, and product photography</li>
                 </BulletList>
               </div>
+              {/* Mobile: Accordion for Perfect for */}
+              <Accordion
+                title={<span className="font-semibold">Perfect for:</span>}
+                className="lg:hidden px-0"
+                titleBorder
+              >
+                <BulletList>
+                  <li>Nonprofits capturing impact and outreach</li>
+                  <li>Corporations promoting culture and achievements</li>
+                  <li>Stakeholder events, panels, and commercial shoots</li>
+                </BulletList>
+              </Accordion>
+              {/* Desktop: Show Includes inline */}
+              <div className="mt-3 hidden lg:block">
+                <span className="font-bold">Perfect for:</span>
+                <BulletList>
+                  <li>Executive headshots &amp; leadership portraits</li>
+                  <li>Media coverage of events, meetings, and activations</li>
+                  <li>Success stories, interviews, and testimonial videos</li>
+                  <li>Branded content for campaigns and websites</li>
+                  <li>Food, venue, and product photography</li>
+                </BulletList>
+              </div>
             </ShimmerParagraph>
             <div className="flex items-center gap-x-5">
               <AnimatedButton as={"link"} variant="outline" href="#">
-                HIRE US
+                BOOK A CONSULTATION
               </AnimatedButton>
             </div>
           </div>
@@ -678,18 +698,15 @@ export default function ServicesPage() {
                 text="Print & Fulfillment Services"
               />{" "}
               <span className="text-[#858585] bg-[#2C2C2C] border px-2 py-0.5 rounded-full border-[#393939] text-xs font-normal align-middle whitespace-nowrap">
-                Starts at $100
+                Starts at $75
               </span>
             </div>
 
             <ShimmerParagraph className="my-5 leading-7">
-              We create content that connects with your audience and gets them
-              talking. From coming up with viral ideas to making sure everything
-              matches your brand, we’ve got you covered. We’ll write blog posts,
-              copies, scripts and product descriptions that are clear and
-              engaging. We can also plan your content calendar and handle the
-              graphics, videos, or any other media you need to bring your ideas
-              to life.
+              We bring your brand to life — on paper, on walls, and in the hands
+              of your audience. Whether you're distributing outreach materials,
+              prepping for an event, or need custom collateral, we handle print
+              production from file to finish.
               <br />
               {/* Mobile: Accordion for Includes */}
               <Accordion
