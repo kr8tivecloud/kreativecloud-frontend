@@ -4,7 +4,7 @@ import Heroarea from "./Heroarea";
 import Portfolio from "./portfolio/Portfolio";
 import Process from "./process/Process";
 import Services from "./Services";
-import Testimonial from "./testimonial/Testimonial";
+// import Testimonial from "./testimonial/Testimonial";
 
 const LandingPageContent = () => {
   return (
@@ -13,7 +13,7 @@ const LandingPageContent = () => {
       <Portfolio />
       {/* <Features /> */}
       <Services />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Process />
       <Faqs />
     </div>
