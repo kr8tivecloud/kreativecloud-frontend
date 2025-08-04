@@ -188,3 +188,38 @@ export { default as NewPurposeCounsellingItem5 } from "./portfolio/new-purpose-c
 
 export { default as WnyICCItem1 } from "./portfolio/wnyicc/item-1.png";
 export { default as WnyICCItem2 } from "./portfolio/wnyicc/item-2.png";
+
+export { default as PhyllisGunningItem1 } from "./portfolio/phyllis-gunning/item-1.png";
+export { default as PhyllisGunningItem2 } from "./portfolio/phyllis-gunning/item-2.png";
+export { default as PhyllisGunningItem3 } from "./portfolio/phyllis-gunning/item-3.png";
+export { default as PhyllisGunningItem4 } from "./portfolio/phyllis-gunning/item-4.png";
+export { default as PhyllisGunningItem5 } from "./portfolio/phyllis-gunning/item-5.png";
+
+export { default as RawConnectionItem1 } from "./portfolio/raw-connection/item-1.png";
+export { default as RawConnectionItem2 } from "./portfolio/raw-connection/item-2.png";
+export { default as RawConnectionItem3 } from "./portfolio/raw-connection/item-3.png";
+export { default as RawConnectionItem4 } from "./portfolio/raw-connection/item-4.png";
+
+export { default as MekkachItem1 } from "./portfolio/mekkachi/item-1.png";
+export { default as MekkachItem2 } from "./portfolio/mekkachi/item-2.png";
+export { default as MekkachItem3 } from "./portfolio/mekkachi/item-3.png";
+export { default as MekkachItem4 } from "./portfolio/mekkachi/item-4.png";
+export { default as MekkachItem5 } from "./portfolio/mekkachi/item-5.png";
+export { default as MekkachItem6 } from "./portfolio/mekkachi/item-6.png";
+
+export { default as CestDeLartItem1 } from "./portfolio/cest-de-lart/item-1.png";
+export { default as CestDeLartItem2 } from "./portfolio/cest-de-lart/item-2.png";
+export { default as CestDeLartItem3 } from "./portfolio/cest-de-lart/item-3.png";
+export { default as CestDeLartItem4 } from "./portfolio/cest-de-lart/item-4.png";
+export { default as CestDeLartItem5 } from "./portfolio/cest-de-lart/item-5.png";
+
+export { default as CafeItem1 } from "./portfolio/cafe/item-1.png";
+export { default as CafeItem2 } from "./portfolio/cafe/item-2.png";
+export { default as CafeItem3 } from "./portfolio/cafe/item-3.png";
+export { default as CafeItem4 } from "./portfolio/cafe/item-4.png";
+
+export { default as UpraxxItem1 } from "./portfolio/upraxx/item-1.png";
+export { default as UpraxxItem2 } from "./portfolio/upraxx/item-2.png";
+export { default as UpraxxItem3 } from "./portfolio/upraxx/item-3.png";
+export { default as UpraxxItem4 } from "./portfolio/upraxx/item-4.png";
+export { default as UpraxxItem5 } from "./portfolio/upraxx/item-5.png";

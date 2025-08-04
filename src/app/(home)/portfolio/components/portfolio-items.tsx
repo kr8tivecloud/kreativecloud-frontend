@@ -6,18 +6,17 @@ import {
   AtkinsMockup,
   BlackdiamondMockup,
   NewPurposeMockup,
-  WnyICCMockup,
+  CafeItem3 as CafeMockup,
+  CestDeLartItem3 as CestDeLartMockup,
+  MekkachItem3 as MekkachiMockup,
+  PhyllisGunningItem1 as PhyllisGunningMockup,
+  RawConnectionItem4 as RawConnectionMockup,
+  UpraxxItem5 as UpraxxMockup,
+
+  // WnyICCMockup,
 } from "../../../../../public/images";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-
-type PortfolioData = {
-  name: string;
-  image: StaticImageData;
-  services: string[];
-  category: string[];
-  link: string;
-};
 
 const categories = [
   "All",
@@ -27,7 +26,17 @@ const categories = [
   "Music",
   "Entertainment",
   "Small Business",
-];
+] as const;
+
+type Category = (typeof categories)[number];
+
+type PortfolioData = {
+  name: string;
+  image: StaticImageData;
+  services: string[];
+  category: Exclude<(typeof categories)[number], "All">[];
+  link: string;
+};
 
 const portfolioData: PortfolioData[] = [
   {
@@ -52,22 +61,64 @@ const portfolioData: PortfolioData[] = [
     link: "/portfolio/new-purpose-counselling",
   },
   {
-    name: "WNYICC",
-    image: WnyICCMockup,
-    services: ["Website", "UI/UX Design", "Marketing"],
-    category: ["Health Care"],
-    link: "/portfolio/wnyicc",
+    name: "Cafe",
+    image: CafeMockup,
+    services: ["Website", "UI/UX Design"],
+    category: ["Fashion", "Small Business"],
+    link: "/portfolio/cafe",
   },
+  {
+    name: "C’est de L’art",
+    image: CestDeLartMockup,
+    services: ["Website", "UI/UX Design", "Branding"],
+    category: ["Fashion", "Small Business"],
+    link: "/portfolio/cest-de-lart",
+  },
+  {
+    name: "Mekkachi",
+    image: MekkachiMockup,
+    services: ["Website", "UI/UX Design", "Branding", "Marketing"],
+    category: ["Fashion", "Small Business"],
+    link: "/portfolio/phyllis-gunning",
+  },
+  {
+    name: "Raw Connection",
+    image: RawConnectionMockup,
+    services: ["Website", "UI/UX Design", "Branding"],
+    category: ["Small Business"],
+    link: "/portfolio/raw-connection",
+  },
+  {
+    name: "Phyllis Gunning, LLC",
+    image: PhyllisGunningMockup,
+    services: ["Website", "UI/UX Design", "Branding"],
+    category: ["Small Business"],
+    link: "/portfolio/new-purpose-counselling",
+  },
+  {
+    name: "Upraxx",
+    image: UpraxxMockup,
+    services: ["Website", "UI/UX Design", "Branding", "Marketing"],
+    category: ["Fashion", "Small Business"],
+    link: "/portfolio/upraxx",
+  },
+  // {
+  //   name: "WNYICC",
+  //   image: WnyICCMockup,
+  //   services: ["Website", "UI/UX Design", "Marketing"],
+  //   category: ["Health Care"],
+  //   link: "/portfolio/wnyicc",
+  // },
 ];
 
 export default function PortfolioItems() {
   // Use undefined for "All"
-  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined
-  );
+  const [selectedCategory, setSelectedCategory] = useState<
+    Category | undefined
+  >(undefined);
 
   const filteredPortfolios = portfolioData.filter((portfolio) => {
-    if (!selectedCategory || selectedCategory.toLowerCase() === "all") {
+    if (!selectedCategory || selectedCategory === "All") {
       return true;
     }
     return portfolio.category.includes(selectedCategory);
@@ -75,10 +126,10 @@ export default function PortfolioItems() {
 
   // Custom setter to treat "All" as undefined
   function handleSetSelectedCategory(value: string | undefined) {
-    if (!value || !categories.includes(value)) {
+    if (!value || !categories.includes(value as Category)) {
       setSelectedCategory("All");
     } else {
-      setSelectedCategory(value);
+      setSelectedCategory(value as Category);
     }
   }
 
@@ -86,7 +137,7 @@ export default function PortfolioItems() {
     <div className="px-4 sm:container mb-28">
       {/* CATEGORY PICKER */}
       <CategoryPickerSingle
-        categories={categories}
+        categories={categories as unknown as string[]}
         selected={selectedCategory ?? "All"}
         setSelected={handleSetSelectedCategory}
         className="mt-4 mb-6"
@@ -98,8 +149,14 @@ export default function PortfolioItems() {
         {filteredPortfolios.map((item) => {
           return (
             <Link key={item.name} href={item.link}>
-              <div>
-                <Image src={item.image} alt="" width={652} height={384} />
+              <div className="w-full h-full flex flex-col">
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={652}
+                  height={384}
+                  className="flex-1"
+                />
 
                 <div className="mt-4">
                   <div className="font-bold text-2xl lg:text-3xl">
