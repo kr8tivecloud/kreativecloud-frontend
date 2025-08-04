@@ -79,7 +79,7 @@ const portfolioData: PortfolioData[] = [
     image: MekkachiMockup,
     services: ["Website", "UI/UX Design", "Branding", "Marketing"],
     category: ["Fashion", "Small Business"],
-    link: "/portfolio/phyllis-gunning",
+    link: "/portfolio/mekkachi",
   },
   {
     name: "Raw Connection",
@@ -93,7 +93,7 @@ const portfolioData: PortfolioData[] = [
     image: PhyllisGunningMockup,
     services: ["Website", "UI/UX Design", "Branding"],
     category: ["Small Business"],
-    link: "/portfolio/new-purpose-counselling",
+    link: "/portfolio/phyllis-gunning",
   },
   {
     name: "Upraxx",
