@@ -149,13 +149,21 @@ export default function PortfolioItems() {
         {filteredPortfolios.map((item) => {
           return (
             <Link key={item.name} href={item.link}>
-              <div className="w-full h-full flex flex-col">
+              {/* <div className="w-full h-full flex flex-col">
                 <Image
                   src={item.image}
                   alt=""
                   width={652}
                   height={384}
                   className="flex-1"
+                /> */}
+              <div>
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={652}
+                  height={384}
+                  className="aspect-video object-cover"
                 />
 
                 <div className="mt-4">

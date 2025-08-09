@@ -18,7 +18,7 @@ export function PortfolioGallery({ images }: { images: GalleryImage[] }) {
           src={img.src}
           alt={img.alt}
           className={cn(
-            "w-full h-full object-cover max-h-[80vh]",
+            "w-full h-full object-cover",
             {
               "lg:col-span-6": img.cols === 6,
               "lg:col-span-3": img.cols === 3,
@@ -26,8 +26,11 @@ export function PortfolioGallery({ images }: { images: GalleryImage[] }) {
             },
             {
               "lg:h-auto max-h-[80vh]": img.cols === 6,
+              // "lg:aspect-video max-h-[80vh]": img.cols === 6,
               "lg:h-[min(637px,_60vh)]": img.cols === 3,
+              // "lg:aspect-square max-lg:max-h-[60vh]": img.cols === 3,
               "lg:h-[min(460px,_60vh)]": img.cols === 2,
+              // "lg:aspect-[5_/_4]": img.cols === 2,
             }
           )}
         />

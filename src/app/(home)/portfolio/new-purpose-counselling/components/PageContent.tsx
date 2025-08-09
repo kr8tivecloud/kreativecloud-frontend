@@ -10,6 +10,7 @@ import {
   NewPurposeCounsellingItem3,
   NewPurposeCounsellingItem4,
   NewPurposeCounsellingItem5,
+  // NewPurposeCounsellingItem6,
 } from "../../../../../../public/images";
 
 const galleryImages: GalleryImage[] = [
@@ -38,6 +39,11 @@ const galleryImages: GalleryImage[] = [
     alt: "New Purpose Counselling Gallery 5",
     cols: 6,
   },
+  // {
+  //   src: NewPurposeCounsellingItem6,
+  //   alt: "New Purpose Counselling Gallery 6",
+  //   cols: 6,
+  // },
 ];
 
 const services = ["Website", "UI/UX Design"];
