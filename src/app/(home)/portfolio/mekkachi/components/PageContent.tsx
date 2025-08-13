@@ -10,7 +10,7 @@ import {
   MekkachItem3,
   MekkachItem4,
   MekkachItem5,
-  MekkachItem6,
+  // MekkachItem6,
 } from "../../../../../../public/images";
 
 const galleryImages: GalleryImage[] = [
@@ -39,11 +39,11 @@ const galleryImages: GalleryImage[] = [
     alt: "Exhibition 5",
     cols: 6,
   },
-  {
-    src: MekkachItem6,
-    alt: "Exhibition 6",
-    cols: 6,
-  },
+  // {
+  //   src: MekkachItem6,
+  //   alt: "Exhibition 6",
+  //   cols: 6,
+  // },
 ];
 
 const services = ["Website", "UI/UX Design", "Branding", "Marketing"];
