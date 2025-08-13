@@ -5,13 +5,13 @@ import React, { useState } from "react";
 import {
   AtkinsMockup,
   BlackdiamondMockup,
-  NewPurposeMockup,
-  CafeItem3 as CafeMockup,
-  CestDeLartItem3 as CestDeLartMockup,
-  MekkachItem3 as MekkachiMockup,
+  NewPurposeCounsellingItem1 as NewPurposeMockup,
+  CafeItem1 as CafeMockup,
+  CestDeLartItem1 as CestDeLartMockup,
+  MekkachItem1 as MekkachiMockup,
   PhyllisGunningItem1 as PhyllisGunningMockup,
-  RawConnectionItem4 as RawConnectionMockup,
-  UpraxxItem5 as UpraxxMockup,
+  RawConnectionItem1 as RawConnectionMockup,
+  UpraxxItem1 as UpraxxMockup,
 
   // WnyICCMockup,
 } from "../../../../../public/images";

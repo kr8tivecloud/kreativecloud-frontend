@@ -160,7 +160,7 @@ export { default as MemberPlaceholder } from "./team/members-placeholder.png";
 export { default as KreativeCloud } from "./portfolio/kreative-cloud.svg";
 export { default as BlackdiamondMockup } from "./portfolio/blackdiamond-mockup.png";
 export { default as AtkinsMockup } from "./portfolio/atkins-mockup.png";
-export { default as NewPurposeMockup } from "./portfolio/new-purpose-mockup.png";
+// export { default as NewPurposeMockup } from "./portfolio/new-purpose-mockup.png";
 export { default as WnyICCMockup } from "./portfolio/wnyicc-mockup.png";
 export { default as BlackdiamondItem1 } from "./portfolio/blackdiamond/item-1.webp";
 export { default as BlackdiamondItem2 } from "./portfolio/blackdiamond/item-2.webp";
@@ -209,7 +209,7 @@ export { default as MekkachItem5 } from "./portfolio/mekkachi/item-5.webp";
 export { default as MekkachItem6 } from "./portfolio/mekkachi/item-6.webp";
 
 export { default as CestDeLartItem1 } from "./portfolio/cest-de-lart/item-1.webp";
-export { default as CestDeLartItem2 } from "./portfolio/cest-de-lart/item-2.webp";
+export { default as CestDeLartItem2 } from "./portfolio/cest-de-lart/item-2.jpg";
 export { default as CestDeLartItem3 } from "./portfolio/cest-de-lart/item-3.webp";
 export { default as CestDeLartItem4 } from "./portfolio/cest-de-lart/item-4.webp";
 export { default as CestDeLartItem5 } from "./portfolio/cest-de-lart/item-5.webp";
