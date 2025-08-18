@@ -62,7 +62,7 @@ export default function PageContent() {
           experience with all the right touches.
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            {link}
+            view website
           </a>
         </p>
 

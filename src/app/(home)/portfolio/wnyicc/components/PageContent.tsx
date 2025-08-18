@@ -37,7 +37,7 @@ export default function PageContent() {
           learn more, get in touch, and access important services.
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            {link}
+            view website
           </a>
         </p>
       </div>

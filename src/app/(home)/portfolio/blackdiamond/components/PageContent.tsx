@@ -74,7 +74,7 @@ export default function PageContent() {
           simplify the booking process.
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            {link}
+            view website
           </a>
         </p>
       </div>

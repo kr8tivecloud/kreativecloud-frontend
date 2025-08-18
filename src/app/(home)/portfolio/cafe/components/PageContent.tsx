@@ -50,7 +50,7 @@ export default function PageContent() {
           with a seamless shopping experience.
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            {link}
+            view website
           </a>
         </p>
 

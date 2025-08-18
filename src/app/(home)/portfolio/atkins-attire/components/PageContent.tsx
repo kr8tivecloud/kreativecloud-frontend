@@ -75,7 +75,7 @@ export default function PageContent() {
           collection, captured his brand vibe, and set the stage for growth.{" "}
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            {link}
+            view website
           </a>
         </p>
       </div>

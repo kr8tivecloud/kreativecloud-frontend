@@ -56,7 +56,7 @@ export default function PageContent() {
           platform with dynamic visuals and a smooth user flow.
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            {link}
+            view website
           </a>
         </p>
       </div>
