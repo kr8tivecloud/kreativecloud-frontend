@@ -14,6 +14,7 @@ import {
   GalleryImage,
   PortfolioGallery,
 } from "@/components/home/portfolio/PortfolioGallery";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 const galleryImages: GalleryImage[] = [
   {
@@ -74,8 +75,17 @@ export default function PageContent() {
           solo entrepreneur, he wanted a bold digital space that showcased his
           collection, captured his brand vibe, and set the stage for growth.{" "}
           <br />
-          <a target="_blank" href={link} className="underline text-[#FE922A]">
-            view website
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={link}
+            className="inline-flex items-center gap-0.5 underline text-[#FE922A]"
+          >
+            View website
+            <MdOutlineArrowOutward
+              className="inline-block"
+              aria-hidden="true"
+            />
           </a>
         </p>
       </div>

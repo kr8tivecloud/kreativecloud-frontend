@@ -65,8 +65,8 @@ export default function ResourcesSubmenu() {
               <Link
                 href={link.href}
                 className={cn(
-                  `inline-flex items-center gap-x-1 text-[#999999] relative hover:text-white no-underline transition-[background-size] duration-500 
-         [background:linear-gradient(#ffffff_0_0)_bottom_left/_var(--underline-width,0%)_0.1em_no-repeat]
+                  `inline-flex items-center gap-x-1 text-[#999999] relative hover:text-[#FE922A] no-underline transition-[background-size] duration-500 
+         [background:linear-gradient(#FE922A_0_0)_bottom_left/_var(--underline-width,0%)_0.1em_no-repeat]
          hover:[--underline-width:100%] [&:hover>svg]:opacity-100`,
                   isActive && "text-white"
                 )}

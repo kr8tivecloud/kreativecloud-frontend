@@ -64,7 +64,7 @@ export default function PageContent() {
           access helpful information.
           <br />
           <a target="_blank" href={link} className="underline text-[#FE922A]">
-            view website
+            View website
           </a>
         </p>
       </div>
